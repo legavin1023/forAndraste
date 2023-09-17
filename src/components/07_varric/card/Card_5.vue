@@ -1,0 +1,87 @@
+<template>
+  <svg
+    width="196"
+    height="196"
+    viewBox="0 0 196 196"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <g filter="url(#filter0_d_420_960)">
+      <rect
+        width="186"
+        height="186"
+        rx="16"
+        fill="#C2B39A"
+        shape-rendering="crispEdges"
+      />
+      <rect x="34.5" y="34.5" width="117" height="117" fill="url(#pattern05)" />
+      <rect
+        x="0.5"
+        y="0.5"
+        width="185"
+        height="185"
+        rx="15.5"
+        stroke="#796849"
+        shape-rendering="crispEdges"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_d_420_960"
+        x="0"
+        y="0"
+        width="196"
+        height="196"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset dx="8" dy="8" />
+        <feGaussianBlur stdDeviation="1" />
+        <feComposite in2="hardAlpha" operator="out" />
+        <feColorMatrix
+          type="matrix"
+          values="0 0 0 0 0.841667 0 0 0 0 0.781896 0 0 0 0 0.669826 0 0 0 1 0"
+        />
+        <feBlend
+          mode="normal"
+          in2="BackgroundImageFix"
+          result="effect1_dropShadow_420_960"
+        />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="effect1_dropShadow_420_960"
+          result="shape"
+        />
+      </filter>
+      <pattern
+        id="pattern05"
+        patternContentUnits="objectBoundingBox"
+        width="1"
+        height="1"
+      >
+        <use
+          xlink:href="#image0_420_960"
+          transform="translate(0.128571) scale(0.00952381)"
+        />
+      </pattern>
+      <image
+        id="image0_420_960"
+        width="78"
+        height="105"
+        xlink:href="data:image/png;base64,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"
+      />
+    </defs>
+  </svg>
+</template>
+<script>
+export default {};
+</script>
