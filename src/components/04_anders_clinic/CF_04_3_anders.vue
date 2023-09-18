@@ -48,6 +48,7 @@
               />
             </div>
           </div>
+          <p class="puzzle_text">이 영역 위에서 맞추세요.</p>
           <div class="container dropBox">
             <div
               v-for="(value, index) in [1, 2, 3, 4, 5, 6]"
@@ -173,6 +174,9 @@ export default {
         this.$set(this.droppedImages, drop.getAttribute("value"), image);
         this.checkCorrectDrop(drop, image);
         this.checkCorrectFinalImage();
+
+        // 드랍된 이미지를 images 배열에서 제거
+        this.images = this.images.filter((img) => img.value !== image.value);
       }
     },
     checkCorrectDrop(drop, image) {
@@ -219,14 +223,17 @@ export default {
 .dropBox {
   width: 650px;
   height: 430px;
-  background: #c2b39a;
   margin: auto;
-  border-radius: 30px;
+  border-radius: 20px;
+  border: 2px dashed var(--dashed_line, #ad946e);
+  background: #bfae8f;
   display: flex;
   flex-wrap: wrap;
   justify-content: end;
   align-items: center;
   padding: 40px 0px 0px 40px;
+  z-index: 1;
+
   .drop {
     // border: 1px solid red;
     position: relative;
@@ -249,5 +256,19 @@ export default {
     left: -74px;
     top: -60px;
   }
+}
+.gallery-list {
+  img {
+    z-index: 100;
+  }
+}
+.puzzle_text {
+  color: #7c6f55;
+  text-align: center;
+  width: 400px;
+  display: block;
+  margin: auto;
+  position: relative;
+  top: 260px;
 }
 </style>

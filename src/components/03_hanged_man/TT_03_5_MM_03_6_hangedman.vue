@@ -286,11 +286,10 @@ export default {
     transition: transform 1s;
     button {
       position: absolute;
-      top: 50px;
+      top: 70px;
       right: 0px;
       width: 20px;
       height: 20px;
-      // border: 1px solid red;
     }
     .item {
       display: block;

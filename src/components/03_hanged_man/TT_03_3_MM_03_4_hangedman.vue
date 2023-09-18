@@ -217,14 +217,14 @@ export default {
   z-index: 100;
 }
 .content-button {
-  z-index: 100;
+  z-index: 1000;
 }
 .paintArea {
   position: absolute !important;
   top: 0;
   left: 0;
   width: 100%;
-  height: 4700px;
+  height: 4500px;
   position: relative;
   z-index: 10;
 }

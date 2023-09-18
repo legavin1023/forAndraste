@@ -361,7 +361,16 @@ body {
             &:hover {
                 color: #930000;
             }
+            &:disabled {
+                opacity: 0.6;
+                color: #837a6e;
+                &:hover {
+                    color: #837a6e;
+                    cursor: default;
+                }
+            }
         }
+
         &-ink {
             width: 346px;
             height: 109px;

@@ -67,24 +67,36 @@
         하려면, 조금의 '설득'이 필요해보였다.
       </p>
       <div class="puzzle">
+        <div ref="root" class="particle-root"></div>
+
+        <div class="score">{{ score }}</div>
         <div
           class="background-area"
           @mouseup="stopCounting"
           @mouseleave="stopCounting"
-          @mousedown="increaseGauge"
         >
+          <div class="color-zone red"></div>
+          <div class="color-zone yellow"></div>
+          <div class="color-zone green"></div>
           <div class="gauge-bar" :style="{ width: gaugeValue + '%' }"></div>
-          <div class="target-zone"></div>
-          <div v-if="countdown" class="countdown">{{ countdown }}</div>
+          <!-- Add the Persuade button here -->
         </div>
       </div>
+      <button class="persuade-button" @click="persuade">설득</button>
+
+      <div class="bottomImage"></div>
     </div>
-    <div class="bottomImage"></div>
+    <!-- <particleBoxVue></particleBoxVue> -->
   </div>
 </template>
 
 <script>
+// import particleBoxVue from "./particle/particleBox.vue";
+
 export default {
+  components() {
+    // particleBoxVue;
+  },
   data() {
     return {
       gaugeValue: 0, // 현재 게이지의 값
@@ -95,26 +107,51 @@ export default {
       countdown: null, // 카운트다운의 현재 값 (초)
       targetZoneStart: 65, // 목표 영역의 시작 지점 (%)
       targetZoneEnd: 85, // 목표 영역의 끝 지점 (%)
-      increasingInterval: null, // 게이지 증가에 사용되는 인터벌
-      decreasingInterval: null, // 게이지 감소에 사용되는 인터벌 (현재 사용 안 함)
+      score: 0, // 점수
+      hasScoreDecreasedAtZero: false, // 게이지가 0이 되었을 때 점수를 이미 감소시켰는지 확인하는 플래그
+      decreaseInterval: null, // 게이지 감소를 위한 interval을 저장
+      routeChanged: false,
+      //---
+      particles: [],
+      clicks: [],
+      images: [
+        // Add the URLs of your images here.
+        "/assets/04_anders_clinic/bottle/bottle_1.png,",
+        "/assets/04_anders_clinic/bottle/bottle_2.png,",
+        "/assets/04_anders_clinic/bottle/bottle_3.png,",
+        "/assets/04_anders_clinic/bottle/bottle_4.png,",
+        //...
+      ],
     };
   },
-  mounted() {
-    setInterval(() => {
-      if (this.gaugeValue > 0) {
-        this.decreaseGauge();
+  watch: {
+    score(newValue) {
+      if (newValue >= 95) {
+        this.removeAllImages();
       }
-    }, 500);
+    },
+  },
+  mounted() {
+    this.startDecreasingGauge();
+    this.loop();
+    window.addEventListener("click", this.handleClick);
   },
   methods: {
     // 마우스를 눌렀을 때 게이지를 한 번만 증가시키는 함수
     increaseGauge() {
-      this.gaugeValue += 4;
+      if (this.gaugeValue >= 50 && this.gaugeValue < this.maxGaugeValue) {
+        this.gaugeValue += 1;
+      } else {
+        this.gaugeValue += 2;
+      }
+
       if (this.gaugeValue > this.maxGaugeValue) {
         this.gaugeValue = this.maxGaugeValue;
       }
+
       this.checkTargetZone();
     },
+
     // 마우스를 뗐을 때 게이지 증가를 중지
     stopCounting() {
       clearInterval(this.increasingInterval);
@@ -123,12 +160,39 @@ export default {
 
     // 게이지 값을 감소시키는 함수
     decreaseGauge() {
-      this.gaugeValue -= 5;
-      if (this.gaugeValue < 0) {
+      this.gaugeValue--;
+      if (this.gaugeValue <= 0) {
         this.gaugeValue = 0;
+        if (!this.hasScoreDecreasedAtZero) {
+          this.score = 0; // 점수를 0으로 초기화
+          this.hasScoreDecreasedAtZero = true;
+        }
+      } else {
+        this.hasScoreDecreasedAtZero = false; // 게이지가 0이 아니면 상태를 초기화
       }
-      this.checkTargetZone();
+      this.adjustScore(); // 점수를 조정하는 함수 호출 (필요한 경우)
     },
+    adjustScore() {
+      if (this.gaugeValue < 33) {
+        this.score -= 5;
+      } else if (this.gaugeValue >= 66) {
+        this.score += 5;
+      }
+      // 점수가 0보다 작아지지 않도록 조정
+      if (this.score < 0) {
+        this.score = 0;
+      }
+      // 점수가 100을 넘지 않도록 조정
+      if (this.score > 100) {
+        this.score = 100;
+      }
+      // 점수가 100이 되면 알림 띄우기
+      if (this.score === 100 && !this.routeChanged) {
+        this.routeChanged = true;
+        return this.$router.push({ path: "/FF-05-2-AA-05-03" });
+      }
+    },
+
     // 현재 게이지 값이 목표 영역 내에 있는지 확인하는 함수
     checkTargetZone() {
       if (
@@ -136,80 +200,277 @@ export default {
         this.gaugeValue <= this.targetZoneEnd
       ) {
         if (!this.targetTime && !this.countdownInterval) {
-          this.startCountdown();
+          // this.startCountdown();
         }
       } else {
-        this.stopCountdown();
+        // this.stopCountdown();
       }
     },
-    // 5초 카운트다운을 시작하는 함수
-    startCountdown() {
-      this.countdown = 5;
-      this.targetTime = new Date();
-      this.countdownInterval = setInterval(() => {
-        this.countdown--;
-        if (this.countdown <= 0) {
-          this.gameClear();
-        }
-      }, 1000);
-    },
-    // 카운트다운을 중지하는 함수
-    stopCountdown() {
-      clearInterval(this.countdownInterval);
-      this.countdownInterval = null;
-      this.targetTime = null;
-      this.countdown = null;
-    },
+    // // 5초 카운트다운을 시작하는 함수
+    // startCountdown() {
+    //   this.countdown = 5;
+    //   this.targetTime = new Date();
+    //   this.countdownInterval = setInterval(() => {
+    //     this.countdown--;
+    //     if (this.countdown <= 0) {
+    //       this.gameClear();
+    //     }
+    //   }, 1000);
+    // },
+    // // 카운트다운을 중지하는 함수
+    // stopCountdown() {
+    //   clearInterval(this.countdownInterval);
+    //   this.countdownInterval = null;
+    //   this.targetTime = null;
+    //   this.countdown = null;
+    // },
     // 게임을 클리어했을 때 실행되는 함수
-    gameClear() {
-      clearInterval(this.increasingInterval);
-      clearInterval(this.countdownInterval);
-      this.increasingInterval = null;
-      this.countdown = null;
-      this.gaugeValue = 0;
+    // gameClear() {
+    //   clearInterval(this.increasingInterval);
+    //   clearInterval(this.countdownInterval);
+    //   this.increasingInterval = null;
+    //   this.countdown = null;
+    //   this.gaugeValue = 0;
 
-      setTimeout(() => {
-        this.$router.push({ path: "/FF-05-2-AA-05-03" });
-      }, 2000);
+    //   setTimeout(() => {
+    //     this.$router.push({ path: "/FF-05-2-AA-05-03" });
+    //   }, 2000);
+    // },
+    startDecreasingGauge() {
+      this.stopDecreasingGauge(); // 이미 실행 중인 interval이 있다면 중지
+
+      let decreaseSpeed = 300; // 기본 감소 속도: 1초에 한 번
+
+      // 게이지가 초록 영역 (50 이상) 일 경우 감소 속도를 더 빠르게 설정
+      if (this.gaugeValue > 200) {
+        decreaseSpeed = 20; // 초록 영역에서는 0.5초에 한 번 감소
+      }
+
+      this.decreaseInterval = setInterval(() => {
+        this.decreaseGauge(); // 게이지 값을 감소
+
+        // 초록 영역에서 벗어났을 경우 감소 속도를 조절
+        if (this.gaugeValue === 50) {
+          this.startDecreasingGauge();
+        }
+      }, decreaseSpeed);
     },
+
+    stopDecreasingGauge() {
+      if (this.decreaseInterval) {
+        clearInterval(this.decreaseInterval);
+        this.decreaseInterval = null;
+      }
+    },
+    persuade() {
+      // Adjust the gauge value as needed
+      if (this.gaugeValue >= 50 && this.gaugeValue < this.maxGaugeValue) {
+        this.gaugeValue += 1;
+      } else {
+        this.gaugeValue += 2;
+      }
+
+      if (this.gaugeValue > this.maxGaugeValue) {
+        this.gaugeValue = this.maxGaugeValue;
+      }
+
+      this.checkTargetZone();
+    },
+    //----------
+    randomFloat(min = 0, max = 9999) {
+      return Math.random() * (max - min) + min;
+    },
+    mapRange(value, source, target) {
+      return (
+        target[0] +
+        ((value - source[0]) * (target[1] - target[0])) /
+          (source[1] - source[0])
+      );
+    },
+    addParticle(x, y) {
+      const particle = this.createParticle(x, y, () => {
+        this.particles.splice(this.particles.indexOf(particle), 1);
+        this.$nextTick(() => {
+          if (this.$refs.root && particle.el) {
+            this.$nextTick(() => {
+              if (this.$refs.root) {
+                this.$refs.root.removeChild(particle.el);
+              }
+            });
+          }
+        });
+      });
+      this.particles.push(particle);
+      this.$refs.root.appendChild(particle.el);
+      return particle;
+    },
+    addParticles(x, y) {
+      const rest = Math.max(0, Math.min(20, 200 - this.particles.length));
+      for (let i = 0; i < rest; i++) this.addParticle(x, y);
+    },
+    handleClick(e) {
+      this.clicks.push([e.pageX, e.pageY]);
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => (this.clicks = []), 400);
+      if (this.clicks.length > 1)
+        this.addParticles(
+          this.clicks[this.clicks.length - 1][0],
+          this.clicks[this.clicks.length - 1][1]
+        );
+    },
+    createParticle(x, y, ondistroyed) {
+      const el = document.createElement("img");
+      el.src = this.images[Math.floor(Math.random() * this.images.length)];
+      const maxAge = this.randomFloat(50, 250);
+      const velocity = 10;
+      const seedR =
+        this.randomFloat(0, 1) < 0.5
+          ? this.randomFloat(-maxAge * 0.2, -maxAge)
+          : this.randomFloat(maxAge * 0.2, maxAge);
+      const seedSX = this.randomFloat(maxAge * 0.6, maxAge);
+      const seedSY = this.randomFloat(maxAge * 0.6, maxAge);
+      const seedX = this.randomFloat(-velocity, velocity);
+      const seedY = this.randomFloat(-velocity, velocity);
+
+      let age = 0;
+      let dead = false;
+      let translateX = 0;
+      let translateY = 0;
+
+      el.style.position = "absolute";
+      el.style.left = `${x}px`;
+      el.style.top = `${y}px`;
+      // el.style.width = "10px";
+      // el.style.height = "10px";
+      el.style.transform = "translate3d(-50%, -50%, 0)";
+
+      const distroy = () => {
+        dead = true;
+        ondistroyed();
+      };
+
+      const update = () => {
+        if (dead) return;
+
+        age++;
+        if (age > maxAge) {
+          distroy();
+          return;
+        }
+
+        translateX += seedX;
+        translateY += seedY;
+        const rotate = this.mapRange(age, [0, seedR], [0, 360]);
+        const scaleX = this.mapRange(age, [0, seedSX], [0.25, 3]);
+        const scaleY = this.mapRange(age, [0, seedSY], [0.25, 3]);
+        const transform = `translate3d(-50%, -50%, 0) translate3d(${translateX}px, ${translateY}px, 0) rotate(${rotate}deg) scale(${scaleX}, ${scaleY})`;
+        const opacity = this.mapRange(age, [maxAge * 0.6, maxAge], [1, 0]);
+
+        el.style.transform = transform;
+        el.style.opacity = opacity;
+      };
+
+      return { el, update, distroy };
+    },
+    loop() {
+      requestAnimationFrame(this.loop);
+      this.particles.forEach((x) => x.update());
+    },
+    removeAllImages() {
+      this.particles.forEach((particle) => particle.distroy());
+      this.particles = [];
+    },
+  },
+  beforeDestroy() {
+    window.removeEventListener("click", this.handleClick);
   },
 };
 // 컴포넌트가 마운트되었을 때 게이지 감소를 시작
 </script>
 
-<style>
+<style lang="scss" scoped>
 .background-area {
-  width: 300px;
-  height: 30px;
-  background-color: #fff;
   position: relative;
   margin: auto;
+  display: flex;
+  width: 441px;
+  height: 24px;
+  transition: background-color 0.3s;
+
+  // overflow: hidden;
+}
+
+.color-zone {
+  width: 33.33%;
+  transition: background-color 0.3s;
+}
+
+.color-zone.red {
+  background-color: #d75656;
+  border-radius: 11.5px 0 0 11.5px;
+}
+
+.color-zone.yellow {
+  background-color: #f99b57;
+}
+
+.color-zone.green {
+  background-color: #77c65b;
+  border-radius: 0 11.5px 11.5px 0;
 }
 
 .gauge-bar {
-  height: 30px;
-  background-color: #837a6e;
+  height: 24px;
+  background-color: #fff;
   transition: width 0.3s;
-}
-
-.target-zone {
   position: absolute;
+  border-radius: 0 11.5px 11.5px 0;
   top: 0;
-  left: 65%;
-  width: 20%;
-  height: 30px;
-  border: 2px dashed red;
-}
+  left: 0;
+  z-index: 1;
+  /* 이미지 추가 */
+  &::after {
+    width: 37px;
+    height: 43px;
+    display: block;
 
-.countdown {
-  position: absolute;
-  top: 0;
-  left: 75%;
-  transform: translateX(-50%);
+    content: "";
+    background-image: url("@/assets/05_fenris/Isolation_Mode.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute; // 이 부분 추가
+    right: -20px; // 이미지의 너비만큼 오른쪽으로 이동
+    top: -50px; // 이미지의 위치를 게이지 바 위
+  }
+}
+.score {
+  position: relative;
   font-size: 20px;
-  color: black;
+  color: #25130f;
+  font-size: 24px;
+  text-align: center;
+  left: -250px;
+  top: 26px;
 }
+
 .puzzle {
   padding: 90px;
+}
+.persuade-button {
+  display: block;
+  width: 200px;
+  text-align: center;
+  margin: auto;
+  background: #fff;
+  margin: auto;
+}
+.particle-root {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  pointer-events: none;
+  overflow: hidden;
 }
 </style>

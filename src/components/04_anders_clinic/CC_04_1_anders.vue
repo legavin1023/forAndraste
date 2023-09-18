@@ -71,8 +71,8 @@
               src="/assets/04_anders_clinic/cat.svg"
               alt="Hangman"
               :style="{
-                width: (chances / 5) * 100 + '%',
-                left: `calc(${(chances / 5) * 100}% - 100px)`,
+                width: '200px',
+                left: `calc((${(chances / 5) * 100}%) - 150px)`,
               }"
             />
             <img
@@ -80,7 +80,6 @@
               src="/assets/04_anders_clinic/fish.svg"
               alt="Hangman"
               :style="{
-                width: (chances / 5) * 100 + '%',
                 left: '0%',
               }"
             />
@@ -238,7 +237,7 @@ export default {
         this.wrongGuesses.push(letter);
         this.chances--;
       }
-
+      console.log("Chances left:", this.chances); // Add this line
       if (this.currentWord === this.wordToGuess) {
         this.$router.push({ path: "/CS-04-2" });
       } else if (this.chances === 0) {
@@ -266,15 +265,10 @@ export default {
 
 <style lang="scss" scoped>
 .game-container {
+  width: 456.279px;
   position: relative;
+  margin: auto;
   top: 80px;
-}
-
-.progress-bar {
-  width: 400px;
-  height: 20px;
-  background-color: lightgray;
-  position: relative;
 }
 
 .hangman-image {
@@ -327,7 +321,8 @@ img {
     height: auto;
   }
   .cat {
-    left: -4000px;
+    position: relative;
+    top: -120px;
   }
   .progress-bar {
     position: relative;
@@ -338,9 +333,13 @@ img {
     border-radius: 3.5px;
     background: #655d5d;
     &-fill {
+      width: 456.279px;
+      height: 7px;
       background: #c4beb2;
+      z-index: 300;
     }
   }
+
   .buttonBox {
     width: 910px;
     margin: auto;

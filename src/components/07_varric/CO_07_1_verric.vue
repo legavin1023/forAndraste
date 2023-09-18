@@ -339,7 +339,7 @@ export default {
     left: 0;
     background: url("@/assets/07_varric/pin/pinTop.png");
     background-size: fill;
-    background: red;
+    // background: red;
   }
   .bott {
     display: block;
@@ -350,7 +350,7 @@ export default {
     left: 0;
     background: url("@/assets/07_varric/pin/pinBott.png");
     background-size: fill;
-    background: red;
+    // background: red;
   }
 }
 </style>
