@@ -141,8 +141,8 @@
           type="text"
           placeholder="여기에 입력해주세요."
           v-model="inputValue"
+          @keyup.enter="checkInputValue"
         />
-        <input type="button" value=">" @click="checkInputValue" />
       </div>
     </div>
     <div class="bottomImage"></div>

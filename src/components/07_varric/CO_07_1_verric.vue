@@ -267,8 +267,12 @@ export default {
     },
     unlock() {
       setTimeout(() => {
+        this.$store.dispatch("terminateAudio");
+
+        this.$store.dispatch("setAudioSource", "/assets/sound/화살소리.mp3");
+        this.$store.dispatch("playAudio");
         this.$router.push({ path: "/CO-07-2-verric" });
-      }, 500);
+      }, 300);
     },
     clamp(val, max, min) {
       return Math.min(Math.max(val, min), max);

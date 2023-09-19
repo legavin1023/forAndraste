@@ -117,7 +117,7 @@
           어린아이가 쓴 것처럼 어색하고 흔들리는 선으로 이어지는 활자들.
           처음으로 글씨를 배우는 사람처럼 여러번 반복해서 쓰여진 글자들이었다.
         </p>
-        <div class="puzzle">
+        <div class="puzzle pt70 pb70">
           <div class="dnd-image-drag cf">
             <div class="container">
               <div class="inner gallery-list cf">
@@ -179,7 +179,7 @@
           <br />
           우선은 장물아비를 찾는 것만이 그 다음 단서로 이어지는 길이었다.
         </p>
-        <div class="content-button" :class="{ hide: !showText }">
+        <div class="content-button mt70" :class="{ hide: !showText }">
           <button @click="checkPath">다크타운으로 향한다.</button>
         </div>
       </div>
@@ -264,7 +264,7 @@
           희미했다. <br />
           <br />우선은 장물아비를 찾는 것만이 그 다음 단서로 이어지는 길이었다.
         </p>
-        <div class="content-button">
+        <div class="content-button mt70">
           <button @click="checkPath">다크타운으로 향한다.</button>
         </div>
       </div>

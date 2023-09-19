@@ -87,7 +87,7 @@
             @click="!image.clicked && showNextImage(image)"
           />
         </div>
-        <div class="content-button">
+        <div class="content-button mt90">
           <button @click="checkPath" v-if="showButton">
             마치게 되더라도 나는 해야 해
           </button>

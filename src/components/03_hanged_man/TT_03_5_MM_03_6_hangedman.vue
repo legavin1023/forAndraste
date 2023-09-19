@@ -244,6 +244,10 @@ export default {
 
   methods: {
     checkPath() {
+      this.$store.dispatch("terminateAudio");
+      this.$store.dispatch("setAudioSource", "/assets/sound/끽소리.wav");
+      this.$store.dispatch("playAudio");
+
       this.$router.push({ path: "/CC-04-1" });
     },
     rotate(direction) {

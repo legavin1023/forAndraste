@@ -54,7 +54,7 @@
           연기의 냄새가 아직도 공기 중에 흐릿하게 남아있었다. <br />한 차례 비가
           왔었는지 바닥은 축축하고 질척거렸다.
         </p>
-        <div class="content-button">
+        <div class="content-button mt70">
           <button @click="checkPath">챈트리로 향한다.</button>
         </div>
       </div>

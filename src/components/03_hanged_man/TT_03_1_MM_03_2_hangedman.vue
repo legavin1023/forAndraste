@@ -1,5 +1,8 @@
 <template>
   <div>
+    <transition name="fade">
+      <eyesFadeOutVue v-if="showComponent" />
+    </transition>
     <div class="topImage hanged"></div>
     <div class="content">
       <p class="content-text mt26">
@@ -207,15 +210,26 @@
 </template>
 
 <script>
+import eyesFadeOutVue from "@/components/05_fenris/eyes/eyesFadeOut.vue";
+
 export default {
+  components: {
+    // particleBoxVue;
+    eyesFadeOutVue,
+  },
   data() {
     return {
       inputValue: "",
       love: localStorage.getItem("love"),
       route: localStorage.getItem("route"),
+      showComponent: true,
     };
   },
-
+  mounted() {
+    setTimeout(() => {
+      this.showComponent = false;
+    }, 6000);
+  },
   methods: {
     checkInputValue() {
       // if (this.inputValue === "anders") {
@@ -227,4 +241,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0;
+}
+</style>

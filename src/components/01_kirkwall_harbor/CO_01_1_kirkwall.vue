@@ -67,7 +67,7 @@ v
         </ul>
         <span></span>
       </div>
-      <div class="content-button love">
+      <div class="content-button love mt70">
         <button @click="handleAM()">
           호크는 앤더스와 연인관계였고, 이 재앙에서 메이지를 위해 싸웠네.
         </button>

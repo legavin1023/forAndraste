@@ -1,5 +1,15 @@
 <template>
   <div>
+    <transition name="fade">
+      <canvas
+        class="flashLight"
+        @mousemove="handleMouseMove"
+        @mouseleave="handleMouseLeave"
+        v-if="isVisible"
+        ref="canvasEl"
+      ></canvas>
+    </transition>
+
     <div class="topImage fenris"></div>
     <div class="content">
       <p class="content-text">
@@ -92,11 +102,7 @@
 
 <script>
 // import particleBoxVue from "./particle/particleBox.vue";
-
 export default {
-  components() {
-    // particleBoxVue;
-  },
   data() {
     return {
       gaugeValue: 0, // 현재 게이지의 값
@@ -115,13 +121,28 @@ export default {
       particles: [],
       clicks: [],
       images: [
-        // Add the URLs of your images here.
-        "/assets/04_anders_clinic/bottle/bottle_1.png,",
-        "/assets/04_anders_clinic/bottle/bottle_2.png,",
-        "/assets/04_anders_clinic/bottle/bottle_3.png,",
-        "/assets/04_anders_clinic/bottle/bottle_4.png,",
-        //...
+        "/assets/04_anders_clinic/bottle/bottle_1.png",
+        "/assets/04_anders_clinic/bottle/bottle_2.png",
+        "/assets/04_anders_clinic/bottle/bottle_3.png",
+        "/assets/04_anders_clinic/bottle/bottle_4.png",
       ],
+      //----
+      mousePosition: {
+        x: window.innerWidth / 2,
+        y: window.innerHeight / 2,
+      },
+      flashlight_size: {
+        center: window.innerHeight / 5,
+        outside: window.innerHeight / 3,
+      },
+      gradient_color: {
+        first: "rgba(0,0,0,0.8)",
+        second: "rgba(0,0,0,0)",
+      },
+      gradient: null,
+      //------
+      isVisible: true, //빛
+      lastScrollPosition: 0,
     };
   },
   watch: {
@@ -135,8 +156,25 @@ export default {
     this.startDecreasingGauge();
     this.loop();
     window.addEventListener("click", this.handleClick);
+    this.initializeCanvas();
+    this.draw();
+    window.addEventListener("scroll", this.handleScroll);
   },
   methods: {
+    handleScroll() {
+      const currentScrollPosition = window.scrollY;
+
+      if (
+        currentScrollPosition > this.lastScrollPosition &&
+        currentScrollPosition > 2700
+      ) {
+        // 사용자가 아래로 스크롤할 때
+        this.isVisible = false;
+      }
+
+      // 마지막 스크롤 위치를 업데이트
+      this.lastScrollPosition = currentScrollPosition;
+    },
     // 마우스를 눌렀을 때 게이지를 한 번만 증가시키는 함수
     increaseGauge() {
       if (this.gaugeValue >= 50 && this.gaugeValue < this.maxGaugeValue) {
@@ -380,8 +418,67 @@ export default {
       this.particles.forEach((particle) => particle.distroy());
       this.particles = [];
     },
+    initializeCanvas() {
+      const canvasEl = this.$refs.canvasEl;
+      canvasEl.width = window.innerWidth;
+      canvasEl.height = window.innerHeight;
+
+      if (
+        window.getComputedStyle(document.body).getPropertyValue("position") !==
+        "relative"
+      ) {
+        document.body.style.position = "relative";
+      }
+      canvasEl.style = "position: fixed; top: 0; left: 0;";
+    },
+    handleMouseMove(e) {
+      this.mousePosition.x = e.offsetX;
+      this.mousePosition.y = e.offsetY;
+      this.draw();
+    },
+    handleMouseLeave() {
+      this.draw();
+    },
+    draw() {
+      const canvasEl = this.$refs.canvasEl;
+      const c = canvasEl.getContext("2d");
+      const w = canvasEl.width;
+      const h = canvasEl.height;
+
+      c.save();
+      c.clearRect(0, 0, w, h);
+
+      this.gradient = c.createRadialGradient(
+        this.mousePosition.x,
+        this.mousePosition.y,
+        this.flashlight_size.center,
+        this.mousePosition.x,
+        this.mousePosition.y,
+        this.flashlight_size.outside
+      );
+      this.gradient.addColorStop(0, this.gradient_color.first);
+      this.gradient.addColorStop(1, this.gradient_color.second);
+
+      c.fillStyle = "#000";
+      c.fillRect(0, 0, w, h);
+
+      c.globalCompositeOperation = "destination-out";
+      c.fillStyle = this.gradient;
+      c.arc(
+        this.mousePosition.x,
+        this.mousePosition.y,
+        this.flashlight_size.outside,
+        0,
+        Math.PI * 2,
+        false
+      );
+
+      c.fill();
+      c.restore();
+    },
   },
   beforeDestroy() {
+    window.removeEventListener("scroll", this.handleScroll);
     window.removeEventListener("click", this.handleClick);
   },
 };
@@ -424,7 +521,7 @@ export default {
   background-color: #fff;
   transition: width 0.3s;
   position: absolute;
-  border-radius: 0 11.5px 11.5px 0;
+  border-radius: 11.5px;
   top: 0;
   left: 0;
   z-index: 1;
@@ -472,5 +569,15 @@ export default {
   z-index: 999;
   pointer-events: none;
   overflow: hidden;
+}
+.flashLight {
+  z-index: 100;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0;
 }
 </style>

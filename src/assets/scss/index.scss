@@ -192,13 +192,23 @@ body {
     &-text {
         width: 908px;
         text-align: center;
-        margin: 70px auto;
+        margin: 70px auto 0;
         &-letter {
             font-family: "ROEHOE-CHAN";
             left: 0px;
             background: url("@/assets/image/book/book.png") no-repeat;
             width: 1051px;
             height: 768px;
+            &::after {
+                display: block;
+                content: "";
+                background: url("@/assets/image/book/pen.png") no-repeat;
+                width: 211px;
+                height: 718px;
+                position: relative;
+                top: -440px;
+                left: 980px;
+            }
             p {
                 width: 528px;
                 height: 465px;

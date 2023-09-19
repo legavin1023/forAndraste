@@ -126,7 +126,7 @@
         이상 시비에 휘말리는 것은 막아야 했다.
       </p>
 
-      <div class="content-button-ink">
+      <div class="content-button-ink mt90">
         <button @click="clickFirstButton">흔적 지우기</button>
       </div>
     </div>
@@ -157,7 +157,9 @@ export default {
       this.paintBlack = true;
     },
     showSecondButton() {
-      this.secondButtonVisible = true;
+      if (this.firstButtonClicked) {
+        this.secondButtonVisible = true;
+      }
     },
     checkPath() {
       this.$router.push({ path: "/TT-03-5-MM-03-6" });
@@ -224,7 +226,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 4500px;
+  height: 4300px;
   position: relative;
   z-index: 10;
 }

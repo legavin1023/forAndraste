@@ -312,6 +312,8 @@
           >앤더스의 행방을 따라 찾아가봐야하는 곳</span
         >을 알 것 같았다. 어쩌면 호크의 행방까지도.
       </p>
+    </div>
+    <div class="content">
       <div class="content-buttonBox">
         <input
           type="text"
@@ -320,8 +322,8 @@
           @keyup.enter="checkInputValue"
         />
       </div>
-      <div class="bottomImage"></div>
     </div>
+    <div class="bottomImage"></div>
   </div>
 </template>
 

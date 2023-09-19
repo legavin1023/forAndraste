@@ -228,7 +228,7 @@ export default {
 .arrow {
   position: absolute;
   top: -500px; /* 보이지 않는 위치에서 시작 */
-  animation: slideDown 2s ease-in-out forwards;
+  animation: slideDown 1.5s ease-in-out forwards;
 }
 .content {
   z-index: 10;

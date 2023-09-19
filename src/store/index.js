@@ -8,8 +8,13 @@ export default new Vuex.Store({
     audio: new Audio(),
     isPlaying: false,
     shouldTerminate: false,
+    volume: 1.0,
   },
   mutations: {
+    setVolume(state, volume) {
+      state.volume = volume;
+      state.audio.volume = volume;
+    },
     SET_AUDIO_SOURCE(state, src) {
       state.audio.src = src;
     },
@@ -35,12 +40,25 @@ export default new Vuex.Store({
     },
     playAudio({ commit }) {
       commit("PLAY_AUDIO");
+      console.log("나옴");
     },
     pauseAudio({ commit }) {
       commit("PAUSE_AUDIO");
     },
     terminateAudio({ commit }) {
       commit("TERMINATE_AUDIO");
+    },
+    fadeOutAudio({ state, commit }) {
+      let fadeOutInterval = setInterval(() => {
+        let volume = state.volume - 0.05;
+        if (volume <= 0) {
+          commit("setVolume", 0);
+          clearInterval(fadeOutInterval);
+          commit("TERMINATE_AUDIO");
+        } else {
+          commit("setVolume", volume);
+        }
+      }, 200); // 200ms 간격으로 볼륨 감소
     },
   },
 });
