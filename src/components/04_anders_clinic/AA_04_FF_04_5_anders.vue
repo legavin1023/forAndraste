@@ -177,7 +177,7 @@ export default {
       }
     },
     checkPath() {
-      this.$router.push("/CC-05-1");
+      this.$router.push({ name: "/CC-05-1" });
     },
   },
 };

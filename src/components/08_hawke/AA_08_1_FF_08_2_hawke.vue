@@ -311,16 +311,24 @@ export default {
         JSON.stringify(this.userOrder) === JSON.stringify(this.correctOrder)
       ) {
         setTimeout(() => {
-          this.$router.push({ path: "/AT-08-3-AM-08-4_FT-08-5-FM-08-6-hawke" });
+          let currentValue = localStorage.getItem("pv2");
+          // 가져온 값을 숫자로 변환합니다.
+          let numericValue = parseInt(currentValue, 10);
+          // 1을 더합니다.
+          numericValue += 1;
+          // 결과를 다시 로컬 스토리지에 저장합니다.
+          localStorage.setItem("pv2", numericValue.toString());
+          this.$router.push({ name: "/AT-08-3-AM-08-4_FT-08-5-FM-08-6" });
         }, 500);
         // 여기서 게임을 리셋하거나 다른 로직을 실행할 수 있습니다.
       } else if (this.num === 0) {
         this.gameOver = true;
         setTimeout(() => {
-          this.$router.push({ path: "/AT-08-3-AM-08-4_FT-08-5-FM-08-6-hawke" });
+          this.$router.push({ name: "/CF-08-7" });
         }, 500);
         // 게임 오버 처리 (예: 페이지 리로드 또는 다른 화면으로 전환)
       } else {
+        this.resetGame(); // 게임 리셋 메서드 호출
         alert(`틀렸습니다. 다시 시도하세요. (시도 ${this.num}/3)`);
       }
     },
@@ -357,6 +365,11 @@ export default {
           (img) => img.id !== imageId
         );
       }
+    },
+    resetGame() {
+      this.shuffleImages(); // 이미지를 다시 셔플합니다.
+      this.userOrder = []; // 사용자의 선택을 초기화합니다.
+      // 필요한 다른 리셋 로직을 여기에 추가합니다.
     },
     getSrcById(imageId) {
       const image = this.images.find((img) => img.id === imageId);

@@ -65,7 +65,7 @@
         컬렌은 멋쩍게 조금 웃어보였지만, 그것이 지친 기색을 숨겨주지는 못했다.
       </p>
       <div class="content-dialog">
-        <ul>
+        <ul class="btLineNo_bottom">
           <li>
             <div class="content-dialog-portrait cullen"></div>
             <div class="content-dialog-text">
@@ -96,7 +96,7 @@
         </ul>
       </div>
       <div class="content-dialog">
-        <ul>
+        <ul class="btLineNo_top btLineNo_bottom">
           <li>
             <div class="content-dialog-portrait cullen"></div>
             <div class="content-dialog-text">
@@ -126,7 +126,10 @@
             </div>
           </li>
         </ul>
-        <ul v-if="route === 'AT' || route === 'FT'">
+        <ul
+          v-if="route === 'AT' || route === 'FT'"
+          class="btLineNo_top btLineNo_bottom"
+        >
           <li>
             <div class="content-dialog-portrait cullen"></div>
             <div class="content-dialog-text">
@@ -150,7 +153,10 @@
           </li>
         </ul>
 
-        <ul v-if="route === 'AM' || route === 'FM'">
+        <ul
+          v-if="route === 'AM' || route === 'FM'"
+          class="btLineNo_top btLineNo_bottom"
+        >
           <li>
             <div class="content-dialog-portrait cullen"></div>
             <div class="content-dialog-text">
@@ -180,8 +186,8 @@
         복잡해보였다.
       </p>
       <p class="content-text" v-if="route === 'AM' || route === 'FM'">
-        호크가 메이지의 편에 섰지만, 반란에 동조한 것은 아니었다- 상황이
-        생각보다 복잡해보였다.
+        호크가 메이지의 편에 섰지만, 반란에 동조한 것은 아니었다 상황이 생각보다
+        복잡해보였다.
       </p>
       <div class="content-dialog">
         <ul>
@@ -234,7 +240,7 @@ export default {
     checkInputValue() {
       // if (this.inputValue === "anders") {
       // 입력된 값이 'fortheandraste'와 일치하는 경우, 다른 뷰로 전환
-      this.$router.push("/TT-03-3-MM-03-4");
+      this.$router.push({ name: "/TT-03-3-MM-03-4" });
       // }
     },
   },

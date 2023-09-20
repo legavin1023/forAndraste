@@ -55,19 +55,19 @@
           </li>
         </ul>
       </div>
-      <div class="content-button">
-        <button @click="EE_1()" :disabled="isDisabled(3)">
+      <div class="content-button mt70">
+        <button @click="EE_10_1()" :disabled="!bothSuccess('pv1', 'pv2')">
           앤더스가 어떻게 챈트리를 폭발시켰고, 어디로 갔는지 알아냈습니다.
         </button>
-        <button @click="EE_2()" :disabled="isDisabled(2)">
-          앤더스가 챈트리를 폭발시킨 방법은 짐작이 가지만... 행방은 더 알아봐야
-          합니다. ▶
+        <button @click="EE_10_2()" :disabled="!firstSuccessOnly('pv1', 'pv2')">
+          앤더스가 챈트리를 폭발시킨 방법은 짐작이 가지만... <br />
+          행방은 더 알아봐야 합니다.
         </button>
-        <button @click="EE_3()" :disabled="isDisabled(1)">
-          앤더스가 어떻게 챈터리를 폭발시켰는지는 못찾았지만, 어디로 갔는지
-          짐작가는 곳이 있습니다
+        <button @click="EE_10_3()" :disabled="!secondSuccessOnly('pv1', 'pv2')">
+          앤더스가 어떻게 챈터리를 폭발시켰는지는 못찾았지만,<br />
+          어디로 갔는지 짐작가는 곳이 있습니다
         </button>
-        <button @click="EE_4()" :disabled="isDisabled(0)">
+        <button @click="EE_10_4()" :disabled="!bothFailed('pv1', 'pv2')">
           앤더스에 대해서 알아내지 못했습니다.
         </button>
       </div>
@@ -79,25 +79,37 @@
 <script>
 export default {
   methods: {
-    EE_1() {
-      this.$router.push({ path: "/EE-01" });
+    EE_10_1() {
+      this.$router.push({ name: "/EE-01" });
     },
-    EE_2() {
-      this.$router.push({ path: "/EE-02" });
+    EE_10_2() {
+      this.$router.push({ name: "/EE-02" });
     },
-    EE_3() {
-      this.$router.push({ path: "/EE-03" });
+    EE_10_3() {
+      this.$router.push({ name: "/EE-03" });
     },
-    EE_4() {
-      this.$router.push({ path: "/EE-04" });
+    EE_10_4() {
+      this.$router.push({ name: "/EE-04" });
     },
-    isDisabled(value) {
-      let localStorageValue = localStorage.getItem("yourKeyName");
-
-      // 로컬스토리지의 값이 없거나 주어진 값과 일치하면 true를 반환합니다.
-      return (
-        localStorageValue === null || parseInt(localStorageValue, 10) === value
-      );
+    bothSuccess(key1, key2) {
+      const value1 = localStorage.getItem(key1);
+      const value2 = localStorage.getItem(key2);
+      return value1 === "2" && value2 === "1";
+    },
+    firstSuccessOnly(key1, key2) {
+      const value1 = localStorage.getItem(key1);
+      const value2 = localStorage.getItem(key2);
+      return value1 !== "2" && value2 == "1";
+    },
+    secondSuccessOnly(key1, key2) {
+      const value1 = localStorage.getItem(key1);
+      const value2 = localStorage.getItem(key2);
+      return value1 == "2" && value2 !== "1";
+    },
+    bothFailed(key1, key2) {
+      const value1 = localStorage.getItem(key1);
+      const value2 = localStorage.getItem(key2);
+      return value1 !== "2" && value2 !== "1";
     },
   },
 };

@@ -263,7 +263,7 @@ export default {
         this.gameInProgress = false;
         clearTimeout(this.timer);
         setTimeout(() => {
-          this.$router.push({ path: "/CF-06-3-jangmul-abi" });
+          this.$router.push({ name: "/CF-06-3" });
         }, 2000);
         return;
       }
@@ -284,7 +284,14 @@ export default {
           this.gameInProgress = false;
           clearTimeout(this.timer);
           setTimeout(() => {
-            this.$router.push({ path: "/CS-06-2-jangmul-abi" });
+            let currentValue = localStorage.getItem("pv1");
+            // 가져온 값을 숫자로 변환합니다.
+            let numericValue = parseInt(currentValue, 10);
+            // 1을 더합니다.
+            numericValue += 1;
+            // 결과를 다시 로컬 스토리지에 저장합니다.
+            localStorage.setItem("pv1", numericValue.toString());
+            this.$router.push({ name: "/CS-06-2" });
           }, 2000);
           return;
         }

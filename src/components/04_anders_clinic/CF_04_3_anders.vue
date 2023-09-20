@@ -206,7 +206,7 @@ export default {
 
         if (isPuzzleSolved) {
           setTimeout(() => {
-            this.$router.push({ path: "/AA-04-FF-04-5" });
+            this.$router.push({ name: "/AA-04-FF-04-5" });
           }, 2000);
         }
       }
@@ -261,6 +261,10 @@ export default {
   img {
     z-index: 100;
   }
+}
+.puzzle {
+  width: 900px;
+  margin: auto;
 }
 .puzzle_text {
   color: #7c6f55;

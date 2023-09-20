@@ -25,7 +25,7 @@
         도둑들의 눈빛은 의심이 섞여있긴 했지만 절박해보였고, 곧 고개를 끄덕였다.
       </p>
       <div class="content-dialog">
-        <ul>
+        <ul class="btLineNo_bottom">
           <li>
             <div class="content-dialog-portrait"></div>
             <div class="content-dialog-text">진료소에서 턴 물건이 뭐지?</div>
@@ -50,7 +50,7 @@
       </div>
       <div v-if="love === 'FF'">
         <div class="content-dialog">
-          <ul>
+          <ul class="btLineNo_top">
             <li>
               <div class="content-dialog-portrait"></div>
               <div class="content-dialog-text">
@@ -185,7 +185,7 @@
       </div>
       <div v-if="love === 'AA'">
         <div class="content-dialog">
-          <ul>
+          <ul class="btLineNo_top">
             <li>
               <div class="content-dialog-portrait"></div>
               <div class="content-dialog-text">펜리스?</div>
@@ -363,7 +363,7 @@ export default {
   },
   methods: {
     checkPath() {
-      this.$router.push({ path: "/CC-06-1" });
+      this.$router.push({ name: "/CC-06-1" });
     },
     shuffleImages() {
       this.images = this.originalImages.sort(() => 0.5 - Math.random());

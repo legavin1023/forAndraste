@@ -97,7 +97,7 @@ export default {
       setTimeout(() => {
         this.$store.dispatch("fadeOutAudio");
       }, 10000);
-      this.$router.push({ path: "/TT-03-1-MM-03-2" });
+      this.$router.push({ name: "/TT-03-1-MM-03-2" });
       // }
     },
   },

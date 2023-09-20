@@ -3,7 +3,7 @@
     <div class="topImage hanged"></div>
     <div class="paintArea" @mousemove="drawBlack($event)" ref="paintArea"></div>
     <div class="content">
-      <div class="content-button mt26">
+      <div class="mt26">
         <div
           id="target-area"
           class="target-area content-button-ink"
@@ -162,7 +162,7 @@ export default {
       }
     },
     checkPath() {
-      this.$router.push({ path: "/TT-03-5-MM-03-6" });
+      this.$router.push({ name: "/TT-03-5-MM-03-6" });
     },
     drawBlack(event) {
       if (!this.paintBlack) return;

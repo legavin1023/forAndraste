@@ -271,7 +271,7 @@ export default {
 
         this.$store.dispatch("setAudioSource", "/assets/sound/화살소리.mp3");
         this.$store.dispatch("playAudio");
-        this.$router.push({ path: "/CO-07-2-verric" });
+        this.$router.push({ name: "/CO-07-2" });
       }, 300);
     },
     clamp(val, max, min) {

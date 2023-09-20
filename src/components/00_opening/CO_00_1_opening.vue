@@ -48,7 +48,7 @@ export default {
       this.$store.dispatch("playAudio");
       // if (this.inputValue === "fortheandraste") {
       // 입력된 값이 'fortheandraste'와 일치하는 경우, 다른 뷰로 전환
-      this.$router.push({ path: "/CO-01-1" });
+      this.$router.push({ name: "/CO-01-1" });
       // }
     },
   },

@@ -152,7 +152,7 @@ export default {
   },
   methods: {
     checkPath() {
-      this.$router.push({ path: "/CO-02-2" });
+      this.$router.push({ name: "/CO-02-2" });
     },
     setup() {
       this.tiles = Array.from(

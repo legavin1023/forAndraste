@@ -147,7 +147,7 @@ export default {
   },
   watch: {
     score(newValue) {
-      if (newValue >= 95) {
+      if (newValue >= 100) {
         this.removeAllImages();
       }
     },
@@ -227,7 +227,7 @@ export default {
       // 점수가 100이 되면 알림 띄우기
       if (this.score === 100 && !this.routeChanged) {
         this.routeChanged = true;
-        return this.$router.push({ path: "/FF-05-2-AA-05-03" });
+        this.$router.push({ name: "/FF-05-2-AA-05-03" });
       }
     },
 
@@ -271,7 +271,7 @@ export default {
     //   this.gaugeValue = 0;
 
     //   setTimeout(() => {
-    //     this.$router.push({ path: "/FF-05-2-AA-05-03" });
+    //     this.$router.push({ name: "/FF-05-2-AA-05-03" });
     //   }, 2000);
     // },
     startDecreasingGauge() {
@@ -343,7 +343,7 @@ export default {
       return particle;
     },
     addParticles(x, y) {
-      const rest = Math.max(0, Math.min(20, 200 - this.particles.length));
+      const rest = Math.max(0, Math.min(1, 200 - this.particles.length));
       for (let i = 0; i < rest; i++) this.addParticle(x, y);
     },
     handleClick(e) {

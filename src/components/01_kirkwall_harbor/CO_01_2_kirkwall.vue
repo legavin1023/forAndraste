@@ -95,7 +95,7 @@ export default {
     },
     checkPath() {
       this.$store.dispatch("terminateAudio");
-      this.$router.push({ path: "/CO-02-1" });
+      this.$router.push({ name: "/CO-02-1" });
     },
   },
 };

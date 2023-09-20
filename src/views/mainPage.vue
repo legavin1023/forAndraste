@@ -121,7 +121,7 @@ export default {
       this.$store.dispatch("setAudioSource", "/assets/sound/종이소리.wav");
       this.$store.dispatch("playAudio");
 
-      this.$router.push({ path: "/CO-00-1-opening" });
+      this.$router.push({ name: "/CO-00-1" });
     },
     copyTextFunction() {
       const copyText = "team.nugbug@gmail.com";

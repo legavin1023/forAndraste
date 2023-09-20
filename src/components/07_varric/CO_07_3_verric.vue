@@ -271,7 +271,7 @@ export default {
       }
       if (this.allMatched) {
         setTimeout(() => {
-          this.$router.push({ path: "/AA-08-01-FF-08-2-hawke" });
+          this.$router.push({ name: "/AA-08-01-FF-08-2" });
         }, 1000);
       }
     },

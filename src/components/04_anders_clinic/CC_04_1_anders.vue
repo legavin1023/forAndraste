@@ -86,16 +86,13 @@
           </div>
         </div>
         <div class="buttonBox">
-          <input
-            v-model="guess"
-            @keyup.enter="checkGuess"
-            :disabled="chances === 0"
-          />
+          <input v-model="guess" @keyup.enter="checkGuess" />
           <button
             v-for="letter in alphabet"
             :key="letter"
             @click="makeGuess(letter)"
-            :disabled="chances === 0"
+            :disabled="chances === 0 || wrongGuesses.includes(letter)"
+            :class="{ 'correct-letter': guessedLetters.includes(letter) }"
           >
             {{ letter }}
           </button>
@@ -239,9 +236,17 @@ export default {
       }
       console.log("Chances left:", this.chances); // Add this line
       if (this.currentWord === this.wordToGuess) {
-        this.$router.push({ path: "/CS-04-2" });
+        let currentValue = localStorage.getItem("pv1");
+        // 가져온 값을 숫자로 변환합니다.
+        let numericValue = parseInt(currentValue, 10);
+        // 1을 더합니다.
+        numericValue += 1;
+        // 결과를 다시 로컬 스토리지에 저장합니다.
+        localStorage.setItem("pv1", numericValue.toString());
+
+        this.$router.push({ name: "/CS-04-2" });
       } else if (this.chances === 0) {
-        this.$router.push({ path: "/CF-04-3" });
+        this.$router.push({ name: "/CF-04-3" });
       }
     },
     updateCurrentWord(letter) {
@@ -254,6 +259,11 @@ export default {
           this.correctGuesses.push(i); // 추가된 코드
         }
       }
+    },
+  },
+  computed: {
+    guessedLetters() {
+      return this.correctGuesses.map((index) => this.wordToGuess[index]);
     },
   },
   created() {
@@ -356,6 +366,19 @@ img {
       width: 60px;
       height: 60px;
       font-family: "Pretendard";
+      &:hover {
+        border-radius: 8px;
+        border: 3px solid #847575;
+        background: #f0e7d7;
+      }
+    }
+    button:disabled {
+      opacity: 0.3;
+    }
+    .correct-letter {
+      border-radius: 8px;
+      background: #b4a996;
+      color: #746e62;
     }
   }
 }

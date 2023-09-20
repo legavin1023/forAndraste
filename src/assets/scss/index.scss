@@ -29,6 +29,18 @@
     font-weight: normal;
     font-style: normal;
 }
+body::-webkit-scrollbar {
+    width: 10px;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #baac92;
+    border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+    background-color: #25130f;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
 body {
     font-family: "BookkMyungjo-Bd";
     font-size: 24px;
@@ -193,6 +205,7 @@ body {
         width: 908px;
         text-align: center;
         margin: 70px auto 0;
+        padding: 0 0 70px;
         &-letter {
             font-family: "ROEHOE-CHAN";
             left: 0px;
@@ -220,11 +233,6 @@ body {
         }
     }
     &-dialog {
-        .btLineNo_top::before,
-        .btLineNo_bottom::after {
-            display: none;
-            background: none;
-        }
         ul {
             display: flex;
             flex-direction: column;
@@ -236,7 +244,7 @@ body {
                 align-items: top;
                 justify-content: space-between;
             }
-            &::before {
+            &:not(.btLineNo_top)::before {
                 display: block;
                 width: 399px;
                 height: 43px;
@@ -244,19 +252,13 @@ body {
                 content: " ";
                 margin-bottom: 60px;
             }
-            &::after {
+            &:not(.btLineNo_bottom)::after {
                 display: block;
                 width: 399px;
                 height: 43px;
                 background: url("@/assets/image/text/text_bottom.png") no-repeat;
                 content: " ";
                 margin-top: 60px;
-            }
-            .btLineNo_top::before,
-            .btLineNo_top::after {
-                content: none !important;
-                display: none !important;
-                background: none !important;
             }
         }
         &-image {
@@ -356,6 +358,7 @@ body {
             letter-spacing: -0.6px;
         }
     }
+
     &-button {
         display: flex;
         flex-direction: column;
@@ -411,6 +414,41 @@ body {
             margin-top: 70px;
         }
     }
+    .ending {
+        width: 910px;
+        margin: auto;
+        padding: 80px 0 140px;
+        .verric {
+            font-size: 20px;
+            text-align: right;
+            &::before {
+                display: block;
+                width: 402px;
+                height: 90px;
+                background: url("@/assets/image/ending/verric.png") no-repeat;
+                content: " ";
+                position: relative;
+                top: -26px;
+            }
+        }
+        &-button {
+            padding: 54px 0;
+            border-top: 1px solid #baac92;
+            border-bottom: 1px solid #baac92;
+            background: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            span {
+                margin-right: 24px;
+                display: inline-block;
+                padding: 5px 52px;
+                border-radius: 100px;
+                background: #948072;
+                color: #fff;
+            }
+        }
+    }
     &-hint {
         border-top: 1px solid #25130f;
         width: 571px;
@@ -431,6 +469,7 @@ body {
             content: " ";
         }
     }
+
     &-letter {
         font-family: "KyoboHandwriting2020A";
         background: url("@/assets/image/letter/letter.png") no-repeat;

@@ -248,7 +248,7 @@ export default {
       this.$store.dispatch("setAudioSource", "/assets/sound/끽소리.wav");
       this.$store.dispatch("playAudio");
 
-      this.$router.push({ path: "/CC-04-1" });
+      this.$router.push({ name: "/CC-04-1" });
     },
     rotate(direction) {
       if (direction === "n") {

@@ -96,23 +96,27 @@ export default {
       localStorage.setItem("love", "AA");
       // 로컬 스토리지에 'route' 키로 'AM' 값을 저장
       localStorage.setItem("route", "AM");
-      this.$router.push({ path: "/CO-01-2" });
+      this.$router.push({ name: "/CO-01-2" });
     },
     handleAT() {
       localStorage.setItem("love", "AA");
       localStorage.setItem("route", "AT");
-      this.$router.push({ path: "/CO-01-2" });
+      this.$router.push({ name: "/CO-01-2" });
     },
     handleFM() {
       localStorage.setItem("love", "FF");
       localStorage.setItem("route", "FM");
-      this.$router.push({ path: "/CO-01-2" });
+      this.$router.push({ name: "/CO-01-2" });
     },
     handleFT() {
       localStorage.setItem("love", "FF");
       localStorage.setItem("route", "FT");
-      this.$router.push({ path: "/CO-01-2" });
+      this.$router.push({ name: "/CO-01-2" });
     },
+  },
+  mounted() {
+    localStorage.setItem("pv1", "0");
+    localStorage.setItem("pv2", "0");
   },
 };
 </script>
