@@ -1,0 +1,1 @@
+.puzzle{display:flex;flex-wrap:wrap;justify-content:center;width:900px;margin:auto}.flipped svg rect:first-of-type{fill:#e59292;stroke:#c72929}.selected svg rect:first-of-type{fill:#978568;stroke:#796849}.matched svg rect:first-of-type{fill:#9ac2a0;stroke:#299239}
