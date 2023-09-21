@@ -1,7 +1,8 @@
 const { defineConfig } = require("@vue/cli-service");
 
 module.exports = defineConfig({
-  publicPath: process.env.NODE_ENV === "production" ? "/forTheAndraste/" : "/",
+  // publicPath: process.env.NODE_ENV === "production" ? "/forTheAndraste/" : "/",
+  publicPath: "/forTheAndraste/",
   transpileDependencies: true,
   chainWebpack: (config) => {
     // SVG 파일에 대한 설정
