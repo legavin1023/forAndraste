@@ -1,3 +1,5 @@
+console.log("Current NODE_ENV:", process.env.NODE_ENV);
+
 const { defineConfig } = require("@vue/cli-service");
 
 module.exports = defineConfig({
