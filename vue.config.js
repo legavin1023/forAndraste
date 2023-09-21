@@ -1,7 +1,7 @@
 const { defineConfig } = require("@vue/cli-service");
 
 module.exports = defineConfig({
-  // publicPath: process.env.NODE_ENV === "production" ? "/forTheAndraste/" : "/",
+  publicPath: process.env.NODE_ENV === "production" ? "/forTheAndraste/" : "/",
   // publicPath: "/forTheAndraste/",
   transpileDependencies: true,
   chainWebpack: (config) => {
@@ -26,9 +26,7 @@ module.exports = defineConfig({
       });
   },
 });
-module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/forTheAndraste/" : "/",
-};
+
 //npm run build
 //npm install gh-pages --save-dev
 //npm run deploy
