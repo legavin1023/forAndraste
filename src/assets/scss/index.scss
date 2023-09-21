@@ -44,7 +44,7 @@ body::-webkit-scrollbar-track {
 body {
     font-family: "BookkMyungjo-Bd";
     font-size: 24px;
-    line-height: 32px;
+    line-height: 36px;
     color: #25130f;
     word-break: keep-all;
     background: #25130f;
@@ -157,33 +157,33 @@ body {
     margin: auto;
     background-color: #e2d2b4;
     z-index: 10;
-    background: url("@/assets/image/top/00.오프닝.png");
+    background: url("@/assets/image/top/00.png");
     &.kirkwall {
-        background: url("@/assets/image/top/01.커크월항구.png");
+        background: url("@/assets/image/top/01.png");
     }
     &.chantry {
-        background: url("@/assets/image/top/02.무너진챈트리.png");
+        background: url("@/assets/image/top/02.png");
     }
     &.hanged {
-        background: url("@/assets/image/top/03.행드맨.png");
+        background: url("@/assets/image/top/03.png");
     }
     &.anders {
-        background: url("@/assets/image/top/04.앤더스의 진료소.png");
+        background: url("@/assets/image/top/04.png");
     }
     &.fenris {
-        background: url("@/assets/image/top/05.펜리스의 집.png");
+        background: url("@/assets/image/top/05.png");
     }
     &.abi {
-        background: url("@/assets/image/top/06.장물아비(다크타운).png");
+        background: url("@/assets/image/top/06.png");
     }
     &.verric {
-        background: url("@/assets/image/top/07.배릭의집.png");
+        background: url("@/assets/image/top/07.png");
     }
     &.hawke {
-        background: url("@/assets/image/top/08.호크의집.png");
+        background: url("@/assets/image/top/08.png");
     }
     &.gallows {
-        background: url("@/assets/image/top/09.갤로우즈.png");
+        background: url("@/assets/image/top/09.png");
     }
 }
 .bottomImage {
