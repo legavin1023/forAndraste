@@ -251,37 +251,52 @@ export default {
       placeholders: [
         {
           id: "front",
-          src: "/assets/08_hawke/back/drag_front.png",
-          dragIn: "/assets/08_hawke/back/drag_in.png",
+          src: `${process.env.BASE_URL}assets/08_hawke/back/drag_front.png`,
+          dragIn: `${process.env.BASE_URL}assets/08_hawke/back/drag_in.png`,
         },
         {
           id: "drag",
-          src: "/assets/08_hawke/back/drag.png",
-          dragIn: "/assets/08_hawke/back/drag_in.png",
+          src: `${process.env.BASE_URL}assets/08_hawke/back/drag.png`,
+          dragIn: `${process.env.BASE_URL}assets/08_hawke/back/drag_in.png`,
         },
         {
           id: "center",
-          src: "/assets/08_hawke/back/drag_center.png",
-          dragIn: "/assets/08_hawke/back/drag_in.png",
+          src: `${process.env.BASE_URL}assets/08_hawke/back/drag_center.png`,
+          dragIn: `${process.env.BASE_URL}assets/08_hawke/back/drag_in.png`,
         },
         {
           id: "drage",
-          src: "/assets/08_hawke/back/drag.png",
-          dragIn: "/assets/08_hawke/back/drag_in.png",
+          src: `${process.env.BASE_URL}assets/08_hawke/back/drag.png`,
+          dragIn: `${process.env.BASE_URL}assets/08_hawke/back/drag_in.png`,
         },
         {
           id: "back",
-          src: "/assets/08_hawke/back/drag_back.png",
-          dragIn: "/assets/08_hawke/back/drag_in.png",
+          src: `${process.env.BASE_URL}assets/08_hawke/back/drag_back.png`,
+          dragIn: `${process.env.BASE_URL}assets/08_hawke/back/drag_in.png`,
         },
       ],
       dragging: false,
       images: [
-        { id: "호크", src: "/assets/08_hawke/puzzle/image_1.png" },
-        { id: "앤더스", src: "/assets/08_hawke/puzzle/image_2.png" },
-        { id: "아벨린", src: "/assets/08_hawke/puzzle/image_3.png" },
-        { id: "배릭", src: "/assets/08_hawke/puzzle/image_4.png" },
-        { id: "펜리스", src: "/assets/08_hawke/puzzle/image_5.png" },
+        {
+          id: "호크",
+          src: `${process.env.BASE_URL}assets/08_hawke/puzzle/image_1.png`,
+        },
+        {
+          id: "앤더스",
+          src: `${process.env.BASE_URL}assets/08_hawke/puzzle/image_2.png`,
+        },
+        {
+          id: "아벨린",
+          src: `${process.env.BASE_URL}assets/08_hawke/puzzle/image_3.png`,
+        },
+        {
+          id: "배릭",
+          src: `${process.env.BASE_URL}assets/08_hawke/puzzle/image_4.png`,
+        },
+        {
+          id: "펜리스",
+          src: `${process.env.BASE_URL}assets/08_hawke/puzzle/image_5.png`,
+        },
       ],
       shuffledImages: [],
       correctOrder: ["배릭", "호크", "펜리스", "아벨린", "앤더스"],

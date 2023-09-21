@@ -43,7 +43,7 @@ export default {
 
       this.$store.dispatch(
         "setAudioSource",
-        "/assets/sound/파도소리_배소리.mp3"
+        `${process.env.BASE_URL}assets/sound/파도소리_배소리.mp3`
       );
       this.$store.dispatch("playAudio");
       // if (this.inputValue === "fortheandraste") {

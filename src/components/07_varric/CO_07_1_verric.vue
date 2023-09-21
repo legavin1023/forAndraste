@@ -269,7 +269,10 @@ export default {
       setTimeout(() => {
         this.$store.dispatch("terminateAudio");
 
-        this.$store.dispatch("setAudioSource", "/assets/sound/화살소리.mp3");
+        this.$store.dispatch(
+          "setAudioSource",
+          `${process.env.BASE_URL}assets/sound/화살소리.mp3`
+        );
         this.$store.dispatch("playAudio");
         this.$router.push({ name: "/CO-07-2" });
       }, 300);

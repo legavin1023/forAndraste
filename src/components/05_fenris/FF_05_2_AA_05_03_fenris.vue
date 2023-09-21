@@ -280,13 +280,13 @@ export default {
     return {
       originalImages: [
         {
-          src: "/assets/05_fenris/puzzle/f.png",
+          src: `${process.env.BASE_URL}assets/05_fenris/puzzle/f.png`,
           value: 1,
           width: "86px",
           height: "86px",
         },
         {
-          src: "/assets/05_fenris/puzzle/e1.png",
+          src: `${process.env.BASE_URL}assets/05_fenris/puzzle/e1.png`,
           value: 2,
           id: "e1",
           width: "86px",
@@ -294,55 +294,55 @@ export default {
         },
 
         {
-          src: "/assets/05_fenris/puzzle/n.png",
+          src: `${process.env.BASE_URL}assets/05_fenris/puzzle/n.png`,
           value: 3,
           width: "86px",
           height: "86px",
         },
         {
-          src: "/assets/05_fenris/puzzle/r.png",
+          src: `${process.env.BASE_URL}assets/05_fenris/puzzle/r.png`,
           value: 4,
           width: "86px",
           height: "86px",
         },
         {
-          src: "/assets/05_fenris/puzzle/i.png",
+          src: `${process.env.BASE_URL}assets/05_fenris/puzzle/i.png`,
           value: 5,
           width: "86px",
           height: "86px",
         },
         {
-          src: "/assets/05_fenris/puzzle/s.png",
+          src: `${process.env.BASE_URL}assets/05_fenris/puzzle/s.png`,
           value: 6,
           width: "86px",
           height: "86px",
         },
         {
-          src: "/assets/05_fenris/puzzle/h.png",
+          src: `${process.env.BASE_URL}assets/05_fenris/puzzle/h.png`,
           value: 7,
           width: "86px",
           height: "86px",
         },
         {
-          src: "/assets/05_fenris/puzzle/a.png",
+          src: `${process.env.BASE_URL}assets/05_fenris/puzzle/a.png`,
           value: 8,
           width: "86px",
           height: "86px",
         },
         {
-          src: "/assets/05_fenris/puzzle/w.png",
+          src: `${process.env.BASE_URL}assets/05_fenris/puzzle/w.png`,
           value: 9,
           width: "86px",
           height: "86px",
         },
         {
-          src: "/assets/05_fenris/puzzle/k.png",
+          src: `${process.env.BASE_URL}assets/05_fenris/puzzle/k.png`,
           value: 10,
           width: "86px",
           height: "86px",
         },
         {
-          src: "/assets/05_fenris/puzzle/e2.png",
+          src: `${process.env.BASE_URL}assets/05_fenris/puzzle/e2.png`,
           value: 11,
           id: "e2",
           width: "86px",

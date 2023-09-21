@@ -68,7 +68,7 @@
             <img
               x
               class="hangman-image cat"
-              src="/assets/04_anders_clinic/cat.svg"
+              src="@/assets/04_anders_clinic/cat.svg"
               alt="Hangman"
               :style="{
                 width: '200px',
@@ -77,7 +77,7 @@
             />
             <img
               class="hangman-image fish"
-              src="/assets/04_anders_clinic/fish.svg"
+              src="@/assets/04_anders_clinic/fish.svg"
               alt="Hangman"
               :style="{
                 left: '0%',

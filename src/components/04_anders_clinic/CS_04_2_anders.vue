@@ -97,7 +97,7 @@
     <div class="bottomImage"></div>
   </div>
 </template>
-<!-- image: "/assets/04_anders_clinic/puzzle/puzzle_1.png", -->
+<!-- image: `${process.env.BASE_URL}assets/04_anders_clinic/puzzle/puzzle_1.png", -->
 <script>
 import { mapGetters } from "vuex";
 
@@ -106,37 +106,37 @@ export default {
     return {
       originalImages: [
         {
-          src: "/assets/04_anders_clinic/puzzle/puzzle_1.png",
+          src: `${process.env.BASE_URL}assets/04_anders_clinic/puzzle/puzzle_1.png`,
           value: 1,
           width: "222px",
           height: "192px",
         },
         {
-          src: "/assets/04_anders_clinic/puzzle/puzzle_2.png",
+          src: `${process.env.BASE_URL}assets/04_anders_clinic/puzzle/puzzle_2.png`,
           value: 2,
           width: "147px",
           height: "192px",
         },
         {
-          src: "/assets/04_anders_clinic/puzzle/puzzle_3.png",
+          src: `${process.env.BASE_URL}assets/04_anders_clinic/puzzle/puzzle_3.png`,
           value: 3,
           width: "240px",
           height: "202px",
         },
         {
-          src: "/assets/04_anders_clinic/puzzle/puzzle_4.png",
+          src: `${process.env.BASE_URL}assets/04_anders_clinic/puzzle/puzzle_4.png`,
           value: 4,
           width: "219px",
           height: "189px",
         },
         {
-          src: "/assets/04_anders_clinic/puzzle/puzzle_5.png",
+          src: `${process.env.BASE_URL}assets/04_anders_clinic/puzzle/puzzle_5.png`,
           value: 5,
           width: "135px",
           height: "177px",
         },
         {
-          src: "/assets/04_anders_clinic/puzzle/puzzle_6.png",
+          src: `${process.env.BASE_URL}assets/04_anders_clinic/puzzle/puzzle_6.png`,
           value: 6,
           width: "287px",
           height: "218px",

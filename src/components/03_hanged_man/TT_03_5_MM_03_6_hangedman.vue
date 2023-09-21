@@ -245,7 +245,10 @@ export default {
   methods: {
     checkPath() {
       this.$store.dispatch("terminateAudio");
-      this.$store.dispatch("setAudioSource", "/assets/sound/끽소리.wav");
+      this.$store.dispatch(
+        "setAudioSource",
+        `${process.env.BASE_URL}assets/sound/끽소리.wav`
+      );
       this.$store.dispatch("playAudio");
 
       this.$router.push({ name: "/CC-04-1" });

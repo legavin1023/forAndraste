@@ -118,7 +118,10 @@ export default {
   },
   methods: {
     checkPath() {
-      this.$store.dispatch("setAudioSource", "/assets/sound/종이소리.wav");
+      this.$store.dispatch(
+        "setAudioSource",
+        `${process.env.BASE_URL}assets/sound/종이소리.wav`
+      );
       this.$store.dispatch("playAudio");
 
       this.$router.push({ name: "/CO-00-1" });

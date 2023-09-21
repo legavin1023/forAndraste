@@ -102,12 +102,12 @@ export default {
   data() {
     return {
       images: [
-        "/assets/04_anders_clinic/cat/cat_1.png",
-        "/assets/04_anders_clinic/cat/cat_2.png",
-        "/assets/04_anders_clinic/cat/cat_3.png",
-        "/assets/04_anders_clinic/cat/cat_4.png",
-        "/assets/04_anders_clinic/cat/cat_5.png",
-        "/assets/04_anders_clinic/cat/cat_6.png",
+        `${process.env.BASE_URL}assets/04_anders_clinic/cat/cat_1.png`,
+        `${process.env.BASE_URL}assets/04_anders_clinic/cat/cat_2.png`,
+        `${process.env.BASE_URL}assets/04_anders_clinic/cat/cat_3.png`,
+        `${process.env.BASE_URL}assets/04_anders_clinic/cat/cat_4.png`,
+        `${process.env.BASE_URL}assets/04_anders_clinic/cat/cat_5.png`,
+        `${process.env.BASE_URL}assets/04_anders_clinic/cat/cat_6.png`,
       ],
       maxImages: 6, // 최대 이미지 개수
       imageStack: [], // 화면에 표시되는 이미지 스택

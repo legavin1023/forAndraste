@@ -12,10 +12,10 @@ export default {
       clicks: [],
       images: [
         // Add the URLs of your images here.
-        "/assets/04_anders_clinic/bottle/bottle_1.png,",
-        "/assets/04_anders_clinic/bottle/bottle_2.png,",
-        "/assets/04_anders_clinic/bottle/bottle_3.png,",
-        "/assets/04_anders_clinic/bottle/bottle_4.png,",
+        `${process.env.BASE_URL}assets/04_anders_clinic/bottle/bottle_1.png,",
+        `${process.env.BASE_URL}assets/04_anders_clinic/bottle/bottle_2.png,",
+        `${process.env.BASE_URL}assets/04_anders_clinic/bottle/bottle_3.png,",
+        `${process.env.BASE_URL}assets/04_anders_clinic/bottle/bottle_4.png,",
         //...
       ],
     };
