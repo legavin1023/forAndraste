@@ -130,61 +130,61 @@ export default {
       images: [
         {
           id: 1,
-          src: "/assets/04_anders_clinic/bottle/bottle_1.png",
+          src: `${process.env.BASE_URL}assets/04_anders_clinic/bottle/bottle_1.png`,
           top: 0,
           left: 0,
         },
         {
           id: 2,
-          src: "/assets/04_anders_clinic/bottle/bottle_2.png",
+          src: `${process.env.BASE_URL}assets/04_anders_clinic/bottle/bottle_2.png`,
           top: 0,
           left: 0,
         },
         {
           id: 3,
-          src: "/assets/04_anders_clinic/bottle/bottle_3.png",
+          src: `${process.env.BASE_URL}assets/04_anders_clinic/bottle/bottle_3.png`,
           top: 0,
           left: 0,
         },
         {
           id: 4,
-          src: "/assets/04_anders_clinic/bottle/bottle_4.png",
+          src: `${process.env.BASE_URL}assets/04_anders_clinic/bottle/bottle_4.png`,
           top: 0,
           left: 0,
         },
         {
           id: 5,
-          src: "/assets/04_anders_clinic/bottle/bottle_5.png",
+          src: `${process.env.BASE_URL}assets/04_anders_clinic/bottle/bottle_5.png`,
           top: 0,
           left: 0,
         },
         {
           id: 6,
-          src: "/assets/04_anders_clinic/bottle/bottle_6.png",
+          src: `${process.env.BASE_URL}assets/04_anders_clinic/bottle/bottle_6.png`,
           top: 0,
           left: 0,
         },
         {
           id: 7,
-          src: "/assets/04_anders_clinic/bottle/bottle_7.png",
+          src: `${process.env.BASE_URL}assets/04_anders_clinic/bottle/bottle_7.png`,
           top: 0,
           left: 0,
         },
         {
           id: 8,
-          src: "/assets/04_anders_clinic/bottle/bottle_8.png",
+          src: `${process.env.BASE_URL}assets/04_anders_clinic/bottle/bottle_8.png`,
           top: 0,
           left: 0,
         },
         {
           id: 9,
-          src: "/assets/04_anders_clinic/bottle/bottle_9.png",
+          src: `${process.env.BASE_URL}assets/04_anders_clinic/bottle/bottle_9.png`,
           top: 0,
           left: 0,
         },
         {
           id: 10,
-          src: "/assets/04_anders_clinic/bottle/bottle_10.png",
+          src: `${process.env.BASE_URL}assets/04_anders_clinic/bottle/bottle_10.png`,
           top: 0,
           left: 0,
         },
@@ -285,8 +285,6 @@ export default {
   position: absolute;
   width: 50px;
   height: 100px;
-  img {
-  }
 }
 .hidden-img {
   display: none;

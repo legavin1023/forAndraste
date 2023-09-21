@@ -8,14 +8,14 @@ module.exports = defineConfig({
   transpileDependencies: true,
   chainWebpack: (config) => {
     // SVG 파일에 대한 설정
-    const svgRule = config.module.rule("svg");
-    svgRule.uses.clear();
-    svgRule
-      .use("vue-loader")
-      .loader("vue-loader")
-      .end()
-      .use("vue-svg-loader")
-      .loader("vue-svg-loader");
+    // const svgRule = config.module.rule("svg");
+    // svgRule.uses.clear();
+    // svgRule
+    //   .use("vue-loader")
+    //   .loader("vue-loader")
+    //   .end()
+    //   .use("vue-svg-loader")
+    //   .loader("vue-svg-loader");
 
     // .mpa 파일에 대한 설정
     config.module
