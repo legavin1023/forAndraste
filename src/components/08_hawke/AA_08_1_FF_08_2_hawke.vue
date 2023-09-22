@@ -217,6 +217,8 @@
                 v-if="userOrder[index]"
                 :src="getSrcById(userOrder[index])"
                 :alt="order"
+                draggable="true"
+                @dragstart="startDragOut(index, $event, userOrder[index])"
               />
               <img
                 v-else
@@ -319,6 +321,18 @@ export default {
     this.shuffleImages();
   },
   methods: {
+    startDragOut(index, event, imageId) {
+      // dragstart 이벤트 핸들러를 추가하여 drop-areas의 이미지를 드래그 시작할 때 실행될 로직을 작성합니다.
+      event.dataTransfer.setData("imageId", imageId);
+      this.draggingFrom = index;
+
+      // 사용자 순서에서 해당 이미지를 제거하고 shuffledImages 배열에 다시 추가합니다.
+      this.shuffledImages.push({
+        id: imageId,
+        src: this.getSrcById(imageId),
+      });
+      this.$set(this.userOrder, index, null); // Vue에서 배열의 특정 인덱스를 변경할 때는 $set을 사용해야 합니다.
+    },
     checkPath() {
       this.num--; // 시도 횟수 감소
 
