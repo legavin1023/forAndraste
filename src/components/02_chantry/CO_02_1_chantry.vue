@@ -123,7 +123,7 @@ export default {
     return {
       tiles: [],
       correctOrder: [],
-      imgURL: "/assets/02_chantry/solas.png",
+      imgURL: `${process.env.BASE_URL}/assets/02_chantry/solas.png`,
       containerWidth: 500,
       cols: 3,
       rows: 3,

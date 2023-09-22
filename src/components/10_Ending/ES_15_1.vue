@@ -2,6 +2,7 @@
   <div class="edBox">
     <p class="typing">The journey has just begun</p>
     <div class="endingImage"></div>
+    <p class="madeBy">made by</p>
     <div class="endingLogo">
       <svg
         width="400"
@@ -71,7 +72,7 @@ export default {};
   position: relative;
   top: 80px;
 }
-p {
+.typing {
   color: #185640;
   text-align: center;
   margin: auto;
@@ -79,16 +80,24 @@ p {
   left: 80px;
   top: 470px;
 }
+.madeBy {
+  opacity: 0.4;
+  font-family: Inter;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  top: 120px;
+}
 .endingLogo {
-  /* background: url("@/assets/image/ending/good_logo.svg");
+  /* background: url("@/assets/image/ending/good_logo.svg");*/
   width: 400px;
-  height: 85px; */
+  height: 85px;
   margin: auto;
-  width: 200px;
   position: relative;
   top: 140px;
   svg {
-    width: 200px;
+    // width: 200px;
   }
 }
 

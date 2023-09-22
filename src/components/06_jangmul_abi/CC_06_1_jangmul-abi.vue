@@ -129,20 +129,20 @@ export default {
       maxBlinks: 30, // 최대 깜빡이는 횟수
       blinkCount: 0, // 현재 깜빡이는 횟수
       click: [
-        "assets/06_jangmul_abi/clickPuzzle/click_1.png",
-        "assets/06_jangmul_abi/clickPuzzle/click_2.png",
-        "assets/06_jangmul_abi/clickPuzzle/click_3.png",
-        "assets/06_jangmul_abi/clickPuzzle/click_4.png",
-        "assets/06_jangmul_abi/clickPuzzle/click_5.png",
-        "assets/06_jangmul_abi/clickPuzzle/click_6.png",
+        `${process.env.BASE_URL}assets/06_jangmul_abi/clickPuzzle/click_1.png`,
+        `${process.env.BASE_URL}assets/06_jangmul_abi/clickPuzzle/click_2.png`,
+        `${process.env.BASE_URL}assets/06_jangmul_abi/clickPuzzle/click_3.png`,
+        `${process.env.BASE_URL}assets/06_jangmul_abi/clickPuzzle/click_4.png`,
+        `${process.env.BASE_URL}assets/06_jangmul_abi/clickPuzzle/click_5.png`,
+        `${process.env.BASE_URL}assets/06_jangmul_abi/clickPuzzle/click_6.png`,
       ],
       coin: [
-        "assets/06_jangmul_abi/clickPuzzle/coin_1.png",
-        "assets/06_jangmul_abi/clickPuzzle/coin_2.png",
-        "assets/06_jangmul_abi/clickPuzzle/coin_3.png",
-        "assets/06_jangmul_abi/clickPuzzle/coin_4.png",
-        "assets/06_jangmul_abi/clickPuzzle/coin_5.png",
-        "assets/06_jangmul_abi/clickPuzzle/coin_6.png",
+        `${process.env.BASE_URL}assets/06_jangmul_abi/clickPuzzle/coin_1.png`,
+        `${process.env.BASE_URL}assets/06_jangmul_abi/clickPuzzle/coin_2.png`,
+        `${process.env.BASE_URL}assets/06_jangmul_abi/clickPuzzle/coin_3.png`,
+        `${process.env.BASE_URL}assets/06_jangmul_abi/clickPuzzle/coin_4.png`,
+        `${process.env.BASE_URL}assets/06_jangmul_abi/clickPuzzle/coin_5.png`,
+        `${process.env.BASE_URL}assets/06_jangmul_abi/clickPuzzle/coin_6.png`,
       ],
       gridLayout: [],
     };
@@ -190,8 +190,8 @@ export default {
         const row = [];
         for (let j = 0; j < 6; j++) {
           const imageIndex = this.gridLayout[i][j];
-          const coinImage = `assets/06_jangmul_abi/clickPuzzle/coin_${imageIndex}.png`;
-          const clickImage = `assets/06_jangmul_abi/clickPuzzle/click_${imageIndex}.png`;
+          const coinImage = `${process.env.BASE_URL}assets/06_jangmul_abi/clickPuzzle/coin_${imageIndex}.png`;
+          const clickImage = `${process.env.BASE_URL}assets/06_jangmul_abi/clickPuzzle/click_${imageIndex}.png`;
           row.push({
             active: false,
             opacity: 1, // 추가: 초기 투명도는 1 (전체 투명이 아님)

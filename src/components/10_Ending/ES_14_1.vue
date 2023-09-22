@@ -22,7 +22,8 @@
       </defs>
     </svg>
     <div class="endingImage glitch"></div>
-    <div class="endingLogo glitch">
+    <p class="madeBy">made by</p>
+    <div class="endingLogo">
       <svg
         width="400"
         height="85"
@@ -174,32 +175,40 @@ export default {
 }
 .endingImage {
   background: url("@/assets/image/ending/bad.png");
-  width: 716.156px;
-  height: 581.659px;
+  width: 663px;
+  height: 467px;
   margin: auto;
+  background-size: cover;
   opacity: 0.9;
 }
-
-.endingLogo {
-  /* background: url("@/assets/image/ending/good_logo.svg");
-  width: 400px;
-  height: 85px; */
-  margin: auto;
-  width: 200px;
+.madeBy {
+  opacity: 0.4;
+  font-family: Inter;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
   position: relative;
-  top: 140px;
+  top: 100px;
+}
+.endingLogo {
+  /* background: url("@/assets/image/ending/good_logo.svg");*/
+
+  margin: auto;
+  width: 400px;
+  height: 85px;
+  position: relative;
+  top: 120px;
   svg {
-    width: 200px;
+    // width: 200px;
   }
 }
 #container {
   /* Center the text in the viewport. */
-  position: absolute;
+  position: relative;
+  top: 120px;
   margin: auto;
   width: 100vw;
   height: 80pt;
-  top: 0;
-  bottom: 0;
 
   filter: url(#threshold) blur(0.6px);
   > div {

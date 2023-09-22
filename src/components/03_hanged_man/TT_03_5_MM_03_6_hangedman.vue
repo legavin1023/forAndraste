@@ -221,7 +221,7 @@ export default {
         let tempSlides = [];
         for (let i = 1; i <= 6; i++) {
           tempSlides.push(
-            `/assets/03_hanged_man/krikwall/Map_-_Kirkwall_0${i}.png`
+            `${process.env.BASE_URL}assets/03_hanged_man/krikwall/Map_-_Kirkwall_0${i}.png`
           );
         }
         return tempSlides;
