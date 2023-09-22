@@ -72,7 +72,7 @@
         <div class="content-dialog">
           <ul>
             <li>
-              <div class="content-dialog-portrait gam"></div>
+              <div class="content-dialog-portrait"></div>
               <div class="content-dialog-text">
                 유일한 가족이시라고 들었습니다.
               </div>
@@ -85,7 +85,7 @@
               </div>
             </li>
             <li>
-              <div class="content-dialog-portrait gam"></div>
+              <div class="content-dialog-portrait"></div>
               <div class="content-dialog-text">
                 호크의 어머니께서 메이지한테...?
               </div>
@@ -98,7 +98,7 @@
               </div>
             </li>
             <li>
-              <div class="content-dialog-portrait gam"></div>
+              <div class="content-dialog-portrait"></div>
               <div class="content-dialog-text">
                 그, 메이지 연인과 관련해서...호크가 남기고 간 건 없습니까?
               </div>
@@ -127,7 +127,7 @@
         <div class="content-dialog">
           <ul>
             <li>
-              <div class="content-dialog-portrait gam"></div>
+              <div class="content-dialog-portrait"></div>
               <div class="content-dialog-text">
                 유일한 가족이시라고 들었습니다.
               </div>
@@ -140,7 +140,7 @@
               </div>
             </li>
             <li>
-              <div class="content-dialog-portrait gam"></div>
+              <div class="content-dialog-portrait"></div>
               <div class="content-dialog-text">
                 호크의 어머니께서 메이지한테...?
               </div>
@@ -153,7 +153,7 @@
               </div>
             </li>
             <li>
-              <div class="content-dialog-portrait gam"></div>
+              <div class="content-dialog-portrait"></div>
               <div class="content-dialog-text">
                 그, 메이지 친구와 관련해서...호크가 남기고 간 건 없습니까?
               </div>
