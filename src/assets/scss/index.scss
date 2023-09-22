@@ -176,7 +176,7 @@ body {
     &.abi {
         background: url("@/assets/image/top/06.png");
     }
-    &.verric {
+    &.varric {
         background: url("@/assets/image/top/07.png");
     }
     &.hawke {
@@ -325,7 +325,7 @@ body {
                 background: url("@/assets/image/portrait/Property 1=manA.png") no-repeat;
             }
             &.manB {
-                background: url("@/assets/image/portrait/Property 1=manA.png") no-repeat;
+                background: url("@/assets/image/portrait/Property 1=manB.png") no-repeat;
             }
             &.kidA {
                 background: url("@/assets/image/portrait/Property 1=childA.png");
@@ -418,14 +418,14 @@ body {
         width: 910px;
         margin: auto;
         padding: 80px 0 140px;
-        .verric {
+        .varric {
             font-size: 20px;
             text-align: right;
             &::before {
                 display: block;
                 width: 402px;
                 height: 90px;
-                background: url("@/assets/image/ending/verric.png") no-repeat;
+                background: url("@/assets/image/ending/varric.png") no-repeat;
                 content: " ";
                 position: relative;
                 top: -26px;
@@ -478,7 +478,7 @@ body {
         margin: auto;
         p {
             padding-top: 80px;
-            width: 80%;
+            width: 84%;
             margin: auto;
         }
         &-say {

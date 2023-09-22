@@ -115,17 +115,17 @@ const routes = [
   {
     path: encodePath("/CO-07-1"),
     name: "/CO-07-1",
-    component: () => import("@/components/07_varric/CO_07_1_verric"),
+    component: () => import("@/components/07_varric/CO_07_1_varric"),
   },
   {
     path: encodePath("/CO-07-2"),
     name: "/CO-07-2",
-    component: () => import("@/components/07_varric/CO_07_2_verric"),
+    component: () => import("@/components/07_varric/CO_07_2_varric"),
   },
   {
     path: encodePath("/CO-07-3"),
     name: "/CO-07-3",
-    component: () => import("@/components/07_varric/CO_07_3_verric"),
+    component: () => import("@/components/07_varric/CO_07_3_varric"),
   },
   {
     path: encodePath("/AA-08-01-FF-08-2"),

@@ -134,7 +134,7 @@
         오래 지나지 않은 어느 날 벌어진, 커크월의 또다른 비극이었다.
       </p>
       <div class="content-button ending mt90 pb70">
-        <div class="verric pb70">베릭 테스라스의 메모에서</div>
+        <div class="varric pb70">베릭 테스라스의 메모에서</div>
         <button class="ending-button pb70" @click="checkPath">
           <span>엔딩2</span>
           <p>공동수색 B : 남겨진 자들 B</p>

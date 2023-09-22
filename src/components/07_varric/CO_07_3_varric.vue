@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="topImage verric"></div>
+    <div class="topImage varric"></div>
     <div class="content">
       <div class="content-dialog">
         <ul>
           <li>
-            <div class="content-dialog-portrait verrics"></div>
+            <div class="content-dialog-portrait varric"></div>
             <div class="content-dialog-text">
               난 그날 왜 그런 일이 벌어졌는지 아직도 받아들이지 못했어. 그냥
               앤더스가 죽었다고 생각하고 있고.
@@ -20,7 +20,7 @@
       <div class="content-dialog">
         <ul>
           <li>
-            <div class="content-dialog-portrait verrics"></div>
+            <div class="content-dialog-portrait varric"></div>
             <div class="content-dialog-text">
               호크는... 여기서 잃은 게 너무 많아. 우리의 챔피언을 너무 괴롭히지
               말라고.
@@ -31,7 +31,7 @@
             <div class="content-dialog-text">어디로... 떠나시나요?</div>
           </li>
           <li>
-            <div class="content-dialog-portrait verrics"></div>
+            <div class="content-dialog-portrait varric"></div>
             <div class="content-dialog-text">
               나도 당분간 커크월에서 떨어져 있으려고. 가벼운 여행 정도로.
             </div>
@@ -44,7 +44,7 @@
       <div class="content-dialog">
         <ul>
           <li>
-            <div class="content-dialog-portrait verrics"></div>
+            <div class="content-dialog-portrait varric"></div>
             <div class="content-dialog-text">
               호크의 집도 이렇게 턴 건 아니겠지?
             </div>
@@ -56,7 +56,7 @@
             </div>
           </li>
           <li>
-            <div class="content-dialog-portrait verrics"></div>
+            <div class="content-dialog-portrait varric"></div>
             <div class="content-dialog-text">'아직'이란 말이지....</div>
           </li>
           <li>
@@ -72,7 +72,7 @@
       <div class="content-dialog">
         <ul>
           <li>
-            <div class="content-dialog-portrait verrics"></div>
+            <div class="content-dialog-portrait varric"></div>
             <div class="content-dialog-text">자물쇠를 바꿔야겠네.</div>
           </li>
           <li>
@@ -80,7 +80,7 @@
             <div class="content-dialog-text">.....죄송합니다.</div>
           </li>
           <li>
-            <div class="content-dialog-portrait verrics"></div>
+            <div class="content-dialog-portrait varric"></div>
             <div class="content-dialog-text">
               호크 집에는 감렌이라고, 아주 까칠한 삼촌이 남아 있을테니 섣불리
               열쇠구멍에 손부터 뻗진 말라고. 그 사람한테는 당신네들 권위로
@@ -94,7 +94,7 @@
             </div>
           </li>
           <li>
-            <div class="content-dialog-portrait verrics"></div>
+            <div class="content-dialog-portrait varric"></div>
             <div class="content-dialog-text">그래. 하나 뿐이지만.</div>
           </li>
           <li>
@@ -102,7 +102,7 @@
             <div class="content-dialog-text">알려주셔서 감사합니다.</div>
           </li>
           <li>
-            <div class="content-dialog-portrait verrics"></div>
+            <div class="content-dialog-portrait varric"></div>
             <div class="content-dialog-text">
               당신때문에 아 벨린이 고통받지 않게 하려고 한거니까 됐어. 참,
               그리고 당신.
@@ -113,7 +113,7 @@
             <div class="content-dialog-text">....예?</div>
           </li>
           <li>
-            <div class="content-dialog-portrait verrics"></div>
+            <div class="content-dialog-portrait varric"></div>
             <div class="content-dialog-text">
               배릭은 커크월 항구 쪽으로 사라졌다. 이제 이 모든 것과 이어진
               호크의 흔적을 직접 마주하는 일만이 남아있었다.

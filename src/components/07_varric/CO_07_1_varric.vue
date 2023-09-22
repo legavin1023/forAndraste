@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="topImage verric"></div>
+    <div class="topImage varric"></div>
     <div class="content">
       <p class="content-text">
         배릭의 집은 한때 그의 형인 바트란드의 소유였지만, 모종의 사건 이후 그의
