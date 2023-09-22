@@ -108,7 +108,28 @@
 </template>
 
 <script>
+const imageContext1 = require.context(
+  "@/assets/",
+  true,
+  /\.(png|jpg|jpeg|gif)$/
+);
+const imagePaths1 = imageContext1.keys().map(imageContext1);
+
+const imageContext2 = require.context(
+  `${process.env.BASE_URL}assets/`,
+  true,
+  /\.(png|jpg|jpeg|gif)$/
+);
+const imagePaths2 = imageContext2.keys().map(imageContext2);
+
+const combinedImagePaths = [...imagePaths1, ...imagePaths2];
 export default {
+  created() {
+    combinedImagePaths.forEach((imgPath) => {
+      new Image().src = imgPath;
+    });
+  },
+
   data() {
     return {
       inputValue: "", // 입력된 값 저장을 위한 변수
