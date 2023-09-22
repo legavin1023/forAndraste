@@ -104,24 +104,21 @@
     <div v-if="showAlert" class="custom-alert">
       {{ alertMessage }}
     </div>
+    <link rel="preload" as="image" href="@/assets/image/top/00.png" />
+    <link rel="preload" as="image" href="@/assets/image/top/01.png" />
+    <link rel="preload" as="image" href="@/assets/image/top/02.png" />
+    <link rel="preload" as="image" href="@/assets/image/top/03.png" />
+    <link rel="preload" as="image" href="@/assets/image/top/04.png" />
+    <link rel="preload" as="image" href="@/assets/image/top/05.png" />
+    <link rel="preload" as="image" href="@/assets/image/top/06.png" />
+    <link rel="preload" as="image" href="@/assets/image/top/07.png" />
+    <link rel="preload" as="image" href="@/assets/image/top/08.png" />
+    <link rel="preload" as="image" href="@/assets/image/top/09.png" />
   </div>
 </template>
 
 <script>
-const imageContext = require.context(
-  "@/assets/image/",
-  true,
-  /\.(png|jpg|jpeg|gif)$/
-);
-
-const imagePaths = imageContext.keys().map(imageContext);
 export default {
-  created() {
-    imagePaths.forEach((imgPath) => {
-      new Image().src = imgPath;
-    });
-  },
-
   data() {
     return {
       inputValue: "", // 입력된 값 저장을 위한 변수
