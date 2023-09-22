@@ -109,7 +109,7 @@
 
 <script>
 const imageContext = require.context(
-  "@/assets/images/",
+  "@/assets/image/",
   true,
   /\.(png|jpg|jpeg|gif)$/
 );

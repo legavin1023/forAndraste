@@ -100,12 +100,14 @@
               :src="cell.coinImage"
               alt="Click Image"
               :style="{ opacity: cell.opacity }"
+              draggable="false"
             />
             <img
               v-else
               :src="cell.clickImage"
               alt="Coin Image"
               :style="{ opacity: cell.opacity }"
+              draggable="false"
             />
           </div>
         </div>
