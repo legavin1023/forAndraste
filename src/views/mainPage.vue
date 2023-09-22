@@ -108,24 +108,16 @@
 </template>
 
 <script>
-const imageContext1 = require.context(
-  "@/assets/",
+const imageContext = require.context(
+  "@/assets/images/",
   true,
   /\.(png|jpg|jpeg|gif)$/
 );
-const imagePaths1 = imageContext1.keys().map(imageContext1);
 
-const imageContext2 = require.context(
-  `${process.env.BASE_URL}assets/`,
-  true,
-  /\.(png|jpg|jpeg|gif)$/
-);
-const imagePaths2 = imageContext2.keys().map(imageContext2);
-
-const combinedImagePaths = [...imagePaths1, ...imagePaths2];
+const imagePaths = imageContext.keys().map(imageContext);
 export default {
   created() {
-    combinedImagePaths.forEach((imgPath) => {
+    imagePaths.forEach((imgPath) => {
       new Image().src = imgPath;
     });
   },

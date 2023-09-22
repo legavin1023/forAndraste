@@ -126,7 +126,7 @@ export default {
       gameInProgress: false, // 게임 진행 여부를 나타내는 변수 추가
       maxClicks: 20, // 최대 클릭 횟수
       clickCount: 0, // 클릭 횟수를 추적하는 변수 추가
-      maxBlinks: 30, // 최대 깜빡이는 횟수
+      maxBlinks: 36, // 최대 깜빡이는 횟수
       blinkCount: 0, // 현재 깜빡이는 횟수
       click: [
         `${process.env.BASE_URL}assets/06_jangmul_abi/clickPuzzle/click_1.png`,
