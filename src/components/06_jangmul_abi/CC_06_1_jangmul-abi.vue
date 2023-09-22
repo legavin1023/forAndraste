@@ -158,7 +158,7 @@ export default {
   },
   methods: {
     computeWidthPercentage() {
-      return 100 - (this.blinkCount / 30) * 100;
+      return 100 - (this.blinkCount / 36) * 100;
     },
     createRandomizedGrid() {
       // 각 숫자가 6번씩 나타나게끔 초기 배열을 생성
