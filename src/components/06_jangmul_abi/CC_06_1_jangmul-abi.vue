@@ -261,7 +261,7 @@ export default {
         }
       }, this.duration);
 
-      if (this.blinkCount >= 30) {
+      if (this.blinkCount >= this.maxBlinks) {
         this.gameInProgress = false;
         clearTimeout(this.timer);
         setTimeout(() => {
