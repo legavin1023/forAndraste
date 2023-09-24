@@ -66,7 +66,7 @@
             </div>
           </li>
           <li>
-            <div class="content-dialog-portrait cullen"></div>
+            <div class="content-dialog-portrait commander"></div>
             <div class="content-dialog-text">
               하지만 이대로 붉은 리륨에 대한 단서를 놓칠 수는 없지... 앤더스도
               마찬가지고... 그럼....
@@ -82,15 +82,14 @@
           <li>
             <div class="content-dialog-portrait commander"></div>
             <div class="content-dialog-text">
-              ...우리는 어디까지나 커크월을 지원하러 온 것이니- 커크월의
-              기사단장이 그렇게 말한다면 굳이 위험을 감수하지는 않겠네.
+              우리는 붉은 리륨의 흔적을 따라 딥로드로 향한다.
             </div>
           </li>
         </ul>
       </div>
       <p class="content-text">
         수색대가 딥로드에 진입할 준비를 하는 동안, 기사단장은 고개를 돌려 조용히
-        지시했다..
+        지시했다.
       </p>
       <div class="content-dialog">
         <ul>
@@ -123,7 +122,7 @@
         템플러들에게 닿은 것은 한참 뒤의 일이었다.
       </p>
       <div class="content-button ending mt90 pb70">
-        <div class="varric pb70">베릭 테트라스스의 메모에서</div>
+        <div class="varric pb70">베릭 테트라스의 메모에서</div>
         <button class="ending-button pb70" @click="checkPath">
           <span>엔딩2</span>
           <p>공동수색 A : 남겨진 자들 A</p>

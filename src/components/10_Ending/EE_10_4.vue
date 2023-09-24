@@ -79,7 +79,7 @@
         없었다.
       </p>
       <div class="content-button ending mt90 pb70">
-        <div class="varric pb70">베릭 테트라스스의 메모에서</div>
+        <div class="varric pb70">베릭 테트라스의 메모에서</div>
         <button class="ending-button pb70" @click="checkPath">
           <span>엔딩4</span>
           <p>수색실패 : 레드템플러</p>

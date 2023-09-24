@@ -16,7 +16,7 @@
           읽어갔다.
         </p>
       </div>
-      <div v-if="love === 'AA'">
+      <div v-if="love === 'FF'">
         <div class="content-letter-my"><span>호크,</span></div>
         <p class="content-text">
           편지였다. 그것도 전달되지 못한 편지.<br />

@@ -194,8 +194,8 @@
           <li>
             <div class="content-dialog-portrait cullen"></div>
             <div class="content-dialog-text">
-              컬렌 죄송합니다. 말이 많았군요. 임무가 붉은 리륨에 대한 게
-              아니라고 하셨죠. <br />
+              죄송합니다. 말이 많았군요. 임무가 붉은 리륨에 대한 게 아니라고
+              하셨죠. <br />
               <span>어떤 것 때문에 오셨습니까?</span>
             </div>
           </li>

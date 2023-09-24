@@ -67,7 +67,7 @@
             </div>
           </li>
           <li>
-            <div class="content-dialog-portrait cullen"></div>
+            <div class="content-dialog-portrait commander"></div>
             <div class="content-dialog-text">
               음... 그렇다 하더라도 그동안 붉은 리륨에 대한 단서를 놓칠 수는
               없지...그럼....
@@ -123,7 +123,7 @@
         오래 지나지 않은 어느 날 벌어진, 커크월의 또다른 비극이었다.
       </p>
       <div class="content-button ending mt90 pb70">
-        <div class="varric pb70">베릭 테트라스스의 메모에서</div>
+        <div class="varric pb70">베릭 테트라스의 메모에서</div>
         <button class="ending-button pb70" @click="checkPath">
           <span>엔딩2</span>
           <p>공동수색 B : 남겨진 자들 B</p>
