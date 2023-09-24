@@ -7,12 +7,23 @@
         조심스럽게 종이를 뒤집자, 조금 동요한 듯 그리 정갈하지 못하게 쓰여진
         글자들이 빼곡하게 나열된 것이 보였다.
       </p>
-      <div class="content-letter-my"><span>내 호크,</span></div>
-      <p class="content-text">
-        세상에, 설마 연서인가. <br />
-        계속 읽어야할 지 고민이 되었지만, 호크와 이번 재앙을 연결할 수 있을지도
-        몰랐다. 한숨을 크게 쉰 뒤 징그러운 문장들을 하나하나 읽어갔다.
-      </p>
+      <div v-if="love === 'AA'">
+        <div class="content-letter-my"><span>내 호크,</span></div>
+        <p class="content-text">
+          세상에, 설마 연서인가. <br />
+          계속 읽어야할 지 고민이 되었지만, 호크와 이번 재앙을 연결할 수
+          있을지도 몰랐다. 한숨을 크게 쉰 뒤 징그러운 문장들을 하나하나
+          읽어갔다.
+        </p>
+      </div>
+      <div v-if="love === 'AA'">
+        <div class="content-letter-my"><span>호크,</span></div>
+        <p class="content-text">
+          편지였다. 그것도 전달되지 못한 편지.<br />
+          호크와 이번 사건이 연관되어있을지 모른다는 의심은 한층 짙어졌고, 그
+          의심을 확신으로 바꾸기 위해서 내용을 찬찬히 읽어내려갔다.
+        </p>
+      </div>
       <div
         class="content-letter hidden-text"
         v-if="love === 'AA'"

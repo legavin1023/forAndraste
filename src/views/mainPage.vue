@@ -104,16 +104,9 @@
     <div v-if="showAlert" class="custom-alert">
       {{ alertMessage }}
     </div>
-    <link rel="preload" as="image" href="@/assets/image/top/00.png" />
-    <link rel="preload" as="image" href="@/assets/image/top/01.png" />
-    <link rel="preload" as="image" href="@/assets/image/top/02.png" />
-    <link rel="preload" as="image" href="@/assets/image/top/03.png" />
-    <link rel="preload" as="image" href="@/assets/image/top/04.png" />
-    <link rel="preload" as="image" href="@/assets/image/top/05.png" />
-    <link rel="preload" as="image" href="@/assets/image/top/06.png" />
-    <link rel="preload" as="image" href="@/assets/image/top/07.png" />
-    <link rel="preload" as="image" href="@/assets/image/top/08.png" />
-    <link rel="preload" as="image" href="@/assets/image/top/09.png" />
+    <div v-for="image in images" :key="image">
+      <link rel="preload" as="image" :href="image" />
+    </div>
   </div>
 </template>
 
@@ -124,6 +117,18 @@ export default {
       inputValue: "", // 입력된 값 저장을 위한 변수
       showAlert: false,
       alertMessage: "",
+      images: [
+        require("@/assets/image/top/00.png"),
+        require("@/assets/image/top/01.png"),
+        require("@/assets/image/top/02.png"),
+        require("@/assets/image/top/03.png"),
+        require("@/assets/image/top/04.png"),
+        require("@/assets/image/top/05.png"),
+        require("@/assets/image/top/06.png"),
+        require("@/assets/image/top/07.png"),
+        require("@/assets/image/top/08.png"),
+        require("@/assets/image/top/09.png"),
+      ],
     };
   },
   methods: {

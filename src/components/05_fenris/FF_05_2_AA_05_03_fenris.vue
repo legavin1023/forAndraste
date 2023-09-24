@@ -65,7 +65,7 @@
               </div>
             </li>
             <li>
-              <div class="content-dialog-portrait thiefA"></div>
+              <div class="content-dialog-portrait thiefB"></div>
               <div class="content-dialog-text">
                 돌 상자? 뭐야 그건! 처음 듣는데! 역시 네가...!
               </div>
@@ -77,7 +77,7 @@
               </div>
             </li>
             <li>
-              <div class="content-dialog-portrait thiefB"></div>
+              <div class="content-dialog-portrait thiefA"></div>
               <div class="content-dialog-text">
                 병이 어두워서 무슨 색깔이었는지는 몰라! 돌도 상자째로 넘겼고....
               </div>

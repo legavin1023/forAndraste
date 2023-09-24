@@ -52,16 +52,6 @@
       <p class="content-text">
         기사단장은 호흡을 가다듬고 수색대로 소집된 템플러들을 집합시켰다.
       </p>
-      <div class="content-dialog">
-        <ul>
-          <li>
-            <div class="content-dialog-portrait cullen"></div>
-            <div class="content-dialog-text">
-              우리는 붉은 리륨의 흔적을 따라 딥로드로 향한다.
-            </div>
-          </li>
-        </ul>
-      </div>
       <p class="content-text">
         기사단장은 호흡을 가다듬고 수색대로 소집된 템플러들을 집합시켰다.
       </p>
@@ -89,7 +79,7 @@
         없었다.
       </p>
       <div class="content-button ending mt90 pb70">
-        <div class="varric pb70">베릭 테스라스의 메모에서</div>
+        <div class="varric pb70">베릭 테트라스스의 메모에서</div>
         <button class="ending-button pb70" @click="checkPath">
           <span>엔딩4</span>
           <p>수색실패 : 레드템플러</p>
