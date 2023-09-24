@@ -135,7 +135,7 @@
         감춘 것은 얼마 지나지 않아서였다.
       </p>
       <div class="content-button ending mt90 pb70">
-        <div class="varric"><span>베릭 테트라스의 메모에서</span></div>
+        <div class="varric"><span>베릭 테스라스의 메모에서</span></div>
         <button class="ending-button" @click="checkPath">
           <span>엔딩1</span>
           <p>공동수색 : 함께 앞으로</p>

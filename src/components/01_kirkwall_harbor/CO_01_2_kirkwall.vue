@@ -10,7 +10,7 @@
       <div class="content-dialog">
         <ul>
           <li>
-            <div class="content-dialog-portrait"></div>
+            <div class="content-dialog-portrait commander"></div>
             <div class="content-dialog-text">
               우선 챈트리 쪽으로 가도록 하지. 지도는 갖고 있나?
             </div>

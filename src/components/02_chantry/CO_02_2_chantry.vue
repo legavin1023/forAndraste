@@ -58,7 +58,7 @@
             <div class="content-dialog-text">지금 어디에 계십니까?</div>
           </li>
           <li>
-            <div class="content-dialog-portrait"></div>
+            <div class="content-dialog-portrait templarB"></div>
             <div class="content-dialog-text">
               행드맨에 계실겁니다. 원래는 주점인데, 상황이 이렇다보니 부상자
               수용도 하고 있습니다.

@@ -30,18 +30,7 @@
               파악했습니다.
             </div>
           </li>
-          <li>
-            <div class="content-dialog-portrait commander"></div>
-            <div class="content-dialog-text">본핏?</div>
-          </li>
-          <li>
-            <div class="content-dialog-portrait"></div>
-            <div class="content-dialog-text">
-              예. 자세한 건 따로 보고를 올리겠습니다. 우선 지금은 그쪽에
-              비밀통로가 있고 앤더스가 이를 확인했을 가능성이 커 보입니다. 그가
-              살아있지 않더라도, 조사할 가치는 있어보입니다.
-            </div>
-          </li>
+
           <li>
             <div class="content-dialog-portrait commander"></div>
             <div class="content-dialog-text">
@@ -134,7 +123,7 @@
         오래 지나지 않은 어느 날 벌어진, 커크월의 또다른 비극이었다.
       </p>
       <div class="content-button ending mt90 pb70">
-        <div class="varric pb70">베릭 테트라스의 메모에서</div>
+        <div class="varric pb70">베릭 테스라스의 메모에서</div>
         <button class="ending-button pb70" @click="checkPath">
           <span>엔딩2</span>
           <p>공동수색 B : 남겨진 자들 B</p>

@@ -99,12 +99,12 @@ export default {
     firstSuccessOnly(key1, key2) {
       const value1 = localStorage.getItem(key1);
       const value2 = localStorage.getItem(key2);
-      return value1 !== "2" && value2 == "1";
+      return value1 == "2" && value2 !== "1";
     },
     secondSuccessOnly(key1, key2) {
       const value1 = localStorage.getItem(key1);
       const value2 = localStorage.getItem(key2);
-      return value1 == "2" && value2 !== "1";
+      return value1 !== "2" && value2 == "1";
     },
     bothFailed(key1, key2) {
       const value1 = localStorage.getItem(key1);

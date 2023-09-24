@@ -79,7 +79,7 @@
 export default {
   data() {
     return {
-      texts: [" come", "to", "me"],
+      texts: ["to", "me", " come"],
       morphTime: 1,
       cooldownTime: 0.25,
       textIndex: null,
