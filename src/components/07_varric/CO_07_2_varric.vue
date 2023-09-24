@@ -89,12 +89,6 @@
           <li>
             <div class="content-dialog-portrait"></div>
             <div class="content-dialog-text">
-              이번에 커크월에 지원 온 템플러입니다. 배릭 테트라스씨 되십니까?
-            </div>
-          </li>
-          <li>
-            <div class="content-dialog-portrait varric"></div>
-            <div class="content-dialog-text">
               그보다는- 호크와 가까이 지내셨다고 들어서.... 붉은 리륨도 같이
               수습하신 적이 있다고....
             </div>

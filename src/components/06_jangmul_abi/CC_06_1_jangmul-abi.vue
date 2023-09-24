@@ -30,7 +30,7 @@
             </div>
           </li>
           <li>
-            <div class="content-dialog-portrait thiefA"></div>
+            <div class="content-dialog-portrait abi"></div>
             <div class="content-dialog-text">
               그럼그럼. 하이타운 대저택 지하에 숨어있던 보물인데, 이런건 내가 딱
               알아보지.
@@ -45,17 +45,17 @@
       <div class="content-dialog">
         <ul>
           <li>
-            <div class="content-dialog-portrait abi"></div>
+            <div class="content-dialog-portrait"></div>
             <div class="content-dialog-text">
               갖고 있는 다른 물건들을 좀 볼 수 있을까?
             </div>
           </li>
           <li>
-            <div class="content-dialog-portrait"></div>
+            <div class="content-dialog-portrait abi"></div>
             <div class="content-dialog-text">응?</div>
           </li>
           <li>
-            <div class="content-dialog-portrait thiefA"></div>
+            <div class="content-dialog-portrait"></div>
             <div class="content-dialog-text">
               당신이 취급하는 물건 중에서, 내가 찾는 게 있을 것 같은데.
             </div>

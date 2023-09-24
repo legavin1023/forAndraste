@@ -160,7 +160,7 @@ export default {
       return {
         display: "inline",
         position: "relative",
-        top: "-1088px",
+        top: "-1100px",
       };
     },
     dotStyle() {

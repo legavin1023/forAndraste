@@ -15,7 +15,7 @@
       </p>
       <div
         class="content-letter hidden-text"
-        v-if="route === 'AT' || route === 'FT'"
+        v-if="love === 'AA'"
         ref="pElements"
       >
         <p>
@@ -38,7 +38,7 @@
       </div>
       <div
         class="content-letter hidden-text"
-        v-if="route === 'AM' || route === 'FM'"
+        v-if="love === 'FF'"
         ref="pElements"
       >
         <p>

@@ -104,8 +104,8 @@
           <li>
             <div class="content-dialog-portrait varric"></div>
             <div class="content-dialog-text">
-              당신때문에 아 벨린이 고통받지 않게 하려고 한거니까 됐어. 참,
-              그리고 당신.
+              당신때문에 아벨린이 고통받지 않게 하려고 한거니까 됐어. 참, 그리고
+              당신.
             </div>
           </li>
           <li>
@@ -115,13 +115,15 @@
           <li>
             <div class="content-dialog-portrait varric"></div>
             <div class="content-dialog-text">
-              배릭은 커크월 항구 쪽으로 사라졌다. 이제 이 모든 것과 이어진
-              호크의 흔적을 직접 마주하는 일만이 남아있었다.
+              붉은 리륨은, 절대로 쫓지마. 특히 템플러라면 더더욱.
             </div>
           </li>
         </ul>
       </div>
-      <p class="content-text">배릭은 조금 웃은 것 같았다.</p>
+      <p class="content-text">
+        배릭은 커크월 항구 쪽으로 사라졌다. 이제 이 모든 것과 이어진 호크의
+        흔적을 직접 마주하는 일만이 남아있었다.
+      </p>
       <div class="puzzle">
         <div
           v-for="(card, index) in cards"

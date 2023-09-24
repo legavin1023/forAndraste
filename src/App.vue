@@ -51,7 +51,7 @@ export default {
       this.observer = new IntersectionObserver(callback, { threshold: 0.2 });
 
       const elements = this.$el.querySelectorAll(
-        ".content-dialog, .content-text, .content-button"
+        ".content-dialog, .content-text, .content-button, .endingImage"
       );
       elements.forEach((el) => {
         el.classList.add("fade-element");
