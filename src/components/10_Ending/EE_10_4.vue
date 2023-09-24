@@ -52,9 +52,6 @@
       <p class="content-text">
         기사단장은 호흡을 가다듬고 수색대로 소집된 템플러들을 집합시켰다.
       </p>
-      <p class="content-text">
-        기사단장은 호흡을 가다듬고 수색대로 소집된 템플러들을 집합시켰다.
-      </p>
       <div class="content-dialog">
         <ul>
           <li>
