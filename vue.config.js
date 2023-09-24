@@ -28,13 +28,6 @@ module.exports = defineConfig({
       });
   },
 });
-module.exports = {
-  configureWebpack: {
-    optimization: {
-      splitChunks: false,
-    },
-  },
-};
 
 //npm run build
 //npm install gh-pages --save-dev
