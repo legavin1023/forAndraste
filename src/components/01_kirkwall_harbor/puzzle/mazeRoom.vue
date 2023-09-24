@@ -468,7 +468,9 @@ export default {
         const bondV = maze.bondV;
 
         renderer.clear(this.width, this.height);
+        renderer.ctx.fillStyle = "#FFF";
 
+        renderer.ctx.fillRect(0, 0, this.width, this.height);
         renderer.setColor(null, "#222");
         renderer.beginPath();
         for (let i = 0; i < bondH.length; i++) {
@@ -506,12 +508,11 @@ export default {
   cursor: pointer;
   display: block;
   position: relative;
-  width: 300px;
+  width: 700px;
   height: 50px;
   line-height: 50px;
   background: #25130f;
   border-radius: 10px;
   color: #c2b39a;
-  left: 22px;
 }
 </style>

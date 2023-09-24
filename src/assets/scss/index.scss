@@ -382,6 +382,13 @@ body {
                     cursor: default;
                 }
             }
+            &.red {
+                background: url("@/assets/image/button/button_red.png") no-repeat;
+                color: red;
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
         }
 
         &-ink {

@@ -315,7 +315,7 @@ export default {
   height: 400.947px;
   position: absolute;
   left: -150px;
-  top: 100px;
+  top: 60px;
 }
 #driver {
   display: block;

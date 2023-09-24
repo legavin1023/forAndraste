@@ -1,9 +1,11 @@
 <template>
   <div class="edBox">
-    <p class="typing">The journey has just begun</p>
-    <div class="endingImage"></div>
-    <p class="madeBy">made by</p>
-    <div class="endingLogo">
+    <div id="container">
+      <p class="typing">The journey has just begun</p>
+    </div>
+    <div class="endingImage animated fadeIn img-effect"></div>
+    <div class="logoBox">
+      <div class="endingLogo">made by</div>
       <svg
         width="400"
         height="85"
@@ -52,60 +54,105 @@
         </defs>
       </svg>
     </div>
+    <button class="goHome animated fadeIn" @click="goHome">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="66"
+        height="66"
+        viewBox="0 0 66 66"
+        fill="none"
+      >
+        <circle
+          cx="33"
+          cy="33"
+          r="33"
+          fill="#5EC7B4"
+          style="mix-blend-mode: multiply"
+        />
+        <mask
+          id="mask0_589_1017"
+          style="mask-type: alpha"
+          maskUnits="userSpaceOnUse"
+          x="13"
+          y="13"
+          width="40"
+          height="40"
+        >
+          <rect x="13" y="13" width="40" height="40" fill="#D9D9D9" />
+        </mask>
+        <g mask="url(#mask0_589_1017)">
+          <path
+            d="M18.5417 48.6247V32.9997L15.875 35.083L13.125 31.3747L32.9583 16.208L52.8333 31.3747L50.0417 34.9997L47.375 32.9997V48.6247H18.5417ZM23.1667 44.0413H42.7917V29.4997L32.9583 21.9997L23.1667 29.4832V44.0413ZM26.7946 37.9163C26.1815 37.9163 25.6597 37.709 25.2292 37.2943C24.7986 36.8795 24.5833 36.3656 24.5833 35.7526C24.5833 35.1395 24.7986 34.6247 25.2292 34.208C25.6597 33.7913 26.1815 33.583 26.7946 33.583C27.4076 33.583 27.9215 33.7904 28.3363 34.2051C28.751 34.6198 28.9583 35.1337 28.9583 35.7468C28.9583 36.3598 28.751 36.8747 28.3363 37.2913C27.9215 37.708 27.4076 37.9163 26.7946 37.9163ZM32.9554 37.8747C32.3424 37.8747 31.8285 37.6673 31.4138 37.2526C30.999 36.8379 30.7917 36.324 30.7917 35.7109C30.7917 35.0979 30.999 34.5761 31.4138 34.1455C31.8285 33.715 32.3424 33.4997 32.9554 33.4997C33.5685 33.4997 34.0903 33.715 34.5208 34.1455C34.9514 34.5761 35.1667 35.0979 35.1667 35.7109C35.1667 36.324 34.9514 36.8379 34.5208 37.2526C34.0903 37.6673 33.5685 37.8747 32.9554 37.8747ZM39.1696 37.8747C38.5565 37.8747 38.0347 37.6673 37.6042 37.2526C37.1736 36.8379 36.9583 36.324 36.9583 35.7109C36.9583 35.0979 37.1736 34.5761 37.6042 34.1455C38.0347 33.715 38.5565 33.4997 39.1696 33.4997C39.7826 33.4997 40.2965 33.715 40.7113 34.1455C41.126 34.5761 41.3333 35.0979 41.3333 35.7109C41.3333 36.324 41.126 36.8379 40.7113 37.2526C40.2965 37.6673 39.7826 37.8747 39.1696 37.8747Z"
+            fill="#9AE9DB"
+          />
+        </g>
+      </svg>
+    </button>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    goHome() {
+      this.$router.push({ path: "/" });
+    },
+  },
+};
 </script>
 <style scoped lang="scss">
 .edBox {
   width: 100vw;
   height: 100vh;
   background: #6fdeca;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 .endingImage {
-  background: url("@/assets/image/ending/good.png");
-  width: 720px;
-  height: 666px;
-  margin: auto;
   position: relative;
-  top: 80px;
+  background: url("@/assets/image/ending/good.png");
+  background-size: contain;
+  width: 425px;
+  height: 393px;
+  margin: auto;
 }
 .typing {
   color: #185640;
   text-align: center;
-  margin: auto;
-  position: relative;
-  left: 80px;
-  top: 470px;
+  margin: 110px auto 0;
+  font-size: 70px;
 }
-.madeBy {
-  opacity: 0.4;
-  font-family: Inter;
-  font-size: 40px;
-  font-weight: 700;
-  text-align: center;
-  position: relative;
-  top: 120px;
-}
-.endingLogo {
-  /* background: url("@/assets/image/ending/good_logo.svg");*/
-  width: 400px;
-  height: 85px;
-  margin: auto;
-  position: relative;
-  top: 140px;
-  svg {
-    // width: 200px;
+.logoBox {
+  margin-bottom: 80px;
+
+  .endingLogo {
+    margin: auto;
+    width: 400px;
+    height: 85px;
+    opacity: 0.4;
+    font-family: Inter;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+    top: 30px;
   }
 }
-
+.container {
+  margin: 110px auto;
+  width: 300px;
+  height: 0px;
+}
 .typing {
   width: 22ch;
+  height: 70px;
   animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
+  padding-top: 14px;
   border-right: 3px solid;
 }
 
@@ -119,5 +166,83 @@ export default {};
   50% {
     border-color: transparent;
   }
+}
+.goHome {
+  position: fixed;
+  bottom: 29px;
+  right: 24px;
+  &:hover {
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2));
+  }
+}
+
+.img-effect {
+  background: url("@/assets/image/ending/good.png");
+  background-size: cover;
+  background-position: center;
+
+  @supports (mix-blend-mode: multiply) {
+    position: relative;
+    // overflow: hidden;
+    opacity: 0.3;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: url("@/assets/image/ending/good.png");
+      background-size: cover;
+      background-position: center;
+      filter: blur(1px);
+      opacity: 0.3;
+      transition: all ease 0.7s;
+    }
+
+    &:before {
+      transform: scale(1.1) translate(1%, -1%);
+    }
+
+    &:after {
+      transform: scale(1.1) translate(-1%, 1%);
+    }
+
+    &:hover {
+      opacity: 1;
+
+      &:before,
+      &:after {
+        // visibility: hidden;
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+  }
+}
+
+[class$="-effect"] img {
+  vertical-align: top !important;
+  margin: 0 !important;
+  opacity: 0 !important;
+}
+
+/* CodePen Styles */
+body {
+  display: flex;
+  height: 100vh;
+}
+div {
+  margin: auto;
+}
+
+.img-effect {
+  width: 400px;
+  height: 400px;
 }
 </style>

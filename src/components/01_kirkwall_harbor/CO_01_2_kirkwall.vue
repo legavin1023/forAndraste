@@ -104,10 +104,19 @@ export default {
 .maze-container {
   width: 700px;
   height: 360px;
-  margin: auto;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
   overflow: hidden;
+  display: flex;
   z-index: 10;
+  position: relative;
+  top: 170px;
+  left: 160px;
+}
+.puzzle {
+  background: url("@/assets/01_kirkwall_harbor/map.png");
+  width: 1033px;
+  height: 787px;
+  margin: auto;
 }
 .hide {
   display: none;

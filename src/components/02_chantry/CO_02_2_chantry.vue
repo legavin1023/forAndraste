@@ -66,6 +66,118 @@
           </li>
         </ul>
       </div>
+      <div class="puzzle">
+        <div class="puzzle-image">
+          <div class="map"></div>
+          <div class="compass"></div>
+        </div>
+
+        <table class="puzzle-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+              <th>8</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <div class="content-buttonBox">
         <input
           type="text"
@@ -107,4 +219,66 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.puzzle {
+  &-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+  }
+  .map {
+    width: 473px;
+    height: 347px;
+    background: url("@/assets/02_chantry/map.png") no-repeat;
+    background-position: center;
+    background-color: #f0e7d7;
+    padding: 20px;
+  }
+  .compass {
+    width: 357px;
+    height: 360px;
+    background: url("@/assets/02_chantry/compass.png") no-repeat;
+    background-position: center;
+    background-color: #f0e7d7;
+    padding: 14px;
+  }
+  &-table {
+    width: 900px;
+    height: 392px;
+    margin: 60px auto 0;
+    background: #f0e7d7;
+    thead {
+      background: #7e6f6f;
+      color: #ddd;
+      text-align: center;
+      font-size: 14px;
+      tr {
+        th {
+          border: 1px solid #cfc5b2;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          border: 1px solid #cfc5b2;
+          input {
+            display: block;
+            width: 80px;
+            height: 18px;
+            margin: auto;
+            font-size: 14px;
+          }
+        }
+        td:first-of-type {
+          background: #7e6f6f;
+          color: #ddd;
+          text-align: center;
+          font-size: 14px;
+          width: 100px;
+        }
+      }
+    }
+  }
+}
+</style>

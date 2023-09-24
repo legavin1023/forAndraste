@@ -4,26 +4,9 @@
       <div ref="text1">{{ text1Content }}</div>
       <div ref="text2">{{ text2Content }}</div>
     </div>
-
-    <!-- The SVG filter used to create the merging effect -->
-    <svg id="filters">
-      <defs>
-        <filter id="threshold">
-          <!-- Basically just a threshold effect - pixels with a high enough opacity are set to full opacity, and all other pixels are set to completely transparent. -->
-          <feColorMatrix
-            in="SourceGraphic"
-            type="matrix"
-            values="1 0 0 0 0
-									0 1 0 0 0
-									0 0 1 0 0
-									0 0 0 255 -140"
-          />
-        </filter>
-      </defs>
-    </svg>
-    <div class="endingImage glitch"></div>
-    <p class="madeBy">made by</p>
-    <div class="endingLogo">
+    <div class="endingImage glich animated fadeIn"></div>
+    <div class="logoBox">
+      <div class="endingLogo">made by</div>
       <svg
         width="400"
         height="85"
@@ -72,6 +55,40 @@
         </defs>
       </svg>
     </div>
+    <button class="goHome animated fadeIn" @click="goHome">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="66"
+        height="66"
+        viewBox="0 0 66 66"
+        fill="none"
+      >
+        <circle
+          cx="33"
+          cy="33"
+          r="33"
+          fill="#B66363"
+          style="mix-blend-mode: multiply"
+        />
+        <mask
+          id="mask0_589_1016"
+          style="mask-type: alpha"
+          maskUnits="userSpaceOnUse"
+          x="13"
+          y="13"
+          width="40"
+          height="40"
+        >
+          <rect x="13" y="13" width="40" height="40" fill="#D9D9D9" />
+        </mask>
+        <g mask="url(#mask0_589_1016)">
+          <path
+            d="M18.5417 48.6247V32.9997L15.875 35.083L13.125 31.3747L32.9583 16.208L52.8333 31.3747L50.0417 34.9997L47.375 32.9997V48.6247H18.5417ZM23.1667 44.0413H42.7917V29.4997L32.9583 21.9997L23.1667 29.4832V44.0413ZM26.7946 37.9163C26.1815 37.9163 25.6597 37.709 25.2292 37.2943C24.7986 36.8795 24.5833 36.3656 24.5833 35.7526C24.5833 35.1395 24.7986 34.6247 25.2292 34.208C25.6597 33.7913 26.1815 33.583 26.7946 33.583C27.4076 33.583 27.9215 33.7904 28.3363 34.2051C28.751 34.6198 28.9583 35.1337 28.9583 35.7468C28.9583 36.3598 28.751 36.8747 28.3363 37.2913C27.9215 37.708 27.4076 37.9163 26.7946 37.9163ZM32.9554 37.8747C32.3424 37.8747 31.8285 37.6673 31.4138 37.2526C30.999 36.8379 30.7917 36.324 30.7917 35.7109C30.7917 35.0979 30.999 34.5761 31.4138 34.1455C31.8285 33.715 32.3424 33.4997 32.9554 33.4997C33.5685 33.4997 34.0903 33.715 34.5208 34.1455C34.9514 34.5761 35.1667 35.0979 35.1667 35.7109C35.1667 36.324 34.9514 36.8379 34.5208 37.2526C34.0903 37.6673 33.5685 37.8747 32.9554 37.8747ZM39.1696 37.8747C38.5565 37.8747 38.0347 37.6673 37.6042 37.2526C37.1736 36.8379 36.9583 36.324 36.9583 35.7109C36.9583 35.0979 37.1736 34.5761 37.6042 34.1455C38.0347 33.715 38.5565 33.4997 39.1696 33.4997C39.7826 33.4997 40.2965 33.715 40.7113 34.1455C41.126 34.5761 41.3333 35.0979 41.3333 35.7109C41.3333 36.324 41.126 36.8379 40.7113 37.2526C40.2965 37.6673 39.7826 37.8747 39.1696 37.8747Z"
+            fill="#B65151"
+          />
+        </g>
+      </svg>
+    </button>
   </div>
 </template>
 
@@ -98,6 +115,9 @@ export default {
     },
   },
   methods: {
+    goHome() {
+      this.$router.push({ path: "/" });
+    },
     resetState() {
       this.morph = this.morphTime;
       this.cooldown = this.cooldownTime;
@@ -172,116 +192,94 @@ export default {
   height: 100vh;
   background: #aa2727;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 .endingImage {
   background: url("@/assets/image/ending/bad.png");
-  width: 663px;
-  height: 467px;
-  margin: auto;
+  width: 439.595px;
+  height: 357.263px;
   background-size: cover;
   opacity: 0.9;
 }
-.madeBy {
-  opacity: 0.4;
-  font-family: Inter;
-  font-size: 40px;
-  font-weight: 700;
-  text-align: center;
-  position: relative;
-  top: 100px;
-}
-.endingLogo {
-  /* background: url("@/assets/image/ending/good_logo.svg");*/
+.logoBox {
+  margin-bottom: 80px;
 
-  margin: auto;
-  width: 400px;
-  height: 85px;
-  position: relative;
-  top: 120px;
-  svg {
-    // width: 200px;
+  .endingLogo {
+    /* background: url("@/assets/image/ending/good_logo.svg");*/
+    margin: auto;
+    width: 400px;
+    height: 85px;
+    opacity: 0.4;
+    font-family: Inter;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+    top: 30px;
   }
 }
-#container {
-  /* Center the text in the viewport. */
-  position: relative;
-  top: 120px;
-  margin: auto;
-  width: 100vw;
-  height: 80pt;
 
+#container {
+  margin: 110px auto;
+  width: 300px;
+  height: 0px;
   filter: url(#threshold) blur(0.6px);
   > div {
-    width: 300px;
     font-size: 120px;
     text-align: center;
     font-weight: bold;
     position: absolute;
+    width: 300px;
     left: calc(50% - 150px);
   }
 }
-.glitch {
-  animation: glitch 1s linear infinite;
-}
 
-@keyframes glitch {
-  2%,
-  64% {
-    transform: translate(2px, 0) skew(0deg);
+@keyframes example {
+  0% {
+    -webkit-filter: saturate(8);
+    filter: saturate(8);
+    left: 20px;
   }
-  4%,
-  60% {
-    transform: translate(-2px, 0) skew(0deg);
+  25% {
+    -webkit-filter: hue-rotate(180deg);
+    filter: hue-rotate(180deg);
+    right: 20px;
   }
-  62% {
-    transform: translate(0, 0) skew(5deg);
+  50% {
+    -webkit-filter: invert(0.8);
+    filter: invert(0.8);
+    top: 20px;
   }
-}
-
-.glitch:before,
-.glitch:after {
-  content: attr(title);
-  position: absolute;
-  left: 0;
-}
-
-.glitch:before {
-  animation: glitchTop 1s linear infinite;
-  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-}
-
-@keyframes glitchTop {
-  2%,
-  64% {
-    transform: translate(2px, -2px);
-  }
-  4%,
-  60% {
-    transform: translate(-2px, 2px);
-  }
-  62% {
-    transform: translate(13px, -1px) skew(-13deg);
+  100% {
+    -webkit-filter: hue-rotate(0deg);
+    filter: hue-rotate(0deg);
+    bottom: 20px;
   }
 }
 
-.glitch:after {
-  animation: glitchBotom 1.5s linear infinite;
-  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+.glich:hover {
+  position: relative;
+  animation-name: example;
+  animation-duration: 300ms;
+  cursor: pointer;
 }
 
-@keyframes glitchBotom {
-  2%,
-  64% {
-    transform: translate(-2px, 0);
-  }
-  4%,
-  60% {
-    transform: translate(-2px, 0);
-  }
-  62% {
-    transform: translate(-22px, 5px) skew(21deg);
+.container {
+  display: table-cell;
+  overflow: hidden;
+  height: 353px;
+  width: 353px;
+  margin: 10px;
+}
+.goHome {
+  position: fixed;
+  bottom: 29px;
+  right: 24px;
+  &:hover {
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2));
   }
 }
 </style>
