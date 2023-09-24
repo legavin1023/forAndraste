@@ -20,7 +20,7 @@ module.exports = defineConfig({
     // .mpa 파일에 대한 설정
     config.module
       .rule("audio")
-      .test(/\.(m4a|wav)$/)
+      .test(/\.(m4a|wav|mp3)$/)
       .use("file-loader")
       .loader("file-loader")
       .options({
