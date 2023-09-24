@@ -2,12 +2,12 @@
   <div>
     <div class="topImage anders"></div>
     <div class="content pb70">
-      <p class="content-text">
+      <p class="content-text" v-if="hideText === true">
         별 것 없어보이는 종이였지만 , 뒷면에 무언가 비쳐보였다. <br />
         조심스럽게 종이를 뒤집자, 조금 동요한 듯 그리 정갈하지 못하게 쓰여진
         글자들이 빼곡하게 나열된 것이 보였다.
       </p>
-      <div v-if="love === 'AA'">
+      <div v-if="love === 'AA' && hideText === true">
         <div class="content-letter-my"><span>내 호크,</span></div>
         <p class="content-text">
           세상에, 설마 연서인가. <br />
@@ -16,7 +16,7 @@
           읽어갔다.
         </p>
       </div>
-      <div v-if="love === 'FF'">
+      <div v-if="love === 'FF' && hideText === true">
         <div class="content-letter-my"><span>호크,</span></div>
         <p class="content-text">
           편지였다. 그것도 전달되지 못한 편지.<br />
@@ -71,7 +71,7 @@
         </p>
         <div class="content-letter-say"></div>
       </div>
-      <p class="content-text">
+      <p class="content-text" v-if="hideText === true">
         알 수 없는 내용이었다. <br />'저스티스'는 무엇이고, '분리'한다는 것은
         무엇이란 말인가. <br />분명한 것은 그것이 챈트리 안쪽, 즉 이번 재앙과
         밀접한 관련이 있다는 의미였다. <br />
@@ -124,6 +124,7 @@ export default {
       imageStack: [], // 화면에 표시되는 이미지 스택
       currentImageIndex: 0, // 현재 이미지의 인덱스
       showButton: false,
+      hideText: true,
       love: localStorage.getItem("love"),
       route: localStorage.getItem("route"),
     };
@@ -176,6 +177,7 @@ export default {
       });
       this.imageStack = [];
       this.showButton = true;
+      this.hideText = false;
 
       // puzzle의 높이를 0으로 설정
       const puzzleElement = this.$el.querySelector(".puzzle");
