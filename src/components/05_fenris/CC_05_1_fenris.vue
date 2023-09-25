@@ -92,7 +92,8 @@
           <!-- Add the Persuade button here -->
         </div>
       </div>
-      <button class="persuade-button" @click="persuade">설득</button>
+      <button class="persuade-button" @click="persuade">설득하기</button>
+      <button class="bt" @click="click">임시버튼</button>
 
       <div class="bottomImage"></div>
     </div>
@@ -161,6 +162,9 @@ export default {
     window.addEventListener("scroll", this.handleScroll);
   },
   methods: {
+    click() {
+      this.$router.push({ name: "/FF-05-2-AA-05-03" });
+    },
     handleScroll() {
       const currentScrollPosition = window.scrollY;
 
@@ -493,6 +497,7 @@ export default {
   width: 441px;
   height: 24px;
   transition: background-color 0.3s;
+  background-image: url("@/assets/05_fenris/gauge_bar.png");
 
   // overflow: hidden;
 }
@@ -503,22 +508,23 @@ export default {
 }
 
 .color-zone.red {
-  background-color: #d75656;
+  // background-color: #d75656;
   border-radius: 11.5px 0 0 11.5px;
 }
 
 .color-zone.yellow {
-  background-color: #f99b57;
+  // background-color: #f99b57;
 }
 
 .color-zone.green {
-  background-color: #77c65b;
+  background-color: rgba(125, 168, 33, 0.3);
+
   border-radius: 0 11.5px 11.5px 0;
 }
 
 .gauge-bar {
   height: 24px;
-  background-color: #fff;
+  background-color: #715a5a;
   transition: width 0.3s;
   position: absolute;
   border-radius: 11.5px;
@@ -555,11 +561,13 @@ export default {
 }
 .persuade-button {
   display: block;
-  width: 200px;
   text-align: center;
+  border-radius: 300px;
+  color: #fff;
+  background: #948072;
   margin: auto;
-  background: #fff;
-  margin: auto;
+  font-size: 22px;
+  padding: 14px 97px;
 }
 .particle-root {
   left: 0;
@@ -579,5 +587,13 @@ export default {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
   opacity: 0;
+}
+.bt {
+  display: block;
+  width: 100px;
+  background: blue;
+  text-align: center;
+  margin: auto;
+  color: #fff;
 }
 </style>
