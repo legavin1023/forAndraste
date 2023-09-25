@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
     <div class="topImage varric"></div>
     <div class="content">
       <p class="content-text">
@@ -24,7 +24,7 @@
             style="opacity: 0"
           />
           <div id="cylinder" ref="cylinder"></div>
-          <div id="driver" ref="driver"></div>
+          <div class="driverW"><div id="driver" ref="driver"></div></div>
           <div id="pin" ref="pin">
             <div class="top" ref="pinTop"></div>
             <div class="bott" ref="pinBott"></div>
@@ -290,13 +290,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.box {
+  position: absolute;
+  overflow: hidden;
+  margin: auto;
+  left: calc(50% - 600px);
+}
 #wrap {
   display: block;
   position: relative;
-  width: 12%;
+  width: 1200px;
+  height: 300px;
   margin: auto;
   padding: 250px 0;
-  overflow: visible;
+  overflow-y: hidden;
+  overflow-y: visible;
   display: flex;
   flex-direction: column;
 }
@@ -314,8 +322,12 @@ export default {
   width: 400.947px;
   height: 400.947px;
   position: absolute;
-  left: -150px;
-  top: 60px;
+  left: calc(50% - 200px);
+  top: 100px;
+}
+.driverW {
+  width: 100%;
+  overflow-x: hidden;
 }
 #driver {
   display: block;
@@ -324,8 +336,8 @@ export default {
   background: url("@/assets/07_varric/pin/driver.png");
   background-size: cover;
   position: absolute;
-  top: 280px;
-  right: -890px;
+  top: 320px;
+  right: -380px;
   transform-origin: 3% -3%;
 }
 #pin {
@@ -334,9 +346,10 @@ export default {
   width: 20px; // 7.1304% of collar width
   height: 500px; // 146.4347% of collar width
   position: absolute;
-  left: 47px;
-  top: -240px;
+  left: calc(50% - 10px);
+  top: -200px;
   transform-origin: 50% 99%;
+  z-index: 1000;
   .top {
     display: block;
     width: 100%;

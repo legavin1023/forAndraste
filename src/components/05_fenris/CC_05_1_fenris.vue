@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
     <transition name="fade">
       <canvas
         class="flashLight"
@@ -170,7 +170,7 @@ export default {
 
       if (
         currentScrollPosition > this.lastScrollPosition &&
-        currentScrollPosition > 2700
+        currentScrollPosition > 2600
       ) {
         // 사용자가 아래로 스크롤할 때
         this.isVisible = false;
@@ -426,7 +426,7 @@ export default {
       const canvasEl = this.$refs.canvasEl;
       canvasEl.width = window.innerWidth;
       canvasEl.height = window.innerHeight;
-
+      canvasEl.overflow = "hidden";
       if (
         window.getComputedStyle(document.body).getPropertyValue("position") !==
         "relative"
@@ -570,11 +570,12 @@ export default {
   padding: 14px 97px;
 }
 .particle-root {
+  position: absolute;
   left: 0;
-  top: 0;
+  bottom: 0px;
+  z-index: 999;
   width: 100%;
   height: 100%;
-  z-index: 999;
   pointer-events: none;
   overflow: hidden;
 }
