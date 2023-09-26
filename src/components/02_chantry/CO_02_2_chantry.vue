@@ -89,91 +89,91 @@
           <tbody>
             <tr>
               <td>1</td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
+              <td>1</td>
+              <td>4</td>
+              <td>1</td>
+              <td>4</td>
+              <td>8</td>
+              <td>7</td>
+              <td>8</td>
+              <td>7</td>
             </tr>
             <tr>
               <td>2</td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
+              <td>4</td>
+              <td>8</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>6</td>
+              <td>1</td>
+              <td>2</td>
             </tr>
             <tr>
               <td>3</td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
+              <td>1</td>
+              <td>2</td>
+              <td>6</td>
+              <td>4</td>
+              <td>2</td>
+              <td>4</td>
+              <td>1</td>
+              <td>1</td>
             </tr>
             <tr>
               <td>4</td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
+              <td>4</td>
+              <td>3</td>
+              <td>4</td>
+              <td>7</td>
+              <td>5</td>
+              <td>5</td>
+              <td>5</td>
+              <td>1</td>
             </tr>
             <tr>
               <td>5</td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
+              <td>8</td>
+              <td>4</td>
+              <td>2</td>
+              <td>5</td>
+              <td>8</td>
+              <td>6</td>
+              <td>2</td>
+              <td>4</td>
             </tr>
             <tr>
               <td>6</td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
+              <td>7</td>
+              <td>6</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>9</td>
+              <td>7</td>
+              <td>2</td>
             </tr>
             <tr>
               <td>7</td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
+              <td>8</td>
+              <td>1</td>
+              <td>1</td>
+              <td>5</td>
+              <td>2</td>
+              <td>7</td>
+              <td>0</td>
+              <td>5</td>
             </tr>
             <tr>
               <td>8</td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
+              <td>7</td>
+              <td>2</td>
+              <td>1</td>
+              <td>1</td>
+              <td>4</td>
+              <td>2</td>
+              <td>5</td>
+              <td>3</td>
             </tr>
           </tbody>
         </table>
@@ -261,18 +261,11 @@ export default {
       tr {
         td {
           border: 1px solid #cfc5b2;
-          input {
-            display: block;
-            width: 80px;
-            height: 18px;
-            margin: auto;
-            font-size: 14px;
-          }
+          text-align: center;
         }
         td:first-of-type {
           background: #7e6f6f;
           color: #ddd;
-          text-align: center;
           font-size: 14px;
           width: 100px;
         }
