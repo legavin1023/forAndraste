@@ -347,10 +347,9 @@ export default {
   },
   methods: {
     checkInputValue() {
-      // if (this.inputValue === "bonepit") {
-      // 입력된 값이 'fortheandraste'와 일치하는 경우, 다른 뷰로 전환
-      this.$router.push({ name: "/CC-09-1" });
-      // }
+      if (this.inputValue === "bonepit") {
+        this.$router.push({ name: "/CC-09-1" });
+      }
     },
   },
 };

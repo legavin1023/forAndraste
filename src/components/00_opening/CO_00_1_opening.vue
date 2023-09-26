@@ -10,6 +10,7 @@
         서둘러 수많은 템플러들이 혼란을 정리하고 질서를 회복하겠다는 미명 하에
         커크월로 향했다.
       </p>
+      <p class="content-text">안드라스테를 위하여</p>
       <div class="content-buttonBox">
         <input
           type="text"
@@ -46,10 +47,9 @@ export default {
         `${process.env.BASE_URL}assets/sound/파도소리_배소리.mp3`
       );
       this.$store.dispatch("playAudio");
-      // if (this.inputValue === "fortheandraste") {
-      // 입력된 값이 'fortheandraste'와 일치하는 경우, 다른 뷰로 전환
-      this.$router.push({ name: "/CO-01-1" });
-      // }
+      if (this.inputValue === "fortheandraste") {
+        this.$router.push({ name: "/CO-01-1" });
+      }
     },
   },
 };

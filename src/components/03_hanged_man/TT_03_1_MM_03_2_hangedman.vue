@@ -238,10 +238,9 @@ export default {
   },
   methods: {
     checkInputValue() {
-      // if (this.inputValue === "anders") {
-      // 입력된 값이 'fortheandraste'와 일치하는 경우, 다른 뷰로 전환
-      this.$router.push({ name: "/TT-03-3-MM-03-4" });
-      // }
+      if (this.inputValue === "anders") {
+        this.$router.push({ name: "/TT-03-3-MM-03-4" });
+      }
     },
   },
 };

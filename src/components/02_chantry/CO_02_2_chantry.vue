@@ -200,20 +200,19 @@ export default {
   },
   methods: {
     checkInputValue() {
-      // if (this.inputValue === "12142715") {
-      // 입력된 값이 'fortheandraste'와 일치하는 경우, 다른 뷰로 전환
-      this.$store.dispatch("terminateAudio");
+      if (this.inputValue === "12142715") {
+        this.$store.dispatch("terminateAudio");
 
-      this.$store.dispatch(
-        "setAudioSource",
-        `${process.env.BASE_URL}assets/sound/떠드는 소리.flac`
-      );
-      this.$store.dispatch("playAudio");
-      setTimeout(() => {
-        this.$store.dispatch("fadeOutAudio");
-      }, 10000);
-      this.$router.push({ name: "/TT-03-1-MM-03-2" });
-      // }
+        this.$store.dispatch(
+          "setAudioSource",
+          `${process.env.BASE_URL}assets/sound/떠드는 소리.flac`
+        );
+        this.$store.dispatch("playAudio");
+        setTimeout(() => {
+          this.$store.dispatch("fadeOutAudio");
+        }, 10000);
+        this.$router.push({ name: "/TT-03-1-MM-03-2" });
+      }
     },
   },
 };
