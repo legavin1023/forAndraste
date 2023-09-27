@@ -203,6 +203,11 @@ export default {
       if (this.inputValue === "justice") {
         // 입력된 값이 'justice'와 일치하는 경우, 다른 뷰로 전환
         this.$router.push({ name: "/CO-07-3" });
+      } else {
+        this.shakeIt = true;
+        setTimeout(() => {
+          this.shakeIt = false;
+        }, 600);
       }
     },
   },

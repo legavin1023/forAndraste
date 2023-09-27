@@ -183,6 +183,7 @@ export default {
 
     // Start the animation.
     this.animate();
+    localStorage.clear();
   },
 };
 </script>

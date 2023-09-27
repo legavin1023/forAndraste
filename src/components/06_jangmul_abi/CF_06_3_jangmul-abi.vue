@@ -162,6 +162,11 @@ export default {
     checkInputValue() {
       if (this.inputValue === "varric") {
         this.$router.push({ name: "/CO-07-1" });
+      } else {
+        this.shakeIt = true;
+        setTimeout(() => {
+          this.shakeIt = false;
+        }, 600);
       }
     },
   },

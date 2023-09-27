@@ -98,6 +98,9 @@ export default {
       this.$router.push({ path: "/" });
     },
   },
+  mounted() {
+    localStorage.clear();
+  },
 };
 </script>
 <style scoped lang="scss">

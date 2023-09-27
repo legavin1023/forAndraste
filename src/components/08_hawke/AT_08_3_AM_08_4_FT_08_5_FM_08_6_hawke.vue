@@ -351,6 +351,11 @@ export default {
     checkInputValue() {
       if (this.inputValue === "bonepit") {
         this.$router.push({ name: "/CC-09-1" });
+      } else {
+        this.shakeIt = true;
+        setTimeout(() => {
+          this.shakeIt = false;
+        }, 600);
       }
     },
   },

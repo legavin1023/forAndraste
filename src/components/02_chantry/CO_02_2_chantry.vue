@@ -214,6 +214,11 @@ export default {
           this.$store.dispatch("fadeOutAudio");
         }, 10000);
         this.$router.push({ name: "/TT-03-1-MM-03-2" });
+      } else {
+        this.shakeIt = true;
+        setTimeout(() => {
+          this.shakeIt = false;
+        }, 600);
       }
     },
   },

@@ -240,6 +240,11 @@ export default {
     checkInputValue() {
       if (this.inputValue === "anders") {
         this.$router.push({ name: "/TT-03-3-MM-03-4" });
+      } else {
+        this.shakeIt = true;
+        setTimeout(() => {
+          this.shakeIt = false;
+        }, 600);
       }
     },
   },

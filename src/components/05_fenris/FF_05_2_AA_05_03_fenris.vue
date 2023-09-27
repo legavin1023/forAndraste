@@ -513,6 +513,9 @@ export default {
     position: relative;
   }
 }
+.drag {
+  cursor: pointer;
+}
 
 .hide {
   opacity: 0;
