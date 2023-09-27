@@ -76,22 +76,57 @@
   </div>
 </template>
 
+<!-- Google tag (gtag.js) -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-TTEDSHEX0P"
+></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+  dataLayer.push(arguments);
+}
+gtag("js", new Date());
+
+gtag("config", "G-TTEDSHEX0P");
+</script>
+
 <script>
 export default {
   methods: {
     EE_10_1() {
+      gtag("event", "ending_01", {
+        event_category: "gameEnding",
+        event_label: "ending_A",
+        value: "ending_01",
+      });
       this.$store.dispatch("playNextSound");
       this.$router.push({ name: "/EE-01" });
     },
     EE_10_2() {
+      gtag("event", "ending_02", {
+        event_category: "gameEnding",
+        event_label: "ending_B",
+        value: "ending_02",
+      });
       this.$store.dispatch("playNextSound");
       this.$router.push({ name: "/EE-02" });
     },
     EE_10_3() {
+      gtag("event", "ending_03", {
+        event_category: "gameEnding",
+        event_label: "ending_C",
+        value: "ending_03",
+      });
       this.$store.dispatch("playNextSound");
       this.$router.push({ name: "/EE-03" });
     },
     EE_10_4() {
+      gtag("event", "ending_04", {
+        event_category: "gameEnding",
+        event_label: "ending_D",
+        value: "ending_04",
+      });
       this.$store.dispatch("playNextSound");
       this.$router.push({ name: "/EE-04" });
     },
