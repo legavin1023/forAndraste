@@ -175,6 +175,7 @@
           placeholder="여기에 입력해주세요."
           v-model="inputValue"
           @keyup.enter="checkInputValue"
+          :class="{ 'shake-animation': shakeIt }"
         />
       </div>
     </div>
@@ -188,6 +189,7 @@ export default {
     return {
       showArrow: true,
       inputValue: "", // 입력된 값 저장을 위한 변수
+      shakeIt: false, // 흔들림 애니메이션 활성화 플래그
     };
   },
   mounted() {
@@ -198,10 +200,10 @@ export default {
   },
   methods: {
     checkInputValue() {
-      // if (this.inputValue === "justice") {
-      // 입력된 값이 'justice'와 일치하는 경우, 다른 뷰로 전환
-      this.$router.push({ name: "/CO-07-3" });
-      // }
+      if (this.inputValue === "justice") {
+        // 입력된 값이 'justice'와 일치하는 경우, 다른 뷰로 전환
+        this.$router.push({ name: "/CO-07-3" });
+      }
     },
   },
 };
@@ -240,5 +242,44 @@ export default {
     opacity: 0;
     display: none;
   }
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-10px);
+  }
+  20% {
+    transform: translateX(10px);
+  }
+  30% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  60% {
+    transform: translateX(10px);
+  }
+  70% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  90% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake-animation {
+  animation: shake 0.6s;
 }
 </style>

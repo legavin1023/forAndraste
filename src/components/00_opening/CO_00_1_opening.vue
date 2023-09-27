@@ -17,6 +17,7 @@
           placeholder="여기에 입력해주세요."
           v-model="inputValue"
           @keyup.enter="checkInputValue"
+          :class="{ 'shake-animation': shakeIt }"
         />
       </div>
       <div class="content-hint">
@@ -36,21 +37,69 @@ export default {
   data() {
     return {
       inputValue: "", // 입력된 값 저장을 위한 변수
+      shakeIt: false, // 흔들림 애니메이션 활성화 플래그
     };
   },
   methods: {
     checkInputValue() {
-      this.$store.dispatch("terminateAudio");
-
-      this.$store.dispatch(
-        "setAudioSource",
-        `${process.env.BASE_URL}assets/sound/파도소리_배소리.mp3`
-      );
       this.$store.dispatch("playAudio");
       if (this.inputValue === "fortheandraste") {
+        this.$store.dispatch("terminateAudio");
+
+        this.$store.dispatch(
+          "setAudioSource",
+          `${process.env.BASE_URL}assets/sound/파도소리_배소리.mp3`
+        );
         this.$router.push({ name: "/CO-01-1" });
+      } else {
+        this.shakeIt = true;
+        setTimeout(() => {
+          this.shakeIt = false;
+        }, 600);
       }
     },
   },
 };
 </script>
+
+<style>
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-10px);
+  }
+  20% {
+    transform: translateX(10px);
+  }
+  30% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  60% {
+    transform: translateX(10px);
+  }
+  70% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  90% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake-animation {
+  animation: shake 0.6s;
+}
+</style>

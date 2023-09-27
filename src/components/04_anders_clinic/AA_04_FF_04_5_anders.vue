@@ -208,23 +208,28 @@ export default {
   height: 3200px;
 }
 .cat {
-  width: 900px;
+  width: 300px;
   margin: 150px auto;
   display: flex;
   justify-content: center;
   position: relative;
+  cursor: pointer;
 }
 
 .cat:nth-of-type(2) {
   right: -240px;
+  width: 460px;
 }
 .cat:nth-of-type(3) {
   right: -100px;
+  width: 370px;
 }
 .cat:nth-of-type(4) {
   right: 240px;
+  width: 370px;
 }
 .cat:nth-of-type(5) {
   right: -240px;
+  width: 280px;
 }
 </style>

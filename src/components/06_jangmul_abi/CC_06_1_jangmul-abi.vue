@@ -101,6 +101,7 @@
               alt="Click Image"
               :style="{ opacity: cell.opacity }"
               draggable="false"
+              class="coin"
             />
             <img
               v-else
@@ -108,6 +109,7 @@
               alt="Coin Image"
               :style="{ opacity: cell.opacity }"
               draggable="false"
+              class="coin"
             />
           </div>
         </div>
@@ -384,5 +386,8 @@ export default {
       transition: width 0.5s ease-in-out; // 너비가 바뀔 때 부드럽게 애니메이션 효과 적용
     }
   }
+}
+.coin {
+  cursor: pointer;
 }
 </style>

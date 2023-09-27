@@ -217,6 +217,7 @@ export default {
   top: 1900px;
   left: calc(50% - 175px);
   z-index: 100;
+  padding: 50px;
 }
 .content-button {
   z-index: 1000;
