@@ -92,26 +92,28 @@ v
 export default {
   methods: {
     handleAM() {
-      // 로컬 스토리지에 'love' 키로 'AA' 값을 저장
       localStorage.setItem("love", "AA");
-      // 로컬 스토리지에 'route' 키로 'AM' 값을 저장
       localStorage.setItem("route", "AM");
       this.$router.push({ name: "/CO-01-2" });
+      this.$store.dispatch("playNextSound");
     },
     handleAT() {
       localStorage.setItem("love", "AA");
       localStorage.setItem("route", "AT");
       this.$router.push({ name: "/CO-01-2" });
+      this.$store.dispatch("playNextSound");
     },
     handleFM() {
       localStorage.setItem("love", "FF");
       localStorage.setItem("route", "FM");
       this.$router.push({ name: "/CO-01-2" });
+      this.$store.dispatch("playNextSound");
     },
     handleFT() {
       localStorage.setItem("love", "FF");
       localStorage.setItem("route", "FT");
       this.$router.push({ name: "/CO-01-2" });
+      this.$store.dispatch("playNextSound");
     },
   },
   mounted() {

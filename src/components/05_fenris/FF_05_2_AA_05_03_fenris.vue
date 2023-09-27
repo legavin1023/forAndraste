@@ -363,6 +363,8 @@ export default {
   },
   methods: {
     checkPath() {
+      this.$store.dispatch("playNextSound");
+
       this.$router.push({ name: "/CC-06-1" });
     },
     shuffleImages() {
@@ -386,6 +388,12 @@ export default {
       event.target.classList.remove("drag-active");
     },
     drop(event) {
+      this.$store.dispatch("terminateEffectAudio");
+      this.$store.dispatch(
+        "setEffectAudioSource",
+        `${process.env.BASE_URL}assets/sound/fenris_hawke_word_puzzle.mp3`
+      );
+      this.$store.dispatch("playEffectAudio");
       const drop = event.target.closest(".drop");
       const image = JSON.parse(event.dataTransfer.getData("text/plain"));
 

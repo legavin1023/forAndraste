@@ -80,15 +80,19 @@
 export default {
   methods: {
     EE_10_1() {
+      this.$store.dispatch("playNextSound");
       this.$router.push({ name: "/EE-01" });
     },
     EE_10_2() {
+      this.$store.dispatch("playNextSound");
       this.$router.push({ name: "/EE-02" });
     },
     EE_10_3() {
+      this.$store.dispatch("playNextSound");
       this.$router.push({ name: "/EE-03" });
     },
     EE_10_4() {
+      this.$store.dispatch("playNextSound");
       this.$router.push({ name: "/EE-04" });
     },
     bothSuccess(key1, key2) {

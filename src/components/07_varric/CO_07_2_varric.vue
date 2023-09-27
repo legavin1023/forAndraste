@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="arrow-container varric">
+    <div class="arrow-container">
       <img
         src="@/assets/07_varric/arrow.png"
         alt="화살 이미지"
@@ -8,7 +8,7 @@
         v-if="showArrow"
       />
     </div>
-    <div class="topImage"></div>
+    <div class="topImage varric"></div>
     <div class="content">
       <p class="content-text">
         문을 열고 들어가자마자 어깨 위를 스치고 지나가는 화살에 반사적으로 몸을
@@ -190,6 +190,7 @@ export default {
       showArrow: true,
       inputValue: "", // 입력된 값 저장을 위한 변수
       shakeIt: false, // 흔들림 애니메이션 활성화 플래그
+      correctAnswer: "justice",
     };
   },
   mounted() {
@@ -200,10 +201,12 @@ export default {
   },
   methods: {
     checkInputValue() {
-      if (this.inputValue === "justice") {
+      if (this.inputValue === this.correctAnswer) {
         // 입력된 값이 'justice'와 일치하는 경우, 다른 뷰로 전환
+        this.$store.dispatch("playCorrectSound");
         this.$router.push({ name: "/CO-07-3" });
       } else {
+        this.$store.dispatch("playWrongSound");
         this.shakeIt = true;
         setTimeout(() => {
           this.shakeIt = false;

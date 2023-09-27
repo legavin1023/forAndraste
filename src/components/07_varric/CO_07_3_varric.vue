@@ -223,6 +223,12 @@ export default {
       }
     },
     flipCard(index) {
+      this.$store.dispatch("terminateEffectAudio");
+      this.$store.dispatch(
+        "setEffectAudioSource",
+        `${process.env.BASE_URL}assets/sound/flip_card_puzzle.mp3`
+      );
+      this.$store.dispatch("playEffectAudio");
       if (
         this.flips <= 0 ||
         this.cards[index].flipped ||

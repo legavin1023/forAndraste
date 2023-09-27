@@ -143,6 +143,13 @@ export default {
   },
   methods: {
     showNextImage(clickedImage) {
+      this.$store.dispatch("terminateEffectAudio");
+      this.$store.dispatch(
+        "setEffectAudioSource",
+        `${process.env.BASE_URL}assets/sound/cat_sound.mp3`
+      );
+      this.$store.dispatch("playEffectAudio");
+
       if (!this.imageStack || !this.images) return;
       // 이미 클릭된 이미지는 처리하지 않습니다.
       if (clickedImage.clicked) return;
@@ -164,6 +171,13 @@ export default {
       this.imageStack.push({ src: nextImageSrc, clicked: false });
     },
     scrollToTop() {
+      this.$store.dispatch("terminateBackgroundAudio");
+      this.$store.dispatch(
+        "setBackgroundAudioSource",
+        `${process.env.BASE_URL}assets/sound/anders_letter_last.mp3`
+      );
+      this.$store.dispatch("playBackgroundAudio");
+
       window.scrollTo(0, 0);
       const spans = this.$el.querySelectorAll("span");
 
@@ -190,6 +204,22 @@ export default {
       }
     },
     checkPath() {
+      this.$store.dispatch("playNextSound");
+
+      this.$store.dispatch("terminateBackgroundAudio");
+      this.$store.dispatch(
+        "setBackgroundAudioSource",
+        `${process.env.BASE_URL}assets/sound/fenris_mansion.mp3`
+      );
+      setTimeout(() => {
+        this.$store.dispatch("terminateEffectAudio");
+        this.$store.dispatch(
+          "setEffectAudioSource",
+          `${process.env.BASE_URL}assets/sound/fenris_mansion_fight.mp3`
+        );
+        this.$store.dispatch("playEffectAudio");
+      }, 1000);
+      this.$store.dispatch("playBackgroundAudio");
       this.$router.push({ name: "/CC-05-1" });
     },
   },

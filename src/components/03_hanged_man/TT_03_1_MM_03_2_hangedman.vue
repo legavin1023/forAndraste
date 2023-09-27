@@ -229,6 +229,7 @@ export default {
       love: localStorage.getItem("love"),
       route: localStorage.getItem("route"),
       showComponent: true,
+      correctAnswer: "anders",
     };
   },
   mounted() {
@@ -238,9 +239,17 @@ export default {
   },
   methods: {
     checkInputValue() {
-      if (this.inputValue === "anders") {
+      if (this.inputValue === this.correctAnswer) {
+        this.$store.dispatch("terminateBackgroundAudio");
+        this.$store.dispatch(
+          "setBackgroundAudioSource",
+          `${process.env.BASE_URL}assets/sound/anders_clinic.mp3`
+        );
+        this.$store.dispatch("playBackgroundAudio");
+        this.$store.dispatch("playCorrectSound");
         this.$router.push({ name: "/TT-03-3-MM-03-4" });
       } else {
+        this.$store.dispatch("playWrongSound");
         this.shakeIt = true;
         setTimeout(() => {
           this.shakeIt = false;

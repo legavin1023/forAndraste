@@ -138,6 +138,14 @@
 export default {
   methods: {
     checkPath() {
+      this.$store.dispatch("terminateBackgroundAudio");
+      this.$store.dispatch(
+        "setBackgroundAudioSource",
+        `${process.env.BASE_URL}assets/sound/ending_comeotme.mp3`
+      );
+      this.$store.dispatch("playBackgroundAudio");
+      this.$store.dispatch("playNextSound");
+
       this.$router.push({ name: "/ES-bad" });
     },
   },

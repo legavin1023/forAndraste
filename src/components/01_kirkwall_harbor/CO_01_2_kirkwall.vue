@@ -94,7 +94,15 @@ export default {
       this.startTime = 0;
     },
     checkPath() {
-      this.$store.dispatch("terminateAudio");
+      this.$store.dispatch("terminateBackgroundAudio");
+      this.$store.dispatch(
+        "setBackgroundAudioSource",
+        `${process.env.BASE_URL}assets/sound/a_destroyed_chantry.mp3`
+      );
+      this.$store.dispatch("playBackgroundAudio");
+
+      this.$store.dispatch("playNextSound");
+
       this.$router.push({ name: "/CO-02-1" });
     },
   },

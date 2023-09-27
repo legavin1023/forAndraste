@@ -150,6 +150,12 @@
 export default {
   methods: {
     checkPath() {
+      this.$store.dispatch("terminateBackgroundAudio");
+      this.$store.dispatch(
+        "setBackgroundAudioSource",
+        `${process.env.BASE_URL}assets/sound/ending_anders.mp3`
+      );
+      this.$store.dispatch("playBackgroundAudio");
       this.$router.push({ name: "/ES-good" });
     },
   },

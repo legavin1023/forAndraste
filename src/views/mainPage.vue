@@ -134,10 +134,10 @@ export default {
   methods: {
     checkPath() {
       this.$store.dispatch(
-        "setAudioSource",
+        "setBackgroundAudioSource",
         `${process.env.BASE_URL}assets/sound/종이소리.wav`
       );
-      this.$store.dispatch("playAudio");
+      this.$store.dispatch("playBackgroundAudio");
 
       this.$router.push({ name: "/CO-00-1" });
     },

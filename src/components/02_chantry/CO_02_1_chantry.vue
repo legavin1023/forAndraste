@@ -98,6 +98,7 @@
             </div>
           </div>
         </transition-group>
+        <button @click="shuffleAndReset" class="sBtn">퍼즐 다시 섞기</button>
       </div>
 
       <div class="content-button mt90">
@@ -151,7 +152,15 @@ export default {
     },
   },
   methods: {
+    shuffleAndReset() {
+      this.setup(); // 퍼즐 타일을 초기화
+      this.shuffleTiles(); // 타일을 섞습니다.
+      this.isShuffled = false; // 퍼즐이 섞였다는 플래그를 리셋
+      this.showButton = false; // 승리 버튼을 숨깁니다.
+    },
     checkPath() {
+      this.$store.dispatch("playNextSound");
+
       this.$router.push({ name: "/CO-02-2" });
     },
     setup() {
@@ -296,5 +305,15 @@ export default {
 
 .slide-move {
   transition: 100ms linear;
+}
+.sBtn {
+  display: block;
+  text-align: center;
+  border-radius: 300px;
+  color: #fff;
+  background: #948072;
+  font-size: 22px;
+  padding: 14px 97px;
+  margin: 40px auto;
 }
 </style>

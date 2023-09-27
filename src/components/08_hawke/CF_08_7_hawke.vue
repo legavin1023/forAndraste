@@ -78,13 +78,16 @@ export default {
       route: localStorage.getItem("route"),
       inputValue: "",
       shakeIt: false, // 흔들림 애니메이션 활성화 플래그
+      correctAnswer: "gallows",
     };
   },
   methods: {
     checkInputValue() {
-      if (this.inputValue === "gallows") {
+      if (this.inputValue === this.correctAnswer) {
+        this.$store.dispatch("playCorrectSound");
         this.$router.push({ name: "/CC-09-1" });
       } else {
+        this.$store.dispatch("playWrongSound");
         this.shakeIt = true;
         setTimeout(() => {
           this.shakeIt = false;

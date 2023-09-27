@@ -198,23 +198,27 @@ export default {
     return {
       inputValue: "", // 입력된 값 저장을 위한 변수
       shakeIt: false, // 흔들림 애니메이션 활성화 플래그
+      correctAnswer: "12142715",
     };
   },
   methods: {
     checkInputValue() {
-      if (this.inputValue === "12142715") {
-        this.$store.dispatch("terminateAudio");
+      if (this.inputValue === this.correctAnswer) {
+        this.$store.dispatch("playCorrectSound");
+
+        this.$store.dispatch("terminateBackgroundAudio");
 
         this.$store.dispatch(
-          "setAudioSource",
+          "setBackgroundAudioSource",
           `${process.env.BASE_URL}assets/sound/떠드는 소리.flac`
         );
-        this.$store.dispatch("playAudio");
+        this.$store.dispatch("playBackgroundAudio");
         setTimeout(() => {
           this.$store.dispatch("fadeOutAudio");
         }, 10000);
         this.$router.push({ name: "/TT-03-1-MM-03-2" });
       } else {
+        this.$store.dispatch("playWrongSound");
         this.shakeIt = true;
         setTimeout(() => {
           this.shakeIt = false;

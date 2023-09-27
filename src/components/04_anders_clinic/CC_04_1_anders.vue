@@ -224,6 +224,13 @@ export default {
       this.wrongGuesses = [];
     },
     makeGuess(letter) {
+      this.$store.dispatch("terminateEffectAudio");
+      this.$store.dispatch(
+        "setEffectAudioSource",
+        `${process.env.BASE_URL}assets/sound/cat_btn.mp3`
+      );
+      this.$store.dispatch("playEffectAudio");
+
       if (this.chances === 0) {
         return;
       }

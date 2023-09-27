@@ -5,49 +5,82 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    audio: new Audio(),
-    isPlaying: false,
+    backgroundAudio: new Audio(),
+    effectAudio: new Audio(),
+    isBackgroundPlaying: false,
+    isEffectPlaying: false,
     shouldTerminate: false,
     volume: 1.0,
   },
   mutations: {
     setVolume(state, volume) {
       state.volume = volume;
-      state.audio.volume = volume;
+      state.backgroundAudio.volume = volume;
+      // state.effectAudio.volume = volume;
     },
-    SET_AUDIO_SOURCE(state, src) {
-      state.audio.src = src;
+    SET_BACKGROUND_AUDIO_SOURCE(state, src) {
+      state.backgroundAudio.src = src;
     },
-    PLAY_AUDIO(state) {
-      state.audio.play();
-      state.isPlaying = true;
+    PLAY_BACKGROUND_AUDIO(state) {
+      state.backgroundAudio.play();
+      state.isBackgroundPlaying = true;
     },
-    PAUSE_AUDIO(state) {
-      state.audio.pause();
-      state.isPlaying = false;
+    PAUSE_BACKGROUND_AUDIO(state) {
+      state.backgroundAudio.pause();
+      state.isBackgroundPlaying = false;
     },
-    TERMINATE_AUDIO(state) {
-      state.audio.pause();
-      state.audio.currentTime = 0; // 오디오 위치 초기화
-      state.audio.src = ""; // 오디오 소스 제거
-      state.isPlaying = false;
-      state.shouldTerminate = true;
+    TERMINATE_BACKGROUND_AUDIO(state) {
+      state.backgroundAudio.pause();
+      state.backgroundAudio.currentTime = 0;
+      state.backgroundAudio.src = "";
+      state.isBackgroundPlaying = false;
+    },
+
+    SET_EFFECT_AUDIO_SOURCE(state, src) {
+      state.effectAudio.src = src;
+    },
+    PLAY_EFFECT_AUDIO(state) {
+      state.effectAudio.play();
+      state.isEffectPlaying = true;
+    },
+    PAUSE_EFFECT_AUDIO(state) {
+      state.effectAudio.pause();
+      state.isEffectPlaying = false;
+    },
+    TERMINATE_EFFECT_AUDIO(state) {
+      state.effectAudio.pause();
+      state.effectAudio.currentTime = 0;
+      state.effectAudio.src = "";
+      state.isEffectPlaying = false;
     },
   },
   actions: {
-    setAudioSource({ commit }, src) {
-      commit("SET_AUDIO_SOURCE", src);
+    setBackgroundAudioSource({ commit }, src) {
+      commit("SET_BACKGROUND_AUDIO_SOURCE", src);
     },
-    playAudio({ commit }) {
-      commit("PLAY_AUDIO");
-      console.log("나옴");
+    playBackgroundAudio({ commit }) {
+      commit("PLAY_BACKGROUND_AUDIO");
     },
-    pauseAudio({ commit }) {
-      commit("PAUSE_AUDIO");
+    pauseBackgroundAudio({ commit }) {
+      commit("PAUSE_BACKGROUND_AUDIO");
     },
-    terminateAudio({ commit }) {
-      commit("TERMINATE_AUDIO");
+    terminateBackgroundAudio({ commit }) {
+      commit("TERMINATE_BACKGROUND_AUDIO");
     },
+
+    setEffectAudioSource({ commit }, src) {
+      commit("SET_EFFECT_AUDIO_SOURCE", src);
+    },
+    playEffectAudio({ commit }) {
+      commit("PLAY_EFFECT_AUDIO");
+    },
+    pauseEffectAudio({ commit }) {
+      commit("PAUSE_EFFECT_AUDIO");
+    },
+    terminateEffectAudio({ commit }) {
+      commit("TERMINATE_EFFECT_AUDIO");
+    },
+    //--------------------------------------------
     fadeOutAudio({ state, commit }) {
       let fadeOutInterval = setInterval(() => {
         let volume = state.volume - 0.05;
@@ -59,6 +92,29 @@ export default new Vuex.Store({
           commit("setVolume", volume);
         }
       }, 200); // 200ms 간격으로 볼륨 감소
+    },
+    //--------------------------------------------
+
+    playCorrectSound({ dispatch }) {
+      dispatch(
+        "setEffectAudioSource",
+        `${process.env.BASE_URL}assets/sound/input_pass.mp3`
+      ); // 정답 소리 파일 경로
+      dispatch("playEffectAudio");
+    },
+    playWrongSound({ dispatch }) {
+      dispatch(
+        "setEffectAudioSource",
+        `${process.env.BASE_URL}assets/sound/input_fail.mp3`
+      ); // 오답 소리 파일 경로
+      dispatch("playEffectAudio");
+    },
+    playNextSound({ dispatch }) {
+      dispatch(
+        "setEffectAudioSource",
+        `${process.env.BASE_URL}assets/sound/btn_next.mp3`
+      ); // 오답 소리 파일 경로
+      dispatch("playEffectAudio");
     },
   },
 });

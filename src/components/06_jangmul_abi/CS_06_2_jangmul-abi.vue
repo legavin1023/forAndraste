@@ -174,13 +174,16 @@ export default {
     return {
       inputValue: "", // 입력된 값 저장을 위한 변수
       shakeIt: false, // 흔들림 애니메이션 활성화 플래그
+      correctAnswer: "varric",
     };
   },
   methods: {
     checkInputValue() {
-      if (this.inputValue === "varric") {
+      if (this.inputValue === this.correctAnswer) {
         this.$router.push({ name: "/CO-07-1" });
+        this.$store.dispatch("playCorrectSound");
       } else {
+        this.$store.dispatch("playWrongSound");
         this.shakeIt = true;
         setTimeout(() => {
           this.shakeIt = false;

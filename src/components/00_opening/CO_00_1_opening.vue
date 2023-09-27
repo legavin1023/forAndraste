@@ -38,20 +38,22 @@ export default {
     return {
       inputValue: "", // 입력된 값 저장을 위한 변수
       shakeIt: false, // 흔들림 애니메이션 활성화 플래그
+      correctAnswer: "fortheandraste",
     };
   },
   methods: {
     checkInputValue() {
-      this.$store.dispatch("playAudio");
-      if (this.inputValue === "fortheandraste") {
-        this.$store.dispatch("terminateAudio");
-
+      if (this.inputValue === this.correctAnswer) {
+        this.$store.dispatch("terminateBackgroundAudio");
         this.$store.dispatch(
-          "setAudioSource",
+          "setBackgroundAudioSource",
           `${process.env.BASE_URL}assets/sound/파도소리_배소리.mp3`
         );
+        this.$store.dispatch("playBackgroundAudio");
+        this.$store.dispatch("playCorrectSound");
         this.$router.push({ name: "/CO-01-1" });
       } else {
+        this.$store.dispatch("playWrongSound");
         this.shakeIt = true;
         setTimeout(() => {
           this.shakeIt = false;

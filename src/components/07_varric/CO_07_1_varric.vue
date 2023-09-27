@@ -201,6 +201,12 @@ export default {
       }
     },
     breakPin() {
+      this.$store.dispatch("terminateEffectAudio");
+      this.$store.dispatch(
+        "setEffectAudioSource",
+        `${process.env.BASE_URL}assets/sound/pin.mp3`
+      );
+      this.$store.dispatch("playEffectAudio");
       this.gamePaused = true;
       clearInterval(this.cylRotationInterval);
       this.numPins--;
@@ -267,13 +273,19 @@ export default {
     },
     unlock() {
       setTimeout(() => {
-        this.$store.dispatch("terminateAudio");
+        this.$store.dispatch("terminateBackgroundAudio");
+        this.$store.dispatch(
+          "setBackgroundAudioSource",
+          `${process.env.BASE_URL}assets/sound/lock.mp3`
+        );
+        this.$store.dispatch("playBackgroundAudio");
+        this.$store.dispatch("terminateEffectAudio");
 
         this.$store.dispatch(
-          "setAudioSource",
+          "setEffectAudioSource",
           `${process.env.BASE_URL}assets/sound/화살소리.mp3`
         );
-        this.$store.dispatch("playAudio");
+        this.$store.dispatch("playEffectAudio");
         this.$router.push({ name: "/CO-07-2" });
       }, 300);
     },

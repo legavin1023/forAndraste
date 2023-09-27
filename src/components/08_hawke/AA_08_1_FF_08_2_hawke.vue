@@ -347,6 +347,7 @@ export default {
           numericValue += 1;
           // 결과를 다시 로컬 스토리지에 저장합니다.
           localStorage.setItem("pv2", numericValue.toString());
+          this.$store.dispatch("playNextSound");
           this.$router.push({ name: "/AT-08-3-AM-08-4_FT-08-5-FM-08-6" });
         }, 500);
         // 여기서 게임을 리셋하거나 다른 로직을 실행할 수 있습니다.
@@ -369,6 +370,13 @@ export default {
       this.draggingFrom = this.userOrder.indexOf(imageId); // 이미지의 원래 위치를 기억합니다.
     },
     onDrop(index, event) {
+      this.$store.dispatch("terminateEffectAudio");
+      this.$store.dispatch(
+        "setEffectAudioSource",
+        `${process.env.BASE_URL}assets/sound/cat_btn.mp3`
+      );
+      this.$store.dispatch("playEffectAudio");
+
       const imageId = event.dataTransfer.getData("imageId");
 
       // 드래그된 영역에 이미 이미지가 있는 경우

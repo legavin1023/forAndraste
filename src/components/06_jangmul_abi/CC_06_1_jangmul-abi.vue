@@ -276,6 +276,13 @@ export default {
     cellClicked(rowIndex, colIndex) {
       const cell = this.grid[rowIndex][colIndex];
       if (this.gameInProgress && cell.active) {
+        this.$store.dispatch("terminateEffectAudio");
+        this.$store.dispatch(
+          "setEffectAudioSource",
+          `${process.env.BASE_URL}assets/sound/coin_get.mp3`
+        );
+        this.$store.dispatch("playEffectAudio");
+
         // 이미지가 클릭되었을 때만 처리
         clearTimeout(this.timer);
         cell.active = false;

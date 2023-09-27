@@ -162,6 +162,8 @@ export default {
       }
     },
     checkPath() {
+      this.$store.dispatch("playNextSound");
+
       this.$router.push({ name: "/TT-03-5-MM-03-6" });
     },
     drawBlack(event) {
