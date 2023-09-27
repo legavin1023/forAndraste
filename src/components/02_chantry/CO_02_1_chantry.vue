@@ -105,7 +105,6 @@
         <button @click="checkPath" v-if="showButton">
           중갑옷으로 갈아입는다.
         </button>
-        <button @click="checkPath">중갑옷으로 갈아입는다.</button>
       </div>
     </div>
 

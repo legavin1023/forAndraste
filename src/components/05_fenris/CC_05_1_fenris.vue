@@ -93,7 +93,6 @@
         </div>
       </div>
       <button class="persuade-button" @click="persuade">설득하기</button>
-      <button class="bt" @click="click">임시버튼</button>
 
       <div class="bottomImage"></div>
     </div>

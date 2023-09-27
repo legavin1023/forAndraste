@@ -337,6 +337,15 @@ export default {
   left: calc(50% - 200px);
   top: 100px;
 }
+#cylinder::after {
+  content: "";
+  background: url("@/assets/07_varric/pin/game.png");
+  width: 411.778px;
+  height: 119.307px;
+  display: block;
+  position: relative;
+  top: 370px;
+}
 .driverW {
   width: 100%;
   overflow-x: hidden;

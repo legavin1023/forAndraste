@@ -130,7 +130,7 @@ export default class Eye {
       this.context.translate(this.iris.x * 0.1, 0);
       this.context.scale(0.9, 1);
       this.context.strokeStyle = "rgba(0,0,0,0.5)";
-      this.context.fillStyle = "rgba(255,0,0,0.9)";
+      this.context.fillStyle = "#964b00";
       this.context.lineWidth = 2;
       this.context.beginPath();
       this.context.arc(

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Eye from "@/components/05_fenris/eyes/eyesMove.js";
+import Eye from "@/components/03_hanged_man/eyes/eyesMove.js";
 export default {
   name: "eyesFadeOutVue",
   data() {

@@ -216,7 +216,7 @@
 </template>
 
 <script>
-import eyesFadeOutVue from "@/components/05_fenris/eyes/eyesFadeOut.vue";
+import eyesFadeOutVue from "@/components/03_hanged_man/eyes/eyesFadeOut.vue";
 
 export default {
   components: {
