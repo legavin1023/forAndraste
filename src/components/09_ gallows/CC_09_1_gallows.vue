@@ -96,16 +96,40 @@
 export default {
   methods: {
     EE_10_1() {
+      this.$gtm.trackEvent({
+        event: "Button Click Ending 1",
+        category: "Button",
+        action: "Click",
+        label: "Button Click Ending 1",
+      });
       this.$router.push({ name: "/EE-01" });
     },
     EE_10_2() {
-      this.$router.push({ name: "/EE-02" });
+      this.$gtm.trackEvent({
+        event: "Button Click Ending 2",
+        category: "Button",
+        action: "Click",
+        label: "Button Click Ending 2",
+      });
+      this.this.$router.push({ name: "/EE-02" });
     },
     EE_10_3() {
-      this.$router.push({ name: "/EE-03" });
+      this.$gtm.trackEvent({
+        event: "Button Click Ending 3",
+        category: "Button",
+        action: "Click",
+        label: "Button Click Ending 3",
+      });
+      this.this.$router.push({ name: "/EE-03" });
     },
     EE_10_4() {
-      this.$router.push({ name: "/EE-04" });
+      this.$gtm.trackEvent({
+        event: "Button Click Ending 4",
+        category: "Button",
+        action: "Click",
+        label: "Button Click Ending 4",
+      });
+      this.this.$router.push({ name: "/EE-04" });
     },
     bothSuccess(key1, key2) {
       const value1 = localStorage.getItem(key1);
