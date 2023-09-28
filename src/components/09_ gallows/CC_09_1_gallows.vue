@@ -10,6 +10,7 @@
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
     <div class="topImage gallows"></div>
     <div class="content">
       <p class="content-text">
@@ -113,10 +114,7 @@ gtag("js", new Date());
 
 gtag("config", "G-ZLVRBZ8FRL");
 </script>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLP29MTB"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
 <script>
 export default {
   methods: {
