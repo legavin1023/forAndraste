@@ -132,7 +132,6 @@
     <div class="bottomImage"></div>
   </div>
 </template>
-<!-- Google tag (gtag.js) -->
 
 <script>
 export default {
