@@ -111,7 +111,7 @@ export default {
         action: "Click",
         label: "Button Click Ending 2",
       });
-      this.this.$router.push({ name: "/EE-02" });
+      this.$router.push({ name: "/EE-02" });
     },
     EE_10_3() {
       this.$gtm.trackEvent({
@@ -120,7 +120,7 @@ export default {
         action: "Click",
         label: "Button Click Ending 3",
       });
-      this.this.$router.push({ name: "/EE-03" });
+      this.$router.push({ name: "/EE-03" });
     },
     EE_10_4() {
       this.$gtm.trackEvent({
@@ -129,7 +129,7 @@ export default {
         action: "Click",
         label: "Button Click Ending 4",
       });
-      this.this.$router.push({ name: "/EE-04" });
+      this.$router.push({ name: "/EE-04" });
     },
     bothSuccess(key1, key2) {
       const value1 = localStorage.getItem(key1);
