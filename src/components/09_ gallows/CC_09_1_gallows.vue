@@ -1,5 +1,15 @@
 <template>
   <div>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TLP29MTB"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="topImage gallows"></div>
     <div class="content">
       <p class="content-text">
@@ -75,11 +85,24 @@
     <div class="bottomImage"></div>
   </div>
 </template>
-
+<!-- Google Tag Manager -->
+<script>
+(function (w, d, s, l, i) {
+  w[l] = w[l] || [];
+  w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+  var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s),
+    dl = l != "dataLayer" ? "&l=" + l : "";
+  j.async = true;
+  j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+  f.parentNode.insertBefore(j, f);
+})(window, document, "script", "dataLayer", "GTM-TLP29MTB");
+</script>
+<!-- End Google Tag Manager -->
 <!-- Google tag (gtag.js) -->
 <script
   async
-  src="https://www.googletagmanager.com/gtag/js?id=G-TTEDSHEX0P"
+  src="https://www.googletagmanager.com/gtag/js?id=G-ZLVRBZ8FRL"
 ></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -88,46 +111,25 @@ function gtag() {
 }
 gtag("js", new Date());
 
-gtag("config", "G-TTEDSHEX0P");
+gtag("config", "G-ZLVRBZ8FRL");
 </script>
-
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLP29MTB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <script>
 export default {
   methods: {
     EE_10_1() {
-      gtag("event", "ending_01", {
-        event_category: "gameEnding",
-        event_label: "ending_A",
-        value: "ending_01",
-      });
-      this.$store.dispatch("playNextSound");
       this.$router.push({ name: "/EE-01" });
     },
     EE_10_2() {
-      gtag("event", "ending_02", {
-        event_category: "gameEnding",
-        event_label: "ending_B",
-        value: "ending_02",
-      });
-      this.$store.dispatch("playNextSound");
       this.$router.push({ name: "/EE-02" });
     },
     EE_10_3() {
-      gtag("event", "ending_03", {
-        event_category: "gameEnding",
-        event_label: "ending_C",
-        value: "ending_03",
-      });
-      this.$store.dispatch("playNextSound");
       this.$router.push({ name: "/EE-03" });
     },
     EE_10_4() {
-      gtag("event", "ending_04", {
-        event_category: "gameEnding",
-        event_label: "ending_D",
-        value: "ending_04",
-      });
-      this.$store.dispatch("playNextSound");
       this.$router.push({ name: "/EE-04" });
     },
     bothSuccess(key1, key2) {

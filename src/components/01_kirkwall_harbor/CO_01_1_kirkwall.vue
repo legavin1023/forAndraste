@@ -87,63 +87,29 @@ v
     <div class="bottomImage"></div>
   </div>
 </template>
-<!-- Google tag (gtag.js) -->
-<script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=G-TTEDSHEX0P"
-></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag() {
-  dataLayer.push(arguments);
-}
-gtag("js", new Date());
-
-gtag("config", "G-TTEDSHEX0P");
-</script>
 
 <script>
 export default {
   methods: {
     handleAM() {
-      gtag("event", "love_A_M", {
-        event_category: "gameEnding",
-        event_label: "love_A_M",
-        value: "love_A_M",
-      });
       localStorage.setItem("love", "AA");
       localStorage.setItem("route", "AM");
       this.$router.push({ name: "/CO-01-2" });
       this.$store.dispatch("playNextSound");
     },
     handleAT() {
-      gtag("event", "love_A_T", {
-        event_category: "gameEnding",
-        event_label: "love_A_T",
-        value: "love_A_T",
-      });
       localStorage.setItem("love", "AA");
       localStorage.setItem("route", "AT");
       this.$router.push({ name: "/CO-01-2" });
       this.$store.dispatch("playNextSound");
     },
     handleFM() {
-      gtag("event", "love_F_M", {
-        event_category: "gameEnding",
-        event_label: "love_F_M",
-        value: "love_F_M",
-      });
       localStorage.setItem("love", "FF");
       localStorage.setItem("route", "FM");
       this.$router.push({ name: "/CO-01-2" });
       this.$store.dispatch("playNextSound");
     },
     handleFT() {
-      gtag("event", "love_F_T", {
-        event_category: "gameEnding",
-        event_label: "love_F_T",
-        value: "love_F_T",
-      });
       localStorage.setItem("love", "FF");
       localStorage.setItem("route", "FT");
       this.$router.push({ name: "/CO-01-2" });
