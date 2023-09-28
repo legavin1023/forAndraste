@@ -183,7 +183,6 @@ export default {
         Date.now() - this.pinLastDamaged > this.pinDamageInterval
       ) {
         this.pinHealth -= this.pinDamage;
-        console.log("damagePin, pinHealth=", this.pinHealth);
         this.pinLastDamaged = Date.now();
 
         // Pin damage and lock jiggle animation

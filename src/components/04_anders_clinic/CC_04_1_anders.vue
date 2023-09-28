@@ -241,7 +241,6 @@ export default {
         this.wrongGuesses.push(letter);
         this.chances--;
       }
-      console.log("Chances left:", this.chances); // Add this line
       if (this.currentWord === this.wordToGuess) {
         let currentValue = localStorage.getItem("pv1");
         // 가져온 값을 숫자로 변환합니다.
