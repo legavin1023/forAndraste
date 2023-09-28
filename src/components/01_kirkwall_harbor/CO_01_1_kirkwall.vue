@@ -68,17 +68,17 @@ v
         <span></span>
       </div>
       <div class="content-button love mt70">
-        <button @click="handleAM()">
+        <button @click="handleAM()" id="Anders_M">
           호크는 앤더스와 연인관계였고, 이 재앙에서 메이지를 위해 싸웠네.
         </button>
-        <button @click="handleAT()">
+        <button @click="handleAT()" id="Anders_T">
           호크는 앤더스와 연인관계였고, 이 재앙에서 템플러를 위해 싸웠네.
         </button>
-        <button @click="handleFM()">
+        <button @click="handleFM()" id="Fenris_M">
           호크는 펜리스라는 엘프와 연인관계였고, 이 재앙에서 메이지를 위해
           싸웠네.
         </button>
-        <button @click="handleFT()">
+        <button @click="handleFT()" id="Fenris_T">
           호크는 펜리스라는 엘프와 연인관계였고, 이 재앙에서 템플러를 위해
           싸웠네.
         </button>

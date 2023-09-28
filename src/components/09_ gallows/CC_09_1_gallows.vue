@@ -56,18 +56,34 @@
         </ul>
       </div>
       <div class="content-button mt70">
-        <button @click="EE_10_1()" :disabled="!bothSuccess('pv1', 'pv2')">
+        <button
+          @click="EE_10_1()"
+          :disabled="!bothSuccess('pv1', 'pv2')"
+          id="Ending_1"
+        >
           앤더스가 어떻게 챈트리를 폭발시켰고, 어디로 갔는지 알아냈습니다.
         </button>
-        <button @click="EE_10_2()" :disabled="!firstSuccessOnly('pv1', 'pv2')">
+        <button
+          @click="EE_10_2()"
+          :disabled="!firstSuccessOnly('pv1', 'pv2')"
+          id="Ending_2"
+        >
           앤더스가 챈트리를 폭발시킨 방법은 짐작이 가지만... <br />
           행방은 더 알아봐야 합니다.
         </button>
-        <button @click="EE_10_3()" :disabled="!secondSuccessOnly('pv1', 'pv2')">
+        <button
+          @click="EE_10_3()"
+          :disabled="!secondSuccessOnly('pv1', 'pv2')"
+          id="Ending_3"
+        >
           앤더스가 어떻게 챈터리를 폭발시켰는지는 못찾았지만,<br />
           어디로 갔는지 짐작가는 곳이 있습니다
         </button>
-        <button @click="EE_10_4()" :disabled="!bothFailed('pv1', 'pv2')">
+        <button
+          @click="EE_10_4()"
+          :disabled="!bothFailed('pv1', 'pv2')"
+          id="Ending_4"
+        >
           앤더스에 대해서 알아내지 못했습니다.
         </button>
       </div>
