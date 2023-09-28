@@ -97,7 +97,7 @@ export default {
         category: "Button",
         action: "Click",
         label: "Button Click Love AM",
-        value: 1,
+        value: "Button Click Love AM",
       });
       localStorage.setItem("love", "AA");
       localStorage.setItem("route", "AM");
@@ -110,7 +110,7 @@ export default {
         category: "Button",
         action: "Click",
         label: "Button Click Love AT",
-        value: 1,
+        value: "Button Click Love AT",
       });
       localStorage.setItem("love", "AA");
       localStorage.setItem("route", "AT");
@@ -123,7 +123,7 @@ export default {
         category: "Button",
         action: "Click",
         label: "Button Click Love FM",
-        value: 1,
+        value: "Button Click Love FM",
       });
       localStorage.setItem("love", "FF");
       localStorage.setItem("route", "FM");
@@ -136,7 +136,7 @@ export default {
         category: "Button",
         action: "Click",
         label: "Button Click Love FT",
-        value: 1,
+        value: "Button Click Love FT",
       });
       localStorage.setItem("love", "FF");
       localStorage.setItem("route", "FT");
