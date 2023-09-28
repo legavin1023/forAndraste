@@ -92,24 +92,52 @@ v
 export default {
   methods: {
     handleAM() {
+      this.$gtm.trackEvent({
+        event: "Button Click Love AM",
+        category: "Button",
+        action: "Click",
+        label: "Button Click Love AM",
+        value: 1,
+      });
       localStorage.setItem("love", "AA");
       localStorage.setItem("route", "AM");
       this.$router.push({ name: "/CO-01-2" });
       this.$store.dispatch("playNextSound");
     },
     handleAT() {
+      this.$gtm.trackEvent({
+        event: "Button Click Love AT",
+        category: "Button",
+        action: "Click",
+        label: "Button Click Love AT",
+        value: 1,
+      });
       localStorage.setItem("love", "AA");
       localStorage.setItem("route", "AT");
       this.$router.push({ name: "/CO-01-2" });
       this.$store.dispatch("playNextSound");
     },
     handleFM() {
+      this.$gtm.trackEvent({
+        event: "Button Click Love FM",
+        category: "Button",
+        action: "Click",
+        label: "Button Click Love FM",
+        value: 1,
+      });
       localStorage.setItem("love", "FF");
       localStorage.setItem("route", "FM");
       this.$router.push({ name: "/CO-01-2" });
       this.$store.dispatch("playNextSound");
     },
     handleFT() {
+      this.$gtm.trackEvent({
+        event: "Button Click Love FT",
+        category: "Button",
+        action: "Click",
+        label: "Button Click Love FT",
+        value: 1,
+      });
       localStorage.setItem("love", "FF");
       localStorage.setItem("route", "FT");
       this.$router.push({ name: "/CO-01-2" });
