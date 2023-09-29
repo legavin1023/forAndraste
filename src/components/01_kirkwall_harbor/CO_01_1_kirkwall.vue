@@ -92,7 +92,7 @@ v
 export default {
   methods: {
     handleAM() {
-      this.$gtm.push({
+      this.$gtm.trackEvent({
         event: "Button Click Love AM",
       });
       localStorage.setItem("love", "AA");
@@ -101,7 +101,7 @@ export default {
       this.$store.dispatch("playNextSound");
     },
     handleAT() {
-      this.$gtm.push({
+      this.$gtm.trackEvent({
         event: "Button Click Love AT",
       });
       localStorage.setItem("love", "AA");
@@ -110,7 +110,7 @@ export default {
       this.$store.dispatch("playNextSound");
     },
     handleFM() {
-      this.$gtm.push({
+      this.$gtm.trackEvent({
         event: "Button Click Love FM",
       });
       localStorage.setItem("love", "FF");
@@ -119,7 +119,7 @@ export default {
       this.$store.dispatch("playNextSound");
     },
     handleFT() {
-      this.$gtm.push({
+      this.$gtm.trackEvent({
         event: "Button Click Love FT",
       });
       localStorage.setItem("love", "FF");
