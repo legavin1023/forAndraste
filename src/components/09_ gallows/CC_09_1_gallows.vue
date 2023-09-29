@@ -96,25 +96,25 @@
 export default {
   methods: {
     EE_10_1() {
-      this.$gtm.push({
+      this.$gtm.trackEvent({
         event: "Button Click Ending 1",
       });
       this.$router.push({ name: "/EE-01" });
     },
     EE_10_2() {
-      this.$gtm.push({
+      this.$gtm.trackEvent({
         event: "Button Click Ending 2",
       });
       this.$router.push({ name: "/EE-02" });
     },
     EE_10_3() {
-      this.$gtm.push({
+      this.$gtm.trackEvent({
         event: "Button Click Ending 3",
       });
       this.$router.push({ name: "/EE-03" });
     },
     EE_10_4() {
-      this.$gtm.push({
+      this.$gtm.trackEvent({
         event: "Button Click Ending 4",
       });
       this.$router.push({ name: "/EE-04" });
