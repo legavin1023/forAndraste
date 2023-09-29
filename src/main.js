@@ -1,11 +1,5 @@
 import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
 
-import "@/assets/css/reset.css";
-import "@/assets/scss/index.scss";
-import "animate.css";
 import VueGtm from "vue-gtm";
 
 Vue.use(VueGtm, {
@@ -19,9 +13,16 @@ Vue.prototype.$gtag = window.gtag = function () {
   window.dataLayer.push(arguments);
 };
 window.dataLayer = window.dataLayer || [];
-window.dataLayer = window.dataLayer || [];
 window.gtag("js", new Date());
 window.gtag("config", "G-QCVE085BGW"); // 여기에 Google Analytics 추적 ID를 입력하세요.
+
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
+
+import "@/assets/css/reset.css";
+import "@/assets/scss/index.scss";
+import "animate.css";
 
 Vue.config.productionTip = false;
 
