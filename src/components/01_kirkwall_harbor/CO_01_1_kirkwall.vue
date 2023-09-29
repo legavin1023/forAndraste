@@ -94,8 +94,8 @@ export default {
     handleAM() {
       this.$gtm.push({
         event: "Button Click Love AM",
-       event_category: "Button",
-        event_action : "Click",
+        event_category: "Button",
+        event_action: "Click",
         event_label: "Button Click Love AM",
       });
       localStorage.setItem("love", "AA");
@@ -106,8 +106,8 @@ export default {
     handleAT() {
       this.$gtm.push({
         event: "Button Click Love AT",
-       event_category: "Button",
-        event_action : "Click",
+        event_category: "Button",
+        event_action: "Click",
         event_label: "Button Click Love AT",
       });
       localStorage.setItem("love", "AA");
@@ -118,8 +118,8 @@ export default {
     handleFM() {
       this.$gtm.push({
         event: "Button Click Love FM",
-       event_category: "Button",
-        event_action : "Click",
+        event_category: "Button",
+        event_action: "Click",
         event_label: "Button Click Love FM",
       });
       localStorage.setItem("love", "FF");
@@ -130,8 +130,8 @@ export default {
     handleFT() {
       this.$gtm.push({
         event: "Button Click Love FT",
-       event_category: "Button",
-        event_action : "Click",
+        event_category: "Button",
+        event_action: "Click",
         event_label: "Button Click Love FT",
       });
       localStorage.setItem("love", "FF");
