@@ -96,38 +96,38 @@
 export default {
   methods: {
     EE_10_1() {
-      this.$gtm.trackEvent({
+      this.$gtm.push({
         event: "Button Click Ending 1",
-        category: "Button",
-        action: "Click",
-        label: "Button Click Ending 1",
+        event_category: "Button",
+        event_action: "Click",
+        event_label: "Button Click Ending 1",
       });
       this.$router.push({ name: "/EE-01" });
     },
     EE_10_2() {
-      this.$gtm.trackEvent({
+      this.$gtm.push({
         event: "Button Click Ending 2",
-        category: "Button",
-        action: "Click",
-        label: "Button Click Ending 2",
+        event_category: "Button",
+        event_action: "Click",
+        event_label: "Button Click Ending 2",
       });
       this.$router.push({ name: "/EE-02" });
     },
     EE_10_3() {
-      this.$gtm.trackEvent({
+      this.$gtm.push({
         event: "Button Click Ending 3",
-        category: "Button",
-        action: "Click",
-        label: "Button Click Ending 3",
+        event_category: "Button",
+        event_action: "Click",
+        event_label: "Button Click Ending 3",
       });
       this.$router.push({ name: "/EE-03" });
     },
     EE_10_4() {
-      this.$gtm.trackEvent({
+      this.$gtm.push({
         event: "Button Click Ending 4",
-        category: "Button",
-        action: "Click",
-        label: "Button Click Ending 4",
+        event_category: "Button",
+        event_action: "Click",
+        event_label: "Button Click Ending 4",
       });
       this.$router.push({ name: "/EE-04" });
     },

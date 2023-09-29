@@ -92,11 +92,11 @@ v
 export default {
   methods: {
     handleAM() {
-      this.$gtm.trackEvent({
+      this.$gtm.push({
         event: "Button Click Love AM",
-        category: "Button",
-        action: "Click",
-        label: "Button Click Love AM",
+       event_category: "Button",
+        event_action : "Click",
+        event_label: "Button Click Love AM",
       });
       localStorage.setItem("love", "AA");
       localStorage.setItem("route", "AM");
@@ -104,11 +104,11 @@ export default {
       this.$store.dispatch("playNextSound");
     },
     handleAT() {
-      this.$gtm.trackEvent({
+      this.$gtm.push({
         event: "Button Click Love AT",
-        category: "Button",
-        action: "Click",
-        label: "Button Click Love AT",
+       event_category: "Button",
+        event_action : "Click",
+        event_label: "Button Click Love AT",
       });
       localStorage.setItem("love", "AA");
       localStorage.setItem("route", "AT");
@@ -116,11 +116,11 @@ export default {
       this.$store.dispatch("playNextSound");
     },
     handleFM() {
-      this.$gtm.trackEvent({
+      this.$gtm.push({
         event: "Button Click Love FM",
-        category: "Button",
-        action: "Click",
-        label: "Button Click Love FM",
+       event_category: "Button",
+        event_action : "Click",
+        event_label: "Button Click Love FM",
       });
       localStorage.setItem("love", "FF");
       localStorage.setItem("route", "FM");
@@ -128,11 +128,11 @@ export default {
       this.$store.dispatch("playNextSound");
     },
     handleFT() {
-      this.$gtm.trackEvent({
+      this.$gtm.push({
         event: "Button Click Love FT",
-        category: "Button",
-        action: "Click",
-        label: "Button Click Love FT",
+       event_category: "Button",
+        event_action : "Click",
+        event_label: "Button Click Love FT",
       });
       localStorage.setItem("love", "FF");
       localStorage.setItem("route", "FT");
