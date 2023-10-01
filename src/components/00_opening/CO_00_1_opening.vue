@@ -41,6 +41,9 @@ export default {
       correctAnswer: "fortheandraste",
     };
   },
+  mounted() {
+    localStorage.clear();
+  },
   methods: {
     checkInputValue() {
       if (this.inputValue === this.correctAnswer) {

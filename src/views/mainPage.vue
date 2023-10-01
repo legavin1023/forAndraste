@@ -61,7 +61,7 @@
         <table>
           <thead>
             <tr>
-              <th>Dargon Age in game screen shot</th>
+              <th>Dragon Age in game screen shot</th>
               <th class="left">extra image source</th>
             </tr>
           </thead>

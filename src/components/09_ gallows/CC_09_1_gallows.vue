@@ -76,7 +76,7 @@
           :disabled="!secondSuccessOnly('pv1', 'pv2')"
           id="Ending_3"
         >
-          앤더스가 어떻게 챈터리를 폭발시켰는지는 못찾았지만,<br />
+          앤더스가 어떻게 챈트리를 폭발시켰는지는 못찾았지만,<br />
           어디로 갔는지 짐작가는 곳이 있습니다
         </button>
         <button

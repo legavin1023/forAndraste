@@ -7,7 +7,7 @@
           <li>
             <div class="content-dialog-portrait"></div>
             <div class="content-dialog-text">
-              앤더스가 어떻게 챈터리를 폭발시켰는지는 못찾았지만, 어디로 갔는지
+              앤더스가 어떻게 챈트리를 폭발시켰는지는 못찾았지만, 어디로 갔는지
               짐작가는 곳이 있습니다.
             </div>
           </li>
