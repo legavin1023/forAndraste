@@ -38,7 +38,7 @@ export default {
     return {
       inputValue: "", // 입력된 값 저장을 위한 변수
       shakeIt: false, // 흔들림 애니메이션 활성화 플래그
-      correctAnswer: "fortheandraste",
+      correctAnswer: "forandraste",
     };
   },
   mounted() {
