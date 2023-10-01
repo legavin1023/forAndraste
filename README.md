@@ -1,4 +1,4 @@
-# for_andraste
+# forAndraste
 
 ## Project setup
 ```
