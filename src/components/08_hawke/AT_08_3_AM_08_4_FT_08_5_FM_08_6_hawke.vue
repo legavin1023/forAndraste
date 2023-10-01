@@ -176,7 +176,7 @@
             </div>
           </li>
           <li>
-            <div class="content-dialog-portrait gam"></div>
+            <div class="content-dialog-portrait"></div>
             <div class="content-dialog-text">
               호크를 의심하고 있는 게 아닙니다. 앤더스가 사건 직전에 '친구'로서
               함께 했던 것은 호크 뿐이니... 앤더스가 호크 앞에서는 미처 숨기지
