@@ -100,7 +100,7 @@
         </div>
         <div class="content-button mt90">
           <button @click="checkPath" v-if="showButton" class="red">
-            마치게 되더라도 나는 해야 해
+            미치게 되더라도 나는 해야 해
           </button>
         </div>
       </div>
