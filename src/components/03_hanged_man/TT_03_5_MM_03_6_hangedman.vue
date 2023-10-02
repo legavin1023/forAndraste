@@ -198,7 +198,7 @@
               :style="getItemStyle(slideIndex + 1)"
             >
               <img :src="slideSrc" alt="Slide Image" />
-              <button v-if="slideIndex === 4" @click="checkPath"></button>
+              <button v-if="slideIndex === 4" @click="checkPath">X</button>
             </div>
           </div>
         </div>
@@ -297,6 +297,13 @@ export default {
       right: 0px;
       width: 20px;
       height: 20px;
+      // border: 1px solid red;
+      font-size: 10px;
+      line-height: 0px;
+      color: #5d5749;
+      &:hover {
+        color: #fff;
+      }
     }
     .item {
       display: block;
