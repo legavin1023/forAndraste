@@ -124,7 +124,7 @@
       <div class="content-button ending mt90 pb70">
         <div class="varric pb70">베릭 테트라스의 메모에서</div>
         <button class="ending-button pb70" @click="checkPath">
-          <span>엔딩2</span>
+          <span>엔딩3</span>
           <p>공동수색 A : 남겨진 자들 A</p>
         </button>
       </div>
