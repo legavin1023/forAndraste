@@ -21,7 +21,7 @@
             <div class="content-dialog-image varric"></div>
           </li>
           <li>
-            <div class="content-dialog-portrait Varric"></div>
+            <div class="content-dialog-portrait varric"></div>
             <div class="content-dialog-text">
               문을 따고 들어온 이유를 제대로 설명하지 못하면 다음에는 머리야.
             </div>
